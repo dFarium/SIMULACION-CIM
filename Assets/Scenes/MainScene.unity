@@ -234,6 +234,7 @@ GameObject:
   - component: {fileID: 390366078}
   - component: {fileID: 390366080}
   - component: {fileID: 390366081}
+  - component: {fileID: 390366082}
   m_Layer: 0
   m_Name: ManoRotator
   m_TagString: Untagged
@@ -309,6 +310,19 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 0.00001
+--- !u!114 &390366082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390366077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7b98c93dd5d096419c83fa472d29a6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rotationSpeed: 10
 --- !u!1 &486727150
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,8 +493,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 996930592}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.05327748, y: 0.928149, z: -0.14594759, w: 0.33823115}
+  m_LocalPosition: {x: -0.46799, y: 1.2232431, z: 0.9798447}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -576,6 +590,7 @@ GameObject:
   - component: {fileID: 9111592377637111912}
   - component: {fileID: 9111592377637111914}
   - component: {fileID: 9111592377637111915}
+  - component: {fileID: 9111592377637111916}
   m_Layer: 0
   m_Name: Mano
   m_TagString: Untagged
@@ -596,6 +611,7 @@ GameObject:
   - component: {fileID: 1764274472619957668}
   - component: {fileID: 7396671624843400650}
   - component: {fileID: 7396671624843400651}
+  - component: {fileID: 7396671624843400652}
   m_Layer: 0
   m_Name: Antebrazo
   m_TagString: Untagged
@@ -976,7 +992,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5927207036575484648}
   m_Layer: 0
-  m_Name: ScorbotModelNormalsFixed
+  m_Name: Scorbot Con Funcionalidad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1240,6 +1256,19 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 0.00001
+--- !u!114 &7396671624843400652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274809395623775920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7b98c93dd5d096419c83fa472d29a6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rotationSpeed: 10
 --- !u!23 &7433718067789619066
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1314,6 +1343,7 @@ GameObject:
   - component: {fileID: 7154336316655847442}
   - component: {fileID: 8727941300435964741}
   - component: {fileID: 8727941300435964742}
+  - component: {fileID: 8727941300435964743}
   m_Layer: 0
   m_Name: Brazo
   m_TagString: Untagged
@@ -1381,6 +1411,19 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 0.00001
+--- !u!114 &8727941300435964743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7797503386831308662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7b98c93dd5d096419c83fa472d29a6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rotationSpeed: 10
 --- !u!33 &8929643824292746667
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1502,6 +1545,19 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 0.00001
+--- !u!114 &9111592377637111916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225075405704320075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7b98c93dd5d096419c83fa472d29a6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rotationSpeed: 10
 --- !u!1 &9218005947870273104
 GameObject:
   m_ObjectHideFlags: 0
@@ -1515,6 +1571,7 @@ GameObject:
   - component: {fileID: 3618548392315576394}
   - component: {fileID: 9218005947870273106}
   - component: {fileID: 9218005947870273107}
+  - component: {fileID: 9218005947870273108}
   m_Layer: 0
   m_Name: Hombro
   m_TagString: Untagged
@@ -1574,3 +1631,16 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 0.00001
+--- !u!114 &9218005947870273108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9218005947870273104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7b98c93dd5d096419c83fa472d29a6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rotationSpeed: 10
