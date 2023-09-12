@@ -37,12 +37,11 @@ public class HingeJointMovement : MonoBehaviour
             Rotate(false);
         }
 
-        if (Input.GetKeyUp("space"))
+        if (Input.GetKeyUp("w"))
         {
             Debug.Log("DETENIENDO ROBOT");
             StopRotating();
         }
-            
     }
 
     //Mover robot
