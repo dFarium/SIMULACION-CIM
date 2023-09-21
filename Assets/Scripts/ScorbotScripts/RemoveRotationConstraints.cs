@@ -1,20 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class RemoveRotationConstraints : MonoBehaviour
+namespace ScorbotScripts
 {
-    private Rigidbody[] _rigidBodies;
-    public void Start()
+    public class RemoveRotationConstraints : MonoBehaviour
     {
-        _rigidBodies = GetComponentsInChildren<Rigidbody>();
-    }
-
-    public void RemoveConstraints()
-    {
-        foreach (Rigidbody rigidBody in _rigidBodies )
+        private Rigidbody[] _rigidbodies;
+        public void Start()
         {
-            rigidBody.constraints = RigidbodyConstraints.None;
+            _rigidbodies = GetComponentsInChildren<Rigidbody>();
+        }
+
+        public void RemoveConstraints()
+        {
+            foreach (Rigidbody rb in _rigidbodies )
+            {
+                rb.constraints = RigidbodyConstraints.None;
+            }
         }
     }
 }

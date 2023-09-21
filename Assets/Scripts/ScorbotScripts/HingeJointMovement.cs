@@ -1,77 +1,76 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
-public class HingeJointMovement : MonoBehaviour
+namespace ScorbotScripts
 {
-    private HingeJoint _hinge;
-    private Rigidbody _rigidbody;
-    [SerializeField] private float _rotationSpeed;
-    private JointMotor _hingeMotor;
-
-    private void Start()
+    public class HingeJointMovement : MonoBehaviour
     {
-        //Iniciar variables
-        _rigidbody = GetComponent<Rigidbody>();
-        _hinge = GetComponent<HingeJoint>();
-        //Preparacion del motor para la articulacion
-        JointMotor hingeMotor = _hinge.motor;
-        hingeMotor.force = 100;
-        _hinge.useMotor = true;
-        _hinge.motor = hingeMotor;
-    }
+        private HingeJoint _hinge;
+        private Rigidbody _rigidbody;
+        [SerializeField] private float _rotationSpeed;
+        private JointMotor _hingeMotor;
 
-    private void Update()
-    {
-        if (Input.GetKeyDown("q"))
+        private void Start()
         {
-            Debug.Log("MOVIENDO ROBOT EN TRUE...");
-            Rotate(true);
+            //Iniciar variables
+            _rigidbody = GetComponent<Rigidbody>();
+            _hinge = GetComponent<HingeJoint>();
+            //Preparacion del motor para la articulacion
+            JointMotor hingeMotor = _hinge.motor;
+            hingeMotor.force = 100;
+            _hinge.useMotor = true;
+            _hinge.motor = hingeMotor;
         }
 
-        if (Input.GetKeyDown("e"))
+        private void Update()
         {
-            Debug.Log("MOVIENDO ROBOT EN FALSE...");
-            Rotate(false);
+            if (Input.GetKeyDown("q"))
+            {
+                Debug.Log("MOVIENDO ROBOT EN TRUE...");
+                Rotate(true);
+            }
+
+            if (Input.GetKeyDown("e"))
+            {
+                Debug.Log("MOVIENDO ROBOT EN FALSE...");
+                Rotate(false);
+            }
+
+            if (Input.GetKeyUp("w"))
+            {
+                Debug.Log("DETENIENDO ROBOT");
+                StopRotating();
+            }
         }
 
-        if (Input.GetKeyUp("w"))
+        //Mover robot
+        public void Rotate(bool rotation)
         {
-            Debug.Log("DETENIENDO ROBOT");
-            StopRotating();
+            int rotationDirection = rotation ? 1 : -1;
+            JointMotor hingeMotor = _hinge.motor;
+            hingeMotor.targetVelocity = _rotationSpeed * rotationDirection;
+            _hinge.motor = hingeMotor;
         }
-    }
 
-    //Mover robot
-    public void Rotate(bool rotation)
-    {
-        int rotationDirection = rotation ? 1 : -1;
-        JointMotor hingeMotor = _hinge.motor;
-        hingeMotor.targetVelocity = _rotationSpeed * rotationDirection;
-        _hinge.motor = hingeMotor;
-    }
+        public void StopRotating()
+        {
+            JointMotor hingeMotor = _hinge.motor;
+            hingeMotor.targetVelocity = 0f;
+            _hinge.motor = hingeMotor;
+        }
 
-    public void StopRotating()
-    {
-        JointMotor hingeMotor = _hinge.motor;
-        hingeMotor.targetVelocity = 0f;
-        _hinge.motor = hingeMotor;
-    }
+        public void FreezeXRotationAxis()
+        {
+            _rigidbody.constraints = RigidbodyConstraints.FreezeRotationX;
+        }
 
-    public void FreezeXRotationAxis()
-    {
-        _rigidbody.constraints = RigidbodyConstraints.FreezeRotationX;
-    }
+        public void FreezeYRotationAxis()
+        {
+            _rigidbody.constraints = RigidbodyConstraints.FreezeRotationY;
+        }
 
-    public void FreezeYRotationAxis()
-    {
-        _rigidbody.constraints = RigidbodyConstraints.FreezeRotationY;
-    }
-
-    public void FreezeZRotationAxis()
-    {
-        _rigidbody.constraints = RigidbodyConstraints.FreezeRotationZ;
+        public void FreezeZRotationAxis()
+        {
+            _rigidbody.constraints = RigidbodyConstraints.FreezeRotationZ;
+        }
     }
 }

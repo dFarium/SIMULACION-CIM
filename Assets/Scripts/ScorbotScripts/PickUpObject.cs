@@ -1,58 +1,58 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PickUpObject : MonoBehaviour
+namespace ScorbotScripts
 {
-    private GameObject _pickedObject;
-    private GameObject _targetGameObject;
-    private bool _isObjectPicked;
-
-    private void Update()
+    public class PickUpObject : MonoBehaviour
     {
-        if (Input.GetKeyDown("space"))
+        private GameObject _pickedObject;
+        private GameObject _targetGameObject;
+        private bool _isObjectPicked;
+
+        private void Update()
         {
-            if (_isObjectPicked)
+            if (Input.GetKeyDown("space"))
             {
-                Debug.Log(("SOLTANDO OBJETO"));
-                DropObject();
+                if (_isObjectPicked)
+                {
+                    Debug.Log(("SOLTANDO OBJETO"));
+                    DropObject();
+                }
+                else if (_targetGameObject && !_isObjectPicked)
+                {
+                    Debug.Log("TOMANDO OBJETO");
+                    PickUp();
+                }
             }
-            else if (_targetGameObject && !_isObjectPicked)
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (!_isObjectPicked && other.TryGetComponent(out Pickupable pickupableObject))
             {
-                Debug.Log("TOMANDO OBJETO");
-                PickUp();
+                _targetGameObject = other.gameObject;
             }
         }
-    }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (!_isObjectPicked && other.TryGetComponent(out Pickupable pickupableObject))
+        private void OnTriggerExit(Collider other)
         {
-            _targetGameObject = other.gameObject;
+            _targetGameObject = null;
         }
-    }
 
-    private void OnTriggerExit(Collider other)
-    {
-        _targetGameObject = null;
-    }
-
-    public void PickUp()
-    {
-        if (!_isObjectPicked && _targetGameObject != null)
+        public void PickUp()
         {
-            _isObjectPicked = true;
-            _pickedObject = _targetGameObject;
-            _pickedObject.transform.parent = transform;
+            if (!_isObjectPicked && _targetGameObject != null)
+            {
+                _isObjectPicked = true;
+                _pickedObject = _targetGameObject;
+                _pickedObject.transform.parent = transform;
+            }
         }
-    }
 
-    public void DropObject()
-    {
-        _isObjectPicked = false;
-        _pickedObject.transform.parent = null;
-        _pickedObject = null;
+        public void DropObject()
+        {
+            _isObjectPicked = false;
+            _pickedObject.transform.parent = null;
+            _pickedObject = null;
+        }
     }
 }

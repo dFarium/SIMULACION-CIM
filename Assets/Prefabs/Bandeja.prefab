@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4257883078763892097}
   - component: {fileID: 8948322591062240255}
   - component: {fileID: 7303691605697008451}
+  - component: {fileID: 4136031851705541037}
   m_Layer: 0
   m_Name: Bandeja
   m_TagString: Untagged
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4136031851705541037
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8982411675522367995}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7948945675101318237, guid: 433af780f6f6db3498b17666e637da18, type: 3}

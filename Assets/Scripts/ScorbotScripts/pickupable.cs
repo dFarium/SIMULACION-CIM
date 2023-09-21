@@ -1,14 +1,14 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Pickupable : MonoBehaviour
+namespace ScorbotScripts
 {
-    private Rigidbody _rigidbody;
-    private void Start()
+    public class Pickupable : MonoBehaviour
     {
-        _rigidbody = GetComponent<Rigidbody>();
-    }
+        private Rigidbody _rigidbody;
+        private void Start()
+        {
+            _rigidbody = GetComponent<Rigidbody>();
+        }
     
+    }
 }
