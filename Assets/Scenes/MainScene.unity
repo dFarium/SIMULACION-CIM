@@ -285,8 +285,8 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 1250311217}
-  m_Follow: {fileID: 300986048}
+  m_LookAt: {fileID: 347706607}
+  m_Follow: {fileID: 5927207036575484648}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 5
@@ -321,10 +321,10 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &300986048 stripped
+--- !u!4 &347706607 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 2878418830466766858, guid: 8149ea495e7c21f49810666fd61af116, type: 3}
-  m_PrefabInstance: {fileID: 8481291609244390114}
+  m_CorrespondingSourceObject: {fileID: 6867765174559723494, guid: a4d666ce81155fa4c93ff69edd68d21f, type: 3}
+  m_PrefabInstance: {fileID: 6867765174767966985}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &486727150
 GameObject:
@@ -636,11 +636,6 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!4 &1250311217 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8481291609440962061, guid: 8149ea495e7c21f49810666fd61af116, type: 3}
-  m_PrefabInstance: {fileID: 8481291609244390114}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2056934002
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1825,6 +1820,11 @@ Transform:
   m_Father: {fileID: 543450652691163553}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &5927207036575484648 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 940864673397395937, guid: a4d666ce81155fa4c93ff69edd68d21f, type: 3}
+  m_PrefabInstance: {fileID: 6867765174767966985}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6105546537929335019
 GameObject:
   m_ObjectHideFlags: 0
@@ -2041,6 +2041,63 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1001 &6867765174767966985
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 451855040401935195, guid: a4d666ce81155fa4c93ff69edd68d21f, type: 3}
+      propertyPath: m_Name
+      value: Scorbot Con Funcionalidad
+      objectReference: {fileID: 0}
+    - target: {fileID: 940864673397395937, guid: a4d666ce81155fa4c93ff69edd68d21f, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 940864673397395937, guid: a4d666ce81155fa4c93ff69edd68d21f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.279
+      objectReference: {fileID: 0}
+    - target: {fileID: 940864673397395937, guid: a4d666ce81155fa4c93ff69edd68d21f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.718
+      objectReference: {fileID: 0}
+    - target: {fileID: 940864673397395937, guid: a4d666ce81155fa4c93ff69edd68d21f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.393
+      objectReference: {fileID: 0}
+    - target: {fileID: 940864673397395937, guid: a4d666ce81155fa4c93ff69edd68d21f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 940864673397395937, guid: a4d666ce81155fa4c93ff69edd68d21f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 940864673397395937, guid: a4d666ce81155fa4c93ff69edd68d21f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 940864673397395937, guid: a4d666ce81155fa4c93ff69edd68d21f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 940864673397395937, guid: a4d666ce81155fa4c93ff69edd68d21f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 940864673397395937, guid: a4d666ce81155fa4c93ff69edd68d21f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 940864673397395937, guid: a4d666ce81155fa4c93ff69edd68d21f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a4d666ce81155fa4c93ff69edd68d21f, type: 3}
 --- !u!1 &7104373444860144328
 GameObject:
   m_ObjectHideFlags: 0
@@ -2293,63 +2350,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1001 &8481291609244390114
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2878418830466766858, guid: 8149ea495e7c21f49810666fd61af116, type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2878418830466766858, guid: 8149ea495e7c21f49810666fd61af116, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.279
-      objectReference: {fileID: 0}
-    - target: {fileID: 2878418830466766858, guid: 8149ea495e7c21f49810666fd61af116, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.718
-      objectReference: {fileID: 0}
-    - target: {fileID: 2878418830466766858, guid: 8149ea495e7c21f49810666fd61af116, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.393
-      objectReference: {fileID: 0}
-    - target: {fileID: 2878418830466766858, guid: 8149ea495e7c21f49810666fd61af116, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2878418830466766858, guid: 8149ea495e7c21f49810666fd61af116, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2878418830466766858, guid: 8149ea495e7c21f49810666fd61af116, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2878418830466766858, guid: 8149ea495e7c21f49810666fd61af116, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2878418830466766858, guid: 8149ea495e7c21f49810666fd61af116, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2878418830466766858, guid: 8149ea495e7c21f49810666fd61af116, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2878418830466766858, guid: 8149ea495e7c21f49810666fd61af116, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3222855504874439344, guid: 8149ea495e7c21f49810666fd61af116, type: 3}
-      propertyPath: m_Name
-      value: Scorbot Con Funcionalidad
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 8149ea495e7c21f49810666fd61af116, type: 3}
 --- !u!4 &8501695766004969545
 Transform:
   m_ObjectHideFlags: 0
