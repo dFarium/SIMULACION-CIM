@@ -89,7 +89,7 @@ public class NodeSeeker : MonoBehaviour
     //Obtener pasos de altura entre el origen y destino 
     public float GetHeightSteps(List<Transform> animationList)
     { 
-        return (destination.position.y - origin.position.y) / (animationList.Count+2f);
+        return ((destination.position.y - origin.position.y) / (animationList.Count+2f));
     }
 
     //Algoritmo Dijkstra

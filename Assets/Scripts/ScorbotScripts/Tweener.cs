@@ -25,6 +25,7 @@ public class Tweener : MonoBehaviour
         tweenSequence.Append(transform.DOMove(offsetPosition, tweenSpeed).SetEase(Ease.InSine));
         //tweenSequence.Append(transform.DOMove(shortestPath[0].position, tweenSpeed).SetEase(Ease.InSine));
 
+        //Animacion lineal para los puntos intermedios
         for (int i = 1; i < shortestPath.Count - 1; i++)
         {
             offsetPosition = AddOffset(shortestPath[i], step);
