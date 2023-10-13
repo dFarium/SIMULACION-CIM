@@ -12,7 +12,6 @@ public class ToggleCinematic : MonoBehaviour
     // Método para abrir y cerrar la ventana
     public void SwitchCinematic()
     {
-        Debug.Log(botonesDirecto[0].activeSelf);
         if (botonesDirecto[0].activeSelf)
         {
             foreach (GameObject botonD in botonesDirecto)
