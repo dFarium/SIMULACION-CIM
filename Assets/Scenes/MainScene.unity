@@ -8111,6 +8111,7 @@ GameObject:
   - component: {fileID: 1851123002246246795}
   - component: {fileID: 1851123002246246792}
   - component: {fileID: 1851123002246246793}
+  - component: {fileID: 1851123002246246796}
   m_Layer: 0
   m_Name: "\u21BB Roll"
   m_TagString: Untagged
@@ -8200,6 +8201,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1851123002246246791}
   m_CullTransparentMesh: 1
+--- !u!114 &1851123002246246796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851123002246246791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 9111592377637111916}
+          m_TargetAssemblyTypeName: ScorbotScripts.HingeJointMovement, Assembly-CSharp
+          m_MethodName: StopRotating
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 9111592377637111916}
+          m_TargetAssemblyTypeName: ScorbotScripts.HingeJointMovement, Assembly-CSharp
+          m_MethodName: Rotate
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
 --- !u!222 &1851123002287180544
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8353,19 +8399,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1851123002320985744}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5953284680531537442}
-        m_TargetAssemblyTypeName: ToggleCinematic, Assembly-CSharp
-        m_MethodName: SwitchCinematic
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!222 &1851123002320985747
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8407,7 +8441,6 @@ GameObject:
   - component: {fileID: 1851123002320985747}
   - component: {fileID: 1851123002320985744}
   - component: {fileID: 1851123002320985745}
-  - component: {fileID: 5953284680531537442}
   m_Layer: 0
   m_Name: Control On/Off
   m_TagString: Untagged
@@ -8653,6 +8686,7 @@ GameObject:
   - component: {fileID: 1851123002356974931}
   - component: {fileID: 1851123002356974928}
   - component: {fileID: 1851123002356974929}
+  - component: {fileID: 1851123002356974960}
   m_Layer: 0
   m_Name: "Z- / \u2193 Elbow"
   m_TagString: Untagged
@@ -8660,6 +8694,51 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1851123002356974960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851123002356974959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7396671624843400652}
+          m_TargetAssemblyTypeName: ScorbotScripts.HingeJointMovement, Assembly-CSharp
+          m_MethodName: StopRotating
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7396671624843400652}
+          m_TargetAssemblyTypeName: ScorbotScripts.HingeJointMovement, Assembly-CSharp
+          m_MethodName: Rotate
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!224 &1851123002373947994
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9927,6 +10006,7 @@ GameObject:
   - component: {fileID: 1851123002815858097}
   - component: {fileID: 1851123002815857998}
   - component: {fileID: 1851123002815857999}
+  - component: {fileID: 1851123002815858098}
   m_Layer: 0
   m_Name: "\u2191 Pitch"
   m_TagString: Untagged
@@ -10016,6 +10096,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1851123002815857997}
   m_CullTransparentMesh: 1
+--- !u!114 &1851123002815858098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851123002815857997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 390366082}
+          m_TargetAssemblyTypeName: ScorbotScripts.HingeJointMovement, Assembly-CSharp
+          m_MethodName: StopRotating
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 390366082}
+          m_TargetAssemblyTypeName: ScorbotScripts.HingeJointMovement, Assembly-CSharp
+          m_MethodName: Rotate
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
 --- !u!1 &1851123002823840922
 GameObject:
   m_ObjectHideFlags: 0
@@ -10397,7 +10522,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 9218005947870273108}
+        - m_Target: {fileID: 8727941300435964743}
           m_TargetAssemblyTypeName: ScorbotScripts.HingeJointMovement, Assembly-CSharp
           m_MethodName: StopRotating
           m_Mode: 1
@@ -10413,7 +10538,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 9218005947870273108}
+        - m_Target: {fileID: 8727941300435964743}
           m_TargetAssemblyTypeName: ScorbotScripts.HingeJointMovement, Assembly-CSharp
           m_MethodName: Rotate
           m_Mode: 6
@@ -10437,6 +10562,7 @@ GameObject:
   - component: {fileID: 1851123002954290632}
   - component: {fileID: 1851123002954290633}
   - component: {fileID: 1851123002954290630}
+  - component: {fileID: 1851123002954290634}
   m_Layer: 0
   m_Name: "Z+ / \u2191 Elbow"
   m_TagString: Untagged
@@ -10547,6 +10673,51 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 10
+--- !u!114 &1851123002954290634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851123002954290628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7396671624843400652}
+          m_TargetAssemblyTypeName: ScorbotScripts.HingeJointMovement, Assembly-CSharp
+          m_MethodName: StopRotating
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7396671624843400652}
+          m_TargetAssemblyTypeName: ScorbotScripts.HingeJointMovement, Assembly-CSharp
+          m_MethodName: Rotate
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
 --- !u!114 &1851123002974919840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10590,7 +10761,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1851123002974919843}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1851123002974919871}
+        m_TargetAssemblyTypeName: ToggleCinematic, Assembly-CSharp
+        m_MethodName: SwitchCinematic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &1851123002974919841
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10662,6 +10845,7 @@ GameObject:
   - component: {fileID: 1851123002974919842}
   - component: {fileID: 1851123002974919843}
   - component: {fileID: 1851123002974919840}
+  - component: {fileID: 1851123002974919871}
   m_Layer: 0
   m_Name: XYZ-Joints
   m_TagString: Untagged
@@ -10669,6 +10853,32 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1851123002974919871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851123002974919870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 913aed5a007268c45bd821c543ec828f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  botonesDirecto:
+  - {fileID: 1851123002552810797}
+  - {fileID: 1851123002874848202}
+  - {fileID: 1851123002954290628}
+  - {fileID: 1851123002487391924}
+  - {fileID: 1851123003225760682}
+  - {fileID: 1851123002356974959}
+  botonesInverso:
+  - {fileID: 1322698751526972198}
+  - {fileID: 2358638071437570045}
+  - {fileID: 3724775099778348100}
+  - {fileID: 63373619488793788}
+  - {fileID: 7727633685020326098}
+  - {fileID: 47575133838213193}
 --- !u!224 &1851123002998524836
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11508,6 +11718,7 @@ GameObject:
   - component: {fileID: 1851123003225760686}
   - component: {fileID: 1851123003225760687}
   - component: {fileID: 1851123003225760684}
+  - component: {fileID: 1851123003225760688}
   m_Layer: 0
   m_Name: "Y- / \u2193 Shoulder"
   m_TagString: Untagged
@@ -11619,6 +11830,51 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 10
+--- !u!114 &1851123003225760688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851123003225760682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8727941300435964743}
+          m_TargetAssemblyTypeName: ScorbotScripts.HingeJointMovement, Assembly-CSharp
+          m_MethodName: StopRotating
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8727941300435964743}
+          m_TargetAssemblyTypeName: ScorbotScripts.HingeJointMovement, Assembly-CSharp
+          m_MethodName: Rotate
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!224 &1851123003234925866
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12193,6 +12449,7 @@ GameObject:
   - component: {fileID: 1851123003341908756}
   - component: {fileID: 1851123003341908757}
   - component: {fileID: 1851123003341908754}
+  - component: {fileID: 1851123003341908758}
   m_Layer: 0
   m_Name: "\u2193 Pitch"
   m_TagString: Untagged
@@ -12303,6 +12560,51 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 10
+--- !u!114 &1851123003341908758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851123003341908752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 390366082}
+          m_TargetAssemblyTypeName: ScorbotScripts.HingeJointMovement, Assembly-CSharp
+          m_MethodName: StopRotating
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 390366082}
+          m_TargetAssemblyTypeName: ScorbotScripts.HingeJointMovement, Assembly-CSharp
+          m_MethodName: Rotate
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1851123003361205768
 GameObject:
   m_ObjectHideFlags: 0
@@ -12745,6 +13047,7 @@ GameObject:
   - component: {fileID: 1851123003475788549}
   - component: {fileID: 1851123003475788546}
   - component: {fileID: 1851123003475788547}
+  - component: {fileID: 1851123003475788550}
   m_Layer: 0
   m_Name: "\u21BA Roll"
   m_TagString: Untagged
@@ -12834,6 +13137,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1851123003475788545}
   m_CullTransparentMesh: 1
+--- !u!114 &1851123003475788550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851123003475788545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 9111592377637111916}
+          m_TargetAssemblyTypeName: ScorbotScripts.HingeJointMovement, Assembly-CSharp
+          m_MethodName: StopRotating
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 9111592377637111916}
+          m_TargetAssemblyTypeName: ScorbotScripts.HingeJointMovement, Assembly-CSharp
+          m_MethodName: Rotate
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!222 &1851123003477724496
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16937,32 +17285,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &5953284680531537442
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1851123002320985775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 913aed5a007268c45bd821c543ec828f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  botonesDirecto:
-  - {fileID: 1851123002552810797}
-  - {fileID: 1851123002874848202}
-  - {fileID: 1851123002954290628}
-  - {fileID: 1851123002487391924}
-  - {fileID: 1851123003225760682}
-  - {fileID: 1851123002356974959}
-  botonesInverso:
-  - {fileID: 1322698751526972198}
-  - {fileID: 2358638071437570045}
-  - {fileID: 3724775099778348100}
-  - {fileID: 63373619488793788}
-  - {fileID: 7727633685020326098}
-  - {fileID: 47575133838213193}
 --- !u!4 &5957517245482266374
 Transform:
   m_ObjectHideFlags: 0
