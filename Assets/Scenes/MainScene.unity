@@ -678,7 +678,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5927207036575484648}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &140898418
 GameObject:
@@ -964,7 +964,7 @@ Transform:
   - {fileID: 1754061222}
   m_Father: {fileID: 7396671624843400648}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.631}
 --- !u!54 &390366080
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2813,7 +2813,8 @@ GameObject:
   - component: {fileID: 1042789965}
   - component: {fileID: 1042789964}
   - component: {fileID: 1042789968}
-  m_Layer: 0
+  - component: {fileID: 1042789969}
+  m_Layer: 6
   m_Name: IK Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2896,7 +2897,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5927207036575484648}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1042789968
 MonoBehaviour:
@@ -2912,6 +2913,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeSeeker: {fileID: 1872139013}
   tweenSpeed: 1
+--- !u!114 &1042789969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1042789963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fb66e730331ca34c851ede8d2a2d568, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidadMovimiento: 0.1
 --- !u!1 &1074181688
 GameObject:
   m_ObjectHideFlags: 0
@@ -3484,6 +3498,104 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1305884788}
   m_CullTransparentMesh: 1
+--- !u!1 &1321063275
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1321063276}
+  - component: {fileID: 1321063279}
+  - component: {fileID: 1321063278}
+  - component: {fileID: 1321063277}
+  m_Layer: 0
+  m_Name: Capsule
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1321063276
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321063275}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.11, z: 0}
+  m_LocalScale: {x: 0.30173, y: 0.20674883, z: 0.30173}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5927207036575484648}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1321063277
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321063275}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.49999997
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1321063278
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321063275}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1321063279
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321063275}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1411753797
 GameObject:
   m_ObjectHideFlags: 3
@@ -3725,7 +3837,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5927207036575484648}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1497270192
 GameObject:
@@ -4992,7 +5104,7 @@ Transform:
   - {fileID: 1135230867}
   - {fileID: 1180206808}
   m_Father: {fileID: 5927207036575484648}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1872139013
 MonoBehaviour:
@@ -5795,6 +5907,7 @@ GameObject:
   - component: {fileID: 3845364985802698849}
   - component: {fileID: 5674738252974274617}
   - component: {fileID: 6849993907927177550}
+  - component: {fileID: 8053389524086500780}
   m_Layer: 0
   m_Name: Z-
   m_TagString: Untagged
@@ -5829,6 +5942,7 @@ GameObject:
   - component: {fileID: 7917824769548544950}
   - component: {fileID: 4201480419675937650}
   - component: {fileID: 722043385622236496}
+  - component: {fileID: 8391341492823098306}
   m_Layer: 0
   m_Name: X-
   m_TagString: Untagged
@@ -6558,6 +6672,7 @@ GameObject:
   - component: {fileID: 1874536574971869239}
   - component: {fileID: 3978315442358484403}
   - component: {fileID: 2100818309650064275}
+  - component: {fileID: 7769311959679166572}
   m_Layer: 0
   m_Name: X+
   m_TagString: Untagged
@@ -15643,6 +15758,7 @@ GameObject:
   - component: {fileID: 4554915364457040231}
   - component: {fileID: 3045046526952490455}
   - component: {fileID: 6799039378596352968}
+  - component: {fileID: 6799039378596352969}
   m_Layer: 0
   m_Name: 'Y+ '
   m_TagString: Untagged
@@ -16403,6 +16519,7 @@ GameObject:
   - component: {fileID: 4303006962926288753}
   - component: {fileID: 5179987189290479691}
   - component: {fileID: 7479553644192854217}
+  - component: {fileID: 7479553644192854218}
   m_Layer: 0
   m_Name: 'Z+ '
   m_TagString: Untagged
@@ -17563,6 +17680,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1321063276}
   - {fileID: 5957517245482266374}
   - {fileID: 1872139012}
   - {fileID: 1456188436}
@@ -17612,7 +17730,7 @@ Transform:
   m_Children:
   - {fileID: 1063047008090888852}
   m_Father: {fileID: 5927207036575484648}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!54 &5957517245482266375
 Rigidbody:
@@ -18295,6 +18413,51 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6799039378596352969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2358638071437570045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1042789969}
+          m_TargetAssemblyTypeName: MoverCuboCineInv, Assembly-CSharp
+          m_MethodName: DetenerMovimiento
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1042789969}
+          m_TargetAssemblyTypeName: MoverCuboCineInv, Assembly-CSharp
+          m_MethodName: MovimientoY
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
 --- !u!1 &6821012087959749377
 GameObject:
   m_ObjectHideFlags: 0
@@ -18922,6 +19085,51 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7479553644192854218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3724775099778348100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1042789969}
+          m_TargetAssemblyTypeName: MoverCuboCineInv, Assembly-CSharp
+          m_MethodName: DetenerMovimiento
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1042789969}
+          m_TargetAssemblyTypeName: MoverCuboCineInv, Assembly-CSharp
+          m_MethodName: MovimientoZ
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
 --- !u!1 &7509455032829088877
 GameObject:
   m_ObjectHideFlags: 0
@@ -18968,6 +19176,7 @@ GameObject:
   - component: {fileID: 6694024888018369810}
   - component: {fileID: 6576939039776570619}
   - component: {fileID: 1504623884482906959}
+  - component: {fileID: 7727633685020326099}
   m_Layer: 0
   m_Name: 'Y- '
   m_TagString: Untagged
@@ -18975,6 +19184,51 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!114 &7727633685020326099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7727633685020326098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1042789969}
+          m_TargetAssemblyTypeName: MoverCuboCineInv, Assembly-CSharp
+          m_MethodName: DetenerMovimiento
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1042789969}
+          m_TargetAssemblyTypeName: MoverCuboCineInv, Assembly-CSharp
+          m_MethodName: MovimientoY
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!33 &7737859399922547627
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -19018,6 +19272,51 @@ RectTransform:
   m_AnchoredPosition: {x: -151.89313, y: -60.14834}
   m_SizeDelta: {x: 36.778725, y: 30.76289}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &7769311959679166572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322698751526972198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1042789969}
+          m_TargetAssemblyTypeName: MoverCuboCineInv, Assembly-CSharp
+          m_MethodName: DetenerMovimiento
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1042789969}
+          m_TargetAssemblyTypeName: MoverCuboCineInv, Assembly-CSharp
+          m_MethodName: MovimientoX
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
 --- !u!1 &7797503386831308662
 GameObject:
   m_ObjectHideFlags: 0
@@ -19258,6 +19557,51 @@ RectTransform:
   m_AnchoredPosition: {x: 3.0205002, y: -60.14866}
   m_SizeDelta: {x: 36.79853, y: 30.76329}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &8053389524086500780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47575133838213193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1042789969}
+          m_TargetAssemblyTypeName: MoverCuboCineInv, Assembly-CSharp
+          m_MethodName: DetenerMovimiento
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1042789969}
+          m_TargetAssemblyTypeName: MoverCuboCineInv, Assembly-CSharp
+          m_MethodName: MovimientoZ
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!33 &8065056736901109409
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -19581,6 +19925,51 @@ RectTransform:
   m_AnchoredPosition: {x: -151.89313, y: -60.14834}
   m_SizeDelta: {x: 36.778725, y: 30.76289}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &8391341492823098306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63373619488793788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1042789969}
+          m_TargetAssemblyTypeName: MoverCuboCineInv, Assembly-CSharp
+          m_MethodName: DetenerMovimiento
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1042789969}
+          m_TargetAssemblyTypeName: MoverCuboCineInv, Assembly-CSharp
+          m_MethodName: MovimientoX
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!23 &8475675447612661377
 MeshRenderer:
   m_ObjectHideFlags: 0
