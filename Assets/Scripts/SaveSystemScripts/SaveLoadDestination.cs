@@ -22,8 +22,8 @@ public class PositionManager : MonoBehaviour
             z = position.z
         };
         
-        string station = "estacion" + stationNumber;
-        string saveFileName = "posicion" + saveNumber + ".json";
+        string station = "Estacion" + stationNumber;
+        string saveFileName = "E"+ stationNumber + " Posicion" + saveNumber + ".json";
         string filePath = CommonPath + "/" + station + "/" + saveFileName;
         Directory.CreateDirectory(Path.GetDirectoryName(filePath) ?? string.Empty);
 
@@ -33,8 +33,8 @@ public class PositionManager : MonoBehaviour
 
     public static Vector3? LoadPosition(int stationNumber, int saveNumber)
     {
-        string station = "estacion" + stationNumber;
-        string saveFileName = "posicion" + saveNumber + ".json";
+        string station = "Estacion" + stationNumber;
+        string saveFileName = "E"+ stationNumber + " Posicion" + saveNumber + ".json";
         string filePath = CommonPath + "/" + station + "/" + saveFileName;
 
         if (File.Exists(filePath))

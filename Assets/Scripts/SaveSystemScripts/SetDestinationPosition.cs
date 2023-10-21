@@ -9,7 +9,11 @@ public class SetDestinationPosition : MonoBehaviour
     public void LoadAndSetPosition()
     {
         Vector3? newPosition = PositionManager.LoadPosition(stationNumber,saveNumber);
-        if (newPosition == null) return;
+        if (newPosition == null)
+        {
+            return;
+        }
+        
         transform.position = (Vector3)newPosition;
     }
 
