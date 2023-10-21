@@ -18,7 +18,7 @@ namespace ScorbotScripts
     
         private void OnTriggerEnter(Collider other)
         {
-            Debug.Log(gameObject.name + " esta chocando");
+            Debug.Log(gameObject.name + " esta chocando con " + other.name);
         }
 
     

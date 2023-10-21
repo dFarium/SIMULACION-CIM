@@ -15,6 +15,7 @@ public class NodeSeeker : MonoBehaviour
 
     public void Start()
     {
+        if(nodes.Length == 0) Debug.LogError("NO HAY NODOS REGISTRADOS");
         //Sentido Horario
         connectedNodes.Add(new Node(nodes[0], nodes[1], 1));
         connectedNodes.Add(new Node(nodes[1], nodes[2], 1));
