@@ -3514,13 +3514,13 @@ GameObject:
   - component: {fileID: 1321063279}
   - component: {fileID: 1321063278}
   - component: {fileID: 1321063277}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1321063276
 Transform:
   m_ObjectHideFlags: 0
@@ -3855,7 +3855,6 @@ GameObject:
   - component: {fileID: 1462174935}
   - component: {fileID: 1462174934}
   - component: {fileID: 1462174933}
-  - component: {fileID: 1462174937}
   m_Layer: 0
   m_Name: CenterCube
   m_TagString: Untagged
@@ -3941,20 +3940,6 @@ Transform:
   m_Father: {fileID: 3694496934063211768}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1462174937
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1462174932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1451703a0e6f7e643a4bfc45e1d8e130, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectA: {fileID: 1462174936}
-  objectB: {fileID: 1042789967}
 --- !u!1 &1497270192
 GameObject:
   m_ObjectHideFlags: 0
@@ -8331,7 +8316,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1462174937}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: distance, Assembly-CSharp
         m_MethodName: distancia
         m_Mode: 1

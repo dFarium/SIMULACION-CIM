@@ -17,7 +17,7 @@ public class MoverCuboCineInv : MonoBehaviour
 
     public void Start()
     {
-        distance= distance = Vector3.Distance(objectA.position, objectB.position);
+        distance= Vector3.Distance(objectA.position, objectB.position);
     }
 
     public void MovimientoX(bool sentido)
