@@ -1239,7 +1239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 3
-  m_FollowOffset: {x: 0, y: 1, z: -1.2}
+  m_FollowOffset: {x: 0, y: 0.6645651, z: -1.105786}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -2926,10 +2926,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadMovimiento: 0.1
-  objectA: {fileID: 1042789967}
-  objectB: {fileID: 1462174936}
-  distance: 0
+  ikTarget: {fileID: 1042789967}
+  center: {fileID: 1462174936}
   movPositivo: 0
+  maxLength: 0.415
+  minLength: 0.128
 --- !u!1 &1074181688
 GameObject:
   m_ObjectHideFlags: 0
@@ -4466,7 +4467,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 3
-  m_FollowOffset: {x: 0, y: 1, z: -1.2}
+  m_FollowOffset: {x: 0, y: 0.6645651, z: -1.105786}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -4747,7 +4748,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 3
-  m_FollowOffset: {x: 0, y: 1, z: -1.2}
+  m_FollowOffset: {x: 0, y: 0.6645651, z: -1.105786}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -18562,7 +18563,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1042789969}
           m_TargetAssemblyTypeName: MoverCuboCineInv, Assembly-CSharp
-          m_MethodName: MovimientoY
+          m_MethodName: YMovement
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -19234,7 +19235,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1042789969}
           m_TargetAssemblyTypeName: MoverCuboCineInv, Assembly-CSharp
-          m_MethodName: MovimientoZ
+          m_MethodName: ZMovement
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -19333,7 +19334,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1042789969}
           m_TargetAssemblyTypeName: MoverCuboCineInv, Assembly-CSharp
-          m_MethodName: MovimientoY
+          m_MethodName: YMovement
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -19421,7 +19422,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1042789969}
           m_TargetAssemblyTypeName: MoverCuboCineInv, Assembly-CSharp
-          m_MethodName: MovimientoX
+          m_MethodName: XMovement
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -19706,7 +19707,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1042789969}
           m_TargetAssemblyTypeName: MoverCuboCineInv, Assembly-CSharp
-          m_MethodName: MovimientoZ
+          m_MethodName: ZMovement
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -20074,7 +20075,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1042789969}
           m_TargetAssemblyTypeName: MoverCuboCineInv, Assembly-CSharp
-          m_MethodName: MovimientoX
+          m_MethodName: XMovement
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
