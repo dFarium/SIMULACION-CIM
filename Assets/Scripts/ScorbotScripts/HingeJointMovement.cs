@@ -9,6 +9,10 @@ namespace ScorbotScripts
         [SerializeField] private float _rotationSpeed;
         private JointMotor _hingeMotor;
 
+        [SerializeField] private HybridInverseKinematicsNode IKProcesor;
+        [SerializeField] private GameObject IKTarget;
+        [SerializeField] private GameObject Mano;
+
         private void Start()
         {
             //Iniciar variables
@@ -45,6 +49,7 @@ namespace ScorbotScripts
         //Mover robot
         public void Rotate(bool rotation)
         {
+            IKProcesor.enabled = false;
             int rotationDirection = rotation ? 1 : -1;
             JointMotor hingeMotor = _hinge.motor;
             hingeMotor.targetVelocity = _rotationSpeed * rotationDirection;
@@ -56,6 +61,8 @@ namespace ScorbotScripts
             JointMotor hingeMotor = _hinge.motor;
             hingeMotor.targetVelocity = 0f;
             _hinge.motor = hingeMotor;
+            IKTarget.transform.position = Mano.transform.position; 
+            IKProcesor.enabled = true;
         }
 
         public void FreezeXRotationAxis()
