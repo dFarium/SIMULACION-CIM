@@ -13,7 +13,7 @@ namespace ScorbotScripts
         [SerializeField] private float maxLength = 0.415f; //Radio limites exteriores
         [SerializeField] private float minLength = 0.128f; //Radio limites interiores
 
-    
+
         private void Update()
         {
             //Comprobación limites exteriores
@@ -51,7 +51,7 @@ namespace ScorbotScripts
                 StartCoroutine(MoveObjectX());
             }
         }
-    
+
         public void YMovement(bool sentido)
         {
             if (!isMoving)
@@ -60,7 +60,7 @@ namespace ScorbotScripts
                 StartCoroutine(MoveObjectY());
             }
         }
-    
+
         public void ZMovement(bool sentido)
         {
             if (!isMoving)
@@ -69,12 +69,13 @@ namespace ScorbotScripts
                 StartCoroutine(MoveObjectZ());
             }
         }
+
         public void DetenerMovimiento()
         {
             StopAllCoroutines();
             isMoving = false;
         }
-    
+
         private IEnumerator MoveObjectX()
         {
             isMoving = true;
@@ -90,10 +91,11 @@ namespace ScorbotScripts
                 {
                     transform.Translate(-movimientoX, 0, 0);
                 }
+
                 yield return null;
             }
         }
-    
+
         private IEnumerator MoveObjectY()
         {
             isMoving = true;
@@ -109,10 +111,11 @@ namespace ScorbotScripts
                 {
                     transform.Translate(0, -movimientoY, 0);
                 }
+
                 yield return null;
             }
         }
-    
+
         private IEnumerator MoveObjectZ()
         {
             isMoving = true;
@@ -128,18 +131,19 @@ namespace ScorbotScripts
                 {
                     transform.Translate(0, 0, -movimientoZ);
                 }
+
                 yield return null;
             }
         }
-    
+
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.red;
             Vector3 position = center.position;
-            Gizmos.DrawWireSphere(position,maxLength);
-        
+            Gizmos.DrawWireSphere(position, maxLength);
+
             Gizmos.color = Color.blue;
-            Gizmos.DrawWireSphere(position,minLength);
+            Gizmos.DrawWireSphere(position, minLength);
         }
     }
 }

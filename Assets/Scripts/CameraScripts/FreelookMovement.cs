@@ -1,13 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
-public class CameraMovement : MonoBehaviour
+public class FreelookMovement : MonoBehaviour
 {
-    void Start()
+    private void OnEnable()
     {
         CinemachineCore.GetInputAxis = GetAxisCustom;
+    }
+
+    private void OnDisable()
+    {
+        CinemachineCore.GetInputAxis = UnityEngine.Input.GetAxis;
     }
 
     public float GetAxisCustom(string axisName)

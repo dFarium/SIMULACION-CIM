@@ -25,27 +25,6 @@ namespace ScorbotScripts
             _hinge.motor = hingeMotor;
         }
 
-        private void Update()
-        {
-            if (Input.GetKeyDown("q"))
-            {
-                Debug.Log("MOVIENDO ROBOT EN TRUE...");
-                Rotate(true);
-            }
-
-            if (Input.GetKeyDown("e"))
-            {
-                Debug.Log("MOVIENDO ROBOT EN FALSE...");
-                Rotate(false);
-            }
-
-            if (Input.GetKeyUp("w"))
-            {
-                Debug.Log("DETENIENDO ROBOT");
-                StopRotating();
-            }
-        }
-
         //Mover robot
         public void Rotate(bool rotation)
         {
@@ -61,7 +40,7 @@ namespace ScorbotScripts
             JointMotor hingeMotor = _hinge.motor;
             hingeMotor.targetVelocity = 0f;
             _hinge.motor = hingeMotor;
-            IKTarget.transform.position = Mano.transform.position; 
+            IKTarget.transform.position = Mano.transform.position;
             IKProcesor.enabled = true;
         }
 

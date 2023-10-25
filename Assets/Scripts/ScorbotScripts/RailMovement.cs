@@ -10,7 +10,7 @@ public class RailMovement : MonoBehaviour
     [SerializeField] private bool movPositivo;
     [SerializeField] private GameObject limitR; //Gameobject que indica el limite derecho del riel
     [SerializeField] private GameObject limitL; //Gameobject que indica el limite izquierdo del riel
-    
+
     public void XMovement(bool sentido)
     {
         if (!isMoving)
@@ -19,12 +19,13 @@ public class RailMovement : MonoBehaviour
             StartCoroutine(MoveObjectX());
         }
     }
+
     public void DetenerMovimiento()
     {
         StopAllCoroutines();
         isMoving = false;
     }
-        
+
     private IEnumerator MoveObjectX()
     {
         isMoving = true;
@@ -32,25 +33,26 @@ public class RailMovement : MonoBehaviour
         while (isMoving)
         {
             float movimientoX = velocidadMovimiento * speed * Time.deltaTime;
-            if (movPositivo && transform.position.x<limitL.transform.position.x)
+            if (movPositivo && transform.position.x < limitL.transform.position.x)
             {
                 transform.Translate(movimientoX, 0, 0);
             }
             else
             {
-                if (!movPositivo && transform.position.x>limitR.transform.position.x)
+                if (!movPositivo && transform.position.x > limitR.transform.position.x)
                 {
                     transform.Translate(-movimientoX, 0, 0);
                 }
             }
+
             yield return null;
         }
     }
-    
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
         //Vector3 position = center.position;
-        Gizmos.DrawLine(limitL.transform.position ,limitR.transform.position);
+        Gizmos.DrawLine(limitL.transform.position, limitR.transform.position);
     }
 }
