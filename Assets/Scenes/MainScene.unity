@@ -3240,7 +3240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nodeSeeker: {fileID: 1872139013}
-  tweenSpeed: 10
+  tweenSpeed: 1
   speedText: {fileID: 165396019}
 --- !u!114 &1042789969
 MonoBehaviour:
