@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class SpeedValue : MonoBehaviour
 {
     [SerializeField] private Text speedText;
-    
+    [SerializeField] private Text botoneraString;
     private string currentText = "_";
     private string previousText;
     
@@ -73,19 +73,28 @@ public class SpeedValue : MonoBehaviour
 
     public void Confirm()
     {
-        foreach (Button buttons  in interactableButtons)
+        if (true )
         {
-            buttons.interactable=true;
+            foreach (Button buttons  in interactableButtons)
+            {
+                buttons.interactable=true;
+            }
+        
+            foreach (GameObject hideButton in hideButtons)
+            {
+                hideButton.SetActive(true);
+            }
+        
+            foreach (GameObject numericButton in numericButtons)
+            {
+                numericButton.SetActive(false);
+            }
+        }
+        else
+        {
+            
         }
         
-        foreach (GameObject hideButton in hideButtons)
-        {
-            hideButton.SetActive(true);
-        }
         
-        foreach (GameObject numericButton in numericButtons)
-        {
-            numericButton.SetActive(false);
-        }
     }
 }

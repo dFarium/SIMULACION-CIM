@@ -1,18 +1,21 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 namespace ScorbotScripts
 {
     public class IKMovement : MonoBehaviour
     {
-        [SerializeField] public float velocidadMovimiento; // Ajusta la velocidad de movimiento según tus preferencias
+        [SerializeField] public float momentum; // Ajusta la velocidad de movimiento según tus preferencias
         [SerializeField] public Transform ikTarget; // Asigna el IK Target desde el Inspector
         [SerializeField] public Transform center; // Asigna el objeto en el centro desde el Inspector
         private bool isMoving;
         [SerializeField] private bool movPositivo;
         [SerializeField] private float maxLength = 0.415f; //Radio limites exteriores
         [SerializeField] private float minLength = 0.128f; //Radio limites interiores
-
+        [SerializeField] private Text speedText;
+        [SerializeField] private int speed;
 
         private void Update()
         {
@@ -47,6 +50,7 @@ namespace ScorbotScripts
         {
             if (!isMoving)
             {
+                int.TryParse(speedText.text, out speed);
                 movPositivo = sentido;
                 StartCoroutine(MoveObjectX());
             }
@@ -56,6 +60,7 @@ namespace ScorbotScripts
         {
             if (!isMoving)
             {
+                int.TryParse(speedText.text, out speed);
                 movPositivo = sentido;
                 StartCoroutine(MoveObjectY());
             }
@@ -65,6 +70,7 @@ namespace ScorbotScripts
         {
             if (!isMoving)
             {
+                int.TryParse(speedText.text, out speed);
                 movPositivo = sentido;
                 StartCoroutine(MoveObjectZ());
             }
@@ -82,7 +88,7 @@ namespace ScorbotScripts
 
             while (isMoving)
             {
-                float movimientoX = velocidadMovimiento * Time.deltaTime;
+                float movimientoX = momentum * speed * Time.deltaTime;
                 if (movPositivo)
                 {
                     transform.Translate(movimientoX, 0, 0);
@@ -102,7 +108,7 @@ namespace ScorbotScripts
 
             while (isMoving)
             {
-                float movimientoY = velocidadMovimiento * Time.deltaTime;
+                float movimientoY = momentum* speed * Time.deltaTime;
                 if (movPositivo)
                 {
                     transform.Translate(0, movimientoY, 0);
@@ -122,7 +128,7 @@ namespace ScorbotScripts
 
             while (isMoving)
             {
-                float movimientoZ = velocidadMovimiento * Time.deltaTime;
+                float movimientoZ = momentum* speed * Time.deltaTime;
                 if (movPositivo)
                 {
                     transform.Translate(0, 0, movimientoZ);

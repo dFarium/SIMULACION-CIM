@@ -3,18 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Tweener : MonoBehaviour
 {
     [SerializeField] private NodeSeeker nodeSeeker;
     private Sequence tweenSequence;
-    [SerializeField] private float tweenSpeed;
-    private float offsetDistance;
-
+    [SerializeField] private int tweenSpeed;
+    [SerializeField] private Text speedText;    private float offsetDistance;
     public void TweenBetweenNodes()
     {
         List<Transform> shortestPath = nodeSeeker.GenerateShortestPath();
         float step = nodeSeeker.GetHeightSteps(shortestPath);
+        
+        //Inicialización de variable speed
+        //int.TryParse(speedText.text, out tweenSpeed);
         
         //Inicializacion de secuencia DOTween
         tweenSequence = null;

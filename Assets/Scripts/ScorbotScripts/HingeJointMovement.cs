@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace ScorbotScripts
 {
@@ -6,7 +7,9 @@ namespace ScorbotScripts
     {
         private HingeJoint _hinge;
         private Rigidbody _rigidbody;
-        [SerializeField] private float _rotationSpeed;
+        [SerializeField] private Text speedText;
+        [SerializeField] private int _rotationSpeed;
+        [SerializeField] private float baseSpeed;
         private JointMotor _hingeMotor;
 
         [SerializeField] private HybridInverseKinematicsNode IKProcesor;
@@ -31,7 +34,8 @@ namespace ScorbotScripts
             IKProcesor.enabled = false;
             int rotationDirection = rotation ? 1 : -1;
             JointMotor hingeMotor = _hinge.motor;
-            hingeMotor.targetVelocity = _rotationSpeed * rotationDirection;
+            int.TryParse(speedText.text, out _rotationSpeed);
+            hingeMotor.targetVelocity = _rotationSpeed * baseSpeed * rotationDirection;
             _hinge.motor = hingeMotor;
         }
 

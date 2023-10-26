@@ -816,7 +816,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: XXX
+  m_Text: 50
 --- !u!222 &165396020
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1116,7 +1116,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7b98c93dd5d096419c83fa472d29a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotationSpeed: 10
+  speedText: {fileID: 165396019}
+  _rotationSpeed: 0
+  baseSpeed: 0.2
   IKProcesor: {fileID: 693849672}
   IKTarget: {fileID: 1042789963}
   Mano: {fileID: 225075405704320075}
@@ -3238,7 +3240,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nodeSeeker: {fileID: 1872139013}
-  tweenSpeed: 1
+  tweenSpeed: 10
+  speedText: {fileID: 165396019}
 --- !u!114 &1042789969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3251,12 +3254,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fb66e730331ca34c851ede8d2a2d568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadMovimiento: 0.1
+  momentum: 0.002
   ikTarget: {fileID: 1042789967}
   center: {fileID: 1462174936}
   movPositivo: 0
   maxLength: 0.415
   minLength: 0.128
+  speedText: {fileID: 165396019}
+  speed: 0
 --- !u!114 &1042789970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9656,7 +9661,7 @@ GameObject:
   - component: {fileID: 1851123002023000411}
   - component: {fileID: 1851123002023000408}
   m_Layer: 0
-  m_Name: Text
+  m_Name: Botonera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10474,6 +10479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedText: {fileID: 165396019}
+  botoneraString: {fileID: 1851123002023000408}
   interactableButtons:
   - {fileID: 1851123002974919840}
   - {fileID: 1851123003695384059}
@@ -20505,8 +20511,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e31160a9d61102e418d1f48248033e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadMovimiento: 0.01
-  speed: 10
+  momentum: 0.002
+  speedText: {fileID: 165396019}
+  speed: 0
   movPositivo: 0
   limitR: {fileID: 1991266926}
   limitL: {fileID: 579201140}
@@ -21402,7 +21409,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7b98c93dd5d096419c83fa472d29a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotationSpeed: 10
+  speedText: {fileID: 165396019}
+  _rotationSpeed: 0
+  baseSpeed: 0.2
   IKProcesor: {fileID: 693849672}
   IKTarget: {fileID: 1042789963}
   Mano: {fileID: 225075405704320075}
@@ -22597,7 +22606,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7b98c93dd5d096419c83fa472d29a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotationSpeed: 10
+  speedText: {fileID: 165396019}
+  _rotationSpeed: 0
+  baseSpeed: 0.2
   IKProcesor: {fileID: 693849672}
   IKTarget: {fileID: 1042789963}
   Mano: {fileID: 225075405704320075}
@@ -22952,7 +22963,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7b98c93dd5d096419c83fa472d29a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotationSpeed: 10
+  speedText: {fileID: 165396019}
+  _rotationSpeed: 0
+  baseSpeed: 0.2
   IKProcesor: {fileID: 693849672}
   IKTarget: {fileID: 1042789963}
   Mano: {fileID: 225075405704320075}
@@ -23080,7 +23093,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7b98c93dd5d096419c83fa472d29a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotationSpeed: 10
+  speedText: {fileID: 165396019}
+  _rotationSpeed: 0
+  baseSpeed: 0.2
   IKProcesor: {fileID: 693849672}
   IKTarget: {fileID: 1042789963}
   Mano: {fileID: 225075405704320075}
