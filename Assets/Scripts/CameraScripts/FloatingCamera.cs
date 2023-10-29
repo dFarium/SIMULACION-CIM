@@ -18,6 +18,8 @@ public class FloatingCamera : MonoBehaviour
     {
         camera1 = Camera.main;
     }
+    
+
 
     private void Update()
     {

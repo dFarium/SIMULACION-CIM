@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class RailMovement : MonoBehaviour
 {
-    [SerializeField] public float velocidadMovimiento; // Ajusta la velocidad de movimiento según tus preferencias
-    [SerializeField] public float speed;
+    [SerializeField] public float momentum; // Ajusta la velocidad de movimiento según tus preferencias
+    [SerializeField] private Text speedText;
+    [SerializeField] public int speed;
     private bool isMoving;
     [SerializeField] private bool movPositivo;
     [SerializeField] private GameObject limitR; //Gameobject que indica el limite derecho del riel
@@ -15,6 +18,7 @@ public class RailMovement : MonoBehaviour
     {
         if (!isMoving)
         {
+            int.TryParse(speedText.text, out speed);
             movPositivo = sentido;
             StartCoroutine(MoveObjectX());
         }
@@ -32,7 +36,7 @@ public class RailMovement : MonoBehaviour
 
         while (isMoving)
         {
-            float movimientoX = velocidadMovimiento * speed * Time.deltaTime;
+            float movimientoX = momentum * speed * Time.deltaTime;
             if (movPositivo && transform.position.x < limitL.transform.position.x)
             {
                 transform.Translate(movimientoX, 0, 0);
