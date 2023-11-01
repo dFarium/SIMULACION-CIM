@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7528384f09f08044f862169541092e57, type: 3}
+  m_Name: RedProd
+  m_EditorClassIdentifier: 
+  baseMaterial: {fileID: 9056420106238908782, guid: 91c235f1c32e6b349baa6ef0b6ff5647, type: 3}
+  finalProduct: {fileID: 9056420106238908782, guid: b7c5184d0c0c062448ab476a458d8155, type: 3}
+  manufacturingTime: 4
