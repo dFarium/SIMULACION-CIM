@@ -27,6 +27,7 @@ public class SpeedValue : MonoBehaviour
         previousText = speedText.text;
         botoneraString.gameObject.SetActive(false);
         speedText.gameObject.SetActive(true);
+        auxiliarText.text = "enter speed";
         auxiliarText.gameObject.SetActive(true);
         foreach (Button buttons  in interactableButtons)
         {

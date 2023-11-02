@@ -1927,7 +1927,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: enter speed
+  m_Text: a
 --- !u!222 &609027565
 CanvasRenderer:
   m_ObjectHideFlags: 0
