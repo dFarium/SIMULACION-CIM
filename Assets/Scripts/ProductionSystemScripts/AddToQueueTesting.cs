@@ -15,6 +15,7 @@ public class AddToQueueTesting : MonoBehaviour
 
     private void Start()
     {
+        //Se agregan los materiales a la cola de producción
         Random random = new Random();
         foreach (ProductionMaterial productionMaterial in productionMaterials)
         {

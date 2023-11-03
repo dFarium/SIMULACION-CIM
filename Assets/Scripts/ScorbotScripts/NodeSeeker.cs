@@ -12,10 +12,9 @@ public class NodeSeeker : MonoBehaviour
     private List<Node> connectedNodes = new List<Node>();
 
 
-
     public void Start()
     {
-        if(nodes.Length == 0) Debug.LogError("NO HAY NODOS REGISTRADOS");
+        if (nodes.Length == 0) Debug.LogError("NO HAY NODOS REGISTRADOS");
         //Sentido Horario
         connectedNodes.Add(new Node(nodes[0], nodes[1], 1));
         connectedNodes.Add(new Node(nodes[1], nodes[2], 1));
@@ -80,17 +79,18 @@ public class NodeSeeker : MonoBehaviour
         {
             shortestPath.Insert(0, GetClosestNode(origin));
         }
+
         //Añadir posicion destino
         shortestPath.Add(destination);
-        
+
         GetHeightSteps(shortestPath);
         return shortestPath;
     }
 
     //Obtener pasos de altura entre el origen y destino 
     public float GetHeightSteps(List<Transform> animationList)
-    { 
-        return ((destination.position.y - origin.position.y) / (animationList.Count+2f));
+    {
+        return ((destination.position.y - origin.position.y) / (animationList.Count + 2f));
     }
 
     //Algoritmo Dijkstra
@@ -118,7 +118,7 @@ public class NodeSeeker : MonoBehaviour
                 continue;
 
             visited.Add(currentNode);
-            
+
             //Iterar en nodos vecinos
             foreach (Node neighborNode in connectedNodes)
             {

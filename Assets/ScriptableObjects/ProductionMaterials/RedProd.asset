@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: RedProd
   m_EditorClassIdentifier: 
   baseMaterial: {fileID: 9056420106238908782, guid: 91c235f1c32e6b349baa6ef0b6ff5647, type: 3}
-  finalProduct: {fileID: 9056420106238908782, guid: b7c5184d0c0c062448ab476a458d8155, type: 3}
+  finalProductMaterial: {fileID: 2100000, guid: bf6ff16a61bc90b4dba795bcba157c1f, type: 2}
   manufacturingTime: 4

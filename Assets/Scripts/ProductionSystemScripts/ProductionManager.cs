@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class ProductionManager : MonoBehaviour
 {
     [Header("Production Status")] [SerializeField]
     private float productionTimer;
 
-    [SerializeField] private GameObject baseMaterial, finalProduct;
+    [SerializeField] private GameObject currentProduction;
+    [SerializeField] private GameObject finalProduct;
     [SerializeField] private float cooldownTime = 5f;
     [SerializeField] private float cooldownTimer = 0;
     [SerializeField] private Transform station1SpawnPoint, station2SpawnPoint;
@@ -15,28 +17,31 @@ public class ProductionManager : MonoBehaviour
     private GameObject currentFinalProduct; // Variable para almacenar el producto final actual
     private bool isBaseMaterialSpawned;
 
+    // Clase para almacenar los elementos de la cola de producción
     [System.Serializable]
     public class ProductionQueueItem
     {
-        public ProductionMaterial material;
+        [FormerlySerializedAs("material")] public ProductionMaterial productionMaterial;
         public float priority;
         public bool requiresManualReview;
         
-        public ProductionQueueItem(ProductionMaterial material, float priority, bool requiresManualReview)
+        public ProductionQueueItem(ProductionMaterial productionMaterial, float priority, bool requiresManualReview)
         {
-            this.material = material;
+            this.productionMaterial = productionMaterial;
             this.priority = priority;
             this.requiresManualReview = requiresManualReview;
         }
     }
 
-    public void AddToQueue(ProductionMaterial material, float priority, bool requiresManualReview)
+    // Agrega un elemento a la cola de producción
+    public void AddToQueue(ProductionMaterial productionMaterial, float priority, bool requiresManualReview)
     {
-        ProductionQueueItem newItem = new ProductionQueueItem(material, priority, requiresManualReview);
+        ProductionQueueItem newItem = new ProductionQueueItem(productionMaterial, priority, requiresManualReview);
         productionQueue.Add(newItem);
         SortQueueByPriority(); // Ordena la cola después de agregar un elemento.
     }
 
+    // Elimina un elemento de la cola de producción
     public void RemoveFromQueue(ProductionQueueItem item)
     {
         productionQueue.Remove(item);
@@ -47,17 +52,14 @@ public class ProductionManager : MonoBehaviour
     {
         productionQueue.Sort((a, b) => b.priority.CompareTo(a.priority));
     }
-
-    public void SpawnBaseMaterial(ProductionMaterial material, Transform spawnPoint)
+    
+    // Spawnea el material base en la fresadora
+    public void SpawnBaseMaterial(ProductionMaterial productionMaterial, Transform spawnPoint)
     {
-        baseMaterial = Instantiate(material.baseMaterial, spawnPoint);
+        currentProduction = Instantiate(productionMaterial.baseMaterial, spawnPoint);
     }
-
-    public void SpawnFinalProduct(ProductionMaterial material, Transform spawnPoint)
-    {
-        finalProduct = Instantiate(material.finalProduct, spawnPoint);
-    }
-
+    
+    //Lógica de producción
     private void Update()
     {
         // Cooldown timer de la fresadora
@@ -82,7 +84,7 @@ public class ProductionManager : MonoBehaviour
         // Si no se ha spawnado el material base, hazlo
         if (!isBaseMaterialSpawned)
         {
-            SpawnBaseMaterial(productionQueue[0].material, station1SpawnPoint);
+            SpawnBaseMaterial(productionQueue[0].productionMaterial, station2SpawnPoint);
             isBaseMaterialSpawned = true;
         }
 
@@ -90,16 +92,19 @@ public class ProductionManager : MonoBehaviour
         productionTimer += Time.deltaTime;
 
         // Si el tiempo de producción es mayor al tiempo de manufactura, spawnea el producto final
-        if (productionTimer > productionQueue[0].material.manufacturingTime)
+        if (productionTimer > productionQueue[0].productionMaterial.manufacturingTime)
         {
             CompleteProduction();
         }
     }
 
+    // Lógica de spawneo del producto final
     private void CompleteProduction()
     {
-        Destroy(baseMaterial);
-        SpawnFinalProduct(productionQueue[0].material, station2SpawnPoint);
+        // Se coloca el color al producto final
+        MeshRenderer meshRenderer = currentProduction.GetComponent<MeshRenderer>();
+        meshRenderer.material = productionQueue[0].productionMaterial.finalProductMaterial;
+        finalProduct = currentProduction;
         RemoveFromQueue(productionQueue[0]);
         productionTimer = 0;
         isBaseMaterialSpawned = false;
