@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 4c56fadda07aaa84da9255755507aa43, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -152,7 +152,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 19681556}
   m_LocalRotation: {x: -6.123234e-17, y: 1, z: 6.123234e-17, w: -3.7493994e-33}
-  m_LocalPosition: {x: 0.033, y: 0.726, z: 0.435}
+  m_LocalPosition: {x: -0.1621, y: 0.8447, z: 0.395}
   m_LocalScale: {x: 0.03, y: 0.03, z: 0.03}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -170,8 +170,8 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
@@ -969,6 +969,7 @@ GameObject:
   - component: {fileID: 347706607}
   - component: {fileID: 347706609}
   - component: {fileID: 347706608}
+  - component: {fileID: 347706610}
   m_Layer: 0
   m_Name: PickUpZone
   m_TagString: Untagged
@@ -1016,6 +1017,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.016572312, y: 0.069305, z: 0.083118856}
   m_Center: {x: 0.00069796294, y: 0.010149986, z: -0.00004389882}
+--- !u!54 &347706610
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347706606}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &390366077
 GameObject:
   m_ObjectHideFlags: 0
@@ -1581,7 +1598,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 3
-  m_FollowOffset: {x: 0, y: 1.201211, z: -1.299008}
+  m_FollowOffset: {x: 0, y: 0.06, z: -1}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -2110,7 +2127,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 693849671}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec18f272cdf3e704196131d48566ee83, type: 3}
   m_Name: 
@@ -6105,7 +6122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 3
-  m_FollowOffset: {x: 0, y: 1.201211, z: -1.299008}
+  m_FollowOffset: {x: 0, y: 0.06, z: -1}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -6232,7 +6249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 3
-  m_FollowOffset: {x: 0, y: 1.201211, z: -1.299008}
+  m_FollowOffset: {x: 0, y: 0.06, z: -1}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -8256,6 +8273,7 @@ MonoBehaviour:
   meshColliders:
   - {fileID: 8727941300435964744}
   - {fileID: 9111592377637111917}
+  otherColliders: []
   collisionLayer: 3
   defaultLayer: 0
 --- !u!1 &225075405704320075
@@ -8452,7 +8470,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshColliders:
   - {fileID: 9111592377637111917}
+  - {fileID: 8941015561637431049}
+  - {fileID: 6896609426023263020}
   - {fileID: 7509455032829088878}
+  - {fileID: 7365611443533470856}
+  otherColliders:
+  - {fileID: 347706609}
   collisionLayer: 3
   defaultLayer: 0
 --- !u!23 &422030074015067336
@@ -8935,6 +8958,11 @@ MonoBehaviour:
   meshColliders:
   - {fileID: 9111592377637111917}
   - {fileID: 8941015561637431049}
+  - {fileID: 6896609426023263020}
+  - {fileID: 7509455032829088878}
+  - {fileID: 7365611443533470856}
+  otherColliders:
+  - {fileID: 347706609}
   collisionLayer: 3
   defaultLayer: 0
 --- !u!1 &1322698751526972198
@@ -10120,7 +10148,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1851123002072059696}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 347706608}
+        m_TargetAssemblyTypeName: ScorbotScripts.PickUpObject, Assembly-CSharp
+        m_MethodName: PickUpToggle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &1851123002072059699
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18787,6 +18827,7 @@ MonoBehaviour:
   meshColliders:
   - {fileID: 5957517245482266377}
   - {fileID: 8727941300435964744}
+  otherColliders: []
   collisionLayer: 3
   defaultLayer: 0
 --- !u!224 &3375252411660976741
@@ -18831,6 +18872,7 @@ GameObject:
   - component: {fileID: 6896609426023263019}
   - component: {fileID: 6896609426023263020}
   - component: {fileID: 7038836485901205118}
+  - component: {fileID: 7038836485901205119}
   m_Layer: 0
   m_Name: Segmento1Izq
   m_TagString: Untagged
@@ -19977,11 +20019,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshColliders:
-  - {fileID: 7396671624843400653}
+  - {fileID: 9111592377637111917}
   - {fileID: 8941015561637431049}
   - {fileID: 6896609426023263020}
   - {fileID: 7509455032829088878}
   - {fileID: 7365611443533470856}
+  otherColliders:
+  - {fileID: 347706609}
   collisionLayer: 3
   defaultLayer: 0
 --- !u!114 &5394112758019402188
@@ -19999,6 +20043,7 @@ MonoBehaviour:
   meshColliders:
   - {fileID: 9218005947870273109}
   - {fileID: 7396671624843400653}
+  otherColliders: []
   collisionLayer: 3
   defaultLayer: 0
 --- !u!4 &5408439797081559679
@@ -20204,7 +20249,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshColliders:
   - {fileID: 9111592377637111917}
+  - {fileID: 8941015561637431049}
   - {fileID: 6896609426023263020}
+  - {fileID: 7509455032829088878}
+  - {fileID: 7365611443533470856}
+  otherColliders:
+  - {fileID: 347706609}
   collisionLayer: 3
   defaultLayer: 0
 --- !u!4 &5927207036575484648
@@ -20299,6 +20349,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshColliders:
   - {fileID: 9218005947870273109}
+  otherColliders: []
   collisionLayer: 0
   defaultLayer: 0
 --- !u!64 &5957517245482266377
@@ -21257,9 +21308,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshColliders:
   - {fileID: 9111592377637111917}
+  - {fileID: 8941015561637431049}
+  - {fileID: 6896609426023263020}
+  - {fileID: 7509455032829088878}
   - {fileID: 7365611443533470856}
+  otherColliders:
+  - {fileID: 347706609}
   collisionLayer: 3
   defaultLayer: 0
+--- !u!54 &7038836485901205119
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3468232018267255834}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!33 &7095864726960510014
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -21401,6 +21473,7 @@ GameObject:
   - component: {fileID: 6701689969637263088}
   - component: {fileID: 7365611443533470856}
   - component: {fileID: 5915386491156249442}
+  - component: {fileID: 7365611443533470857}
   m_Layer: 0
   m_Name: Segmento2Izq
   m_TagString: Untagged
@@ -21422,6 +21495,22 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 8152512846741458323, guid: cd5cfd1848ec5de4db4cefce2301f038, type: 3}
+--- !u!54 &7365611443533470857
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7365611443533470855}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &7396671624843400648
 Transform:
   m_ObjectHideFlags: 0
@@ -21709,6 +21798,7 @@ GameObject:
   - component: {fileID: 7433718067789619066}
   - component: {fileID: 7509455032829088878}
   - component: {fileID: 1163168552434836979}
+  - component: {fileID: 7509455032829088879}
   m_Layer: 0
   m_Name: Segmento2Der
   m_TagString: Untagged
@@ -21730,6 +21820,22 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -3087070375936005384, guid: cd5cfd1848ec5de4db4cefce2301f038, type: 3}
+--- !u!54 &7509455032829088879
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7509455032829088877}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &7727633685020326098
 GameObject:
   m_ObjectHideFlags: 0
@@ -22885,6 +22991,7 @@ GameObject:
   - component: {fileID: 6092841871963135132}
   - component: {fileID: 8941015561637431049}
   - component: {fileID: 409630160678510159}
+  - component: {fileID: 8941015561637431050}
   m_Layer: 0
   m_Name: Segmento1Der
   m_TagString: Untagged
@@ -22906,6 +23013,22 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 8100331343882570888, guid: cd5cfd1848ec5de4db4cefce2301f038, type: 3}
+--- !u!54 &8941015561637431050
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8941015561637431048}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!33 &8955383795851467128
 MeshFilter:
   m_ObjectHideFlags: 0

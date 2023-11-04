@@ -5,8 +5,12 @@ namespace ScorbotScripts
 {
     public class CollisionManager : MonoBehaviour
     {
+        [Header("Colliders a ignorar")]
         [SerializeField] private MeshCollider[] meshColliders;
-        [SerializeField] private int collisionLayer,defaultLayer;
+        [SerializeField] private Collider[] otherColliders;
+        [Header("Capas de colision")]
+        [SerializeField] private int collisionLayer;
+        [SerializeField] private int defaultLayer;
 
 
         private void Start()
@@ -16,6 +20,11 @@ namespace ScorbotScripts
             foreach (MeshCollider meshCollider in meshColliders)
             {
                 Physics.IgnoreCollision(meshCollider, modelMeshCollider, true);
+            }
+            
+            foreach (Collider collider in otherColliders)
+            {
+                Physics.IgnoreCollision(collider, modelMeshCollider, true);
             }
         }
 
