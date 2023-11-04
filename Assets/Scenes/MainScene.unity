@@ -1581,7 +1581,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 3
-  m_FollowOffset: {x: 0, y: 0.8990417, z: -1.166179}
+  m_FollowOffset: {x: 0, y: 0.06, z: -1}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -3256,7 +3256,7 @@ GameObject:
   - component: {fileID: 1042789968}
   - component: {fileID: 1042789969}
   - component: {fileID: 1042789970}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: IK Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3321,7 +3321,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1042789963}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.383, y: 0.118, z: -0.142}
+  m_LocalPosition: {x: -0.383, y: 0.118, z: -0.017}
   m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -6071,7 +6071,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 3
-  m_FollowOffset: {x: 0, y: 0.8990417, z: -1.166179}
+  m_FollowOffset: {x: 0, y: 0.06, z: -1}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -6198,7 +6198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 3
-  m_FollowOffset: {x: 0, y: 0.8990417, z: -1.166179}
+  m_FollowOffset: {x: 0, y: 0.06, z: -1}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1

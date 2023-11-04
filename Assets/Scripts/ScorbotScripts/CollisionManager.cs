@@ -22,12 +22,14 @@ namespace ScorbotScripts
         private void OnTriggerEnter(Collider other)
         {
             Debug.Log(gameObject.name + " esta chocando con " + other.name);
+            gameObject.layer = collisionLayer;
         }
 
 
         private void OnTriggerExit(Collider other)
         {
             Debug.Log(gameObject.name + " dejo de chocar");
+            gameObject.layer = defaultLayer;
         }
     }
 }
