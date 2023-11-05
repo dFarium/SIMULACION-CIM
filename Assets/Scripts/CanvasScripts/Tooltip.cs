@@ -2,16 +2,18 @@ using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class Tooltip : MonoBehaviour
 {
-    [SerializeField] private float altura;
+    [SerializeField] private float height;
+    [SerializeField] private float delay;
     private CanvasGroup canvasGroup;
     private TMP_Text tooltipText;
     private Vector3 mousePosition;
     private bool isHighlighted, isDelaying;
-    [SerializeField]private float timer;
+    private float timer;
     
     private void Start()
     {
@@ -28,7 +30,7 @@ public class Tooltip : MonoBehaviour
         if (isHighlighted)
         {
             mousePosition = Input.mousePosition;
-            transform.position = mousePosition + Vector3.up * altura;
+            transform.position = mousePosition + Vector3.up * height;
         }
         
         if (isDelaying)
@@ -36,7 +38,7 @@ public class Tooltip : MonoBehaviour
             timer += Time.deltaTime;
         }
 
-        if (timer > 1)
+        if (timer > delay)
         {
             isDelaying = false;
             isHighlighted = true;
