@@ -29,6 +29,7 @@ TagManager:
   - ModoPlay
   - ModoPausa
   - IgnorarColision
+  - Tooltip
   layers:
   - Default
   - TransparentFX
