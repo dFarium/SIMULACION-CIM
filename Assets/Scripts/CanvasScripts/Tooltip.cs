@@ -9,7 +9,8 @@ public class Tooltip : MonoBehaviour
 {
     [SerializeField] private float height;
     [SerializeField] private float delay;
-    private CanvasGroup canvasGroup;
+    [SerializeField]private CanvasGroup canvasGroup;
+    private Transform backGroundParent;
     private TMP_Text tooltipText;
     private Vector3 mousePosition;
     private bool isHighlighted, isDelaying;
@@ -17,8 +18,8 @@ public class Tooltip : MonoBehaviour
     
     private void Start()
     {
+        backGroundParent = transform.parent;
         tooltipText = GetComponent<TMP_Text>();
-        canvasGroup = GetComponentInParent<CanvasGroup>();
         canvasGroup.interactable = false;
         canvasGroup.blocksRaycasts = false;
         isHighlighted = false;
@@ -28,9 +29,9 @@ public class Tooltip : MonoBehaviour
     private void Update()
     {
         if (isHighlighted)
-        {
+        {   
             mousePosition = Input.mousePosition;
-            transform.position = mousePosition + Vector3.up * height;
+            backGroundParent.position = mousePosition + (Vector3.up * height) ;
         }
         
         if (isDelaying)
@@ -58,6 +59,7 @@ public class Tooltip : MonoBehaviour
     {
         timer = 0;
         isHighlighted = false;
+        isDelaying = false;
         canvasGroup.alpha = 0;
     }
 

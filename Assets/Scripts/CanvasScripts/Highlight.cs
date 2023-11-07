@@ -1,12 +1,19 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class Highlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class Highlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, ISelectHandler
 {
     [SerializeField] private string text;
-    [SerializeField] private Tooltip tooltip;
+    private Tooltip tooltip;
     // When highlighted with mouse.
+
+    private void Start()
+    {
+        tooltip = FindAnyObjectByType<Tooltip>();
+    }
+
     public void OnPointerEnter(PointerEventData eventData)
     {
         tooltip.ShowTooltip(text);
