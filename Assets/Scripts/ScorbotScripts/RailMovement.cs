@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -7,7 +8,7 @@ using UnityEngine.UI;
 public class RailMovement : MonoBehaviour
 {
     [SerializeField] public float momentum; // Ajusta la velocidad de movimiento según tus preferencias
-    [SerializeField] private Text speedText;
+    [SerializeField] private TextMeshProUGUI speedText;
     [SerializeField] public int speed;
     private bool isMoving;
     [SerializeField] private bool movPositivo;

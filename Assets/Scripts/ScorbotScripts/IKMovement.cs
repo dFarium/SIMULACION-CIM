@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -14,7 +15,7 @@ namespace ScorbotScripts
         [SerializeField] private bool movPositivo;
         [SerializeField] private float maxLength = 0.415f; //Radio limites exteriores
         [SerializeField] private float minLength = 0.128f; //Radio limites interiores
-        [SerializeField] private Text speedText;
+        [SerializeField] private TextMeshProUGUI speedText;
         [SerializeField] private int speed;
 
         private void Update()

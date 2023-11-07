@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +8,7 @@ namespace ScorbotScripts
     {
         private HingeJoint _hinge;
         private Rigidbody _rigidbody;
-        [SerializeField] private Text speedText;
+        [SerializeField] private TextMeshProUGUI speedText;
         [SerializeField] private int _rotationSpeed;
         [SerializeField] private float baseSpeed;
         private JointMotor _hingeMotor;

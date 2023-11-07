@@ -7,11 +7,15 @@ using UnityEngine.UI;
 
 public class SpeedValue : MonoBehaviour
 {
-    [SerializeField] private Text speedText;
-    [SerializeField] private Text botoneraString;
-    [SerializeField] private Text auxiliarText;
-    private string currentText = "_";
-    private string previousText;
+    //Indica el valor de velocidad de movimiento del robot
+    [SerializeField] private TextMeshProUGUI speedTextValue;
+    //Mensaje por defecto de la botonera cuando no hace nada
+    [SerializeField] private TextMeshProUGUI controlMainText;
+    //Texto de apoyo para ingresar velocidad
+    [SerializeField] private TextMeshProUGUI auxiliarText;
+    [SerializeField] private TextMeshProUGUI numericText;
+    
+    private string defaultControlText = "Esperando Accion";
     
     [SerializeField] private List<Button> interactableButtons = new List<Button>();
     [SerializeField] private List<GameObject> numericButtons = new List<GameObject>();
@@ -24,10 +28,13 @@ public class SpeedValue : MonoBehaviour
      */
     public void SpeedModifier()
     {
-        previousText = speedText.text;
-        botoneraString.gameObject.SetActive(false);
-        speedText.gameObject.SetActive(true);
+        //previousText = speedTextValue.text;
         auxiliarText.text = "enter speed";
+        numericText.text = "_";
+        
+        //intercambia los textos en la botonera
+        controlMainText.gameObject.SetActive(false);
+        numericText.gameObject.SetActive(true);
         auxiliarText.gameObject.SetActive(true);
         foreach (Button buttons  in interactableButtons)
         {
@@ -43,20 +50,18 @@ public class SpeedValue : MonoBehaviour
         {
             numericButton.SetActive(true);
         }
-        
-        speedText.text = currentText;
     }
 
     // Permite actualizar el string (o texto) que muesrta en la botonera el valor actual de la speed
     public void ChangeSpeed(string number)
     {
-        if (speedText.text == "_")
+        if (numericText.text == "_")
         {
-            speedText.text = number;
+            numericText.text = number;
         }
         else
         {
-            speedText.text = speedText.text + number;
+            if(numericText.text.Length < 3) numericText.text = numericText.text + number;
         }
         
     }
@@ -65,7 +70,7 @@ public class SpeedValue : MonoBehaviour
      
     public void Cancel()
     {
-        speedText.text = previousText;
+        numericText.text = speedTextValue.text;
         Confirm();
     }
     
@@ -75,9 +80,11 @@ public class SpeedValue : MonoBehaviour
      */
     public void Confirm()
     {
-        int.TryParse(speedText.text, out int flag);
+        //comprueba que el valor esta dentro del rango
+        int.TryParse(numericText.text, out int flag);
         if (flag>0 && flag<101)
         {
+            speedTextValue.text = numericText.text;
             foreach (Button buttons  in interactableButtons)
             {
                 buttons.interactable=true;
@@ -92,19 +99,18 @@ public class SpeedValue : MonoBehaviour
             {
                 numericButton.SetActive(false);
             }
-            botoneraString.gameObject.SetActive(true);
-            speedText.gameObject.SetActive(false);
+            controlMainText.text = defaultControlText;
+            controlMainText.gameObject.SetActive(true);
+            numericText.gameObject.SetActive(false);
             auxiliarText.gameObject.SetActive(false);
-            botoneraString.text = "LOADING...";
         }
         else
         {
             Debug.Log("error speed");
-            botoneraString.gameObject.SetActive(true);
-            speedText.gameObject.SetActive(false);
+            controlMainText.text = "ERROR SPEED INVALIDA";
+            controlMainText.gameObject.SetActive(true);
+            numericText.gameObject.SetActive(false);
             auxiliarText.gameObject.SetActive(false);
-            speedText.text = previousText;
-            botoneraString.text = "ERROR SPEED INVALIDA";
             StartCoroutine(textDelay(1));
             
         }
