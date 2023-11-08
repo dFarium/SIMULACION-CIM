@@ -9,13 +9,15 @@ public class Tooltip : MonoBehaviour
 {
     [SerializeField] private float height;
     [SerializeField] private float delay;
-    [SerializeField]private CanvasGroup canvasGroup;
+    [SerializeField] private CanvasGroup canvasGroup;
     private Transform backGroundParent;
     private TMP_Text tooltipText;
     private Vector3 mousePosition;
     private bool isHighlighted, isDelaying;
     private float timer;
-    
+
+    private bool isActive = true;
+
     private void Start()
     {
         backGroundParent = transform.parent;
@@ -26,12 +28,13 @@ public class Tooltip : MonoBehaviour
         canvasGroup.alpha = 0;
     }
 
+    
     private void Update()
     {
         if (isHighlighted)
-        {   
+        {
             mousePosition = Input.mousePosition;
-            backGroundParent.position = mousePosition + (Vector3.up * height) ;
+            backGroundParent.position = mousePosition + (Vector3.up * height);
         }
         
         if (isDelaying)
@@ -47,14 +50,19 @@ public class Tooltip : MonoBehaviour
         }
     }
 
+    //Metodo para mostrar el tooltip
     public void ShowTooltip(string text)
     {
+        //Si esta inactivo, no mostrar
+        if (!isActive) return;
+
         timer = 0;
         isDelaying = true;
         tooltipText.text = text;
         isHighlighted = true;
     }
 
+    //Metodo para ocultar el tooltip
     public void HideTooltip()
     {
         timer = 0;
@@ -62,12 +70,10 @@ public class Tooltip : MonoBehaviour
         isDelaying = false;
         canvasGroup.alpha = 0;
     }
-
-    private IEnumerator DelayTooltip(string text)
+    
+    //Metodo para activar/desactivar el tooltip
+    public void ToggleTooltip()
     {
-        yield return new WaitForSeconds(1);
-        tooltipText.text = text;
-        isHighlighted = true;
-        canvasGroup.alpha = 1;
+        isActive = !isActive;
     }
 }
