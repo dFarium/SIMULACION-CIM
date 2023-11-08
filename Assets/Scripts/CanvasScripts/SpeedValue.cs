@@ -28,7 +28,6 @@ public class SpeedValue : MonoBehaviour
      */
     public void SpeedModifier()
     {
-        //previousText = speedTextValue.text;
         auxiliarText.text = "enter speed";
         numericText.text = "_";
         
