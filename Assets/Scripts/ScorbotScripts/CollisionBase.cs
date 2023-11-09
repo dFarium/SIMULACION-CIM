@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class CollisionBase : MonoBehaviour
 {
-    public Material highlightMaterial;
-    public bool highlightCollision;
+    public delegate void CollisionShaderToggledAction();
 
-    public void ToggleHighlightCollision()
+    public static event CollisionShaderToggledAction OnToggleCollisionShaderToggled;
+
+
+    public static void InvokeCollisionShaderToggledEvent()
     {
-        highlightCollision = !highlightCollision;
+        OnToggleCollisionShaderToggled?.Invoke();
     }
 }
