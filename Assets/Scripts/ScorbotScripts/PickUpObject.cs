@@ -6,7 +6,7 @@ namespace ScorbotScripts
     public class PickUpObject : MonoBehaviour
     {
         private GameObject _pickedObject;
-        private GameObject _targetGameObject;
+        public GameObject _targetGameObject;
         private bool _isObjectPicked;
         private bool _canPickUp = true;
         private Animator _animator;
@@ -70,6 +70,7 @@ namespace ScorbotScripts
                 _pickedObject = _targetGameObject;
                 _pickedObject.GetComponent<Pickupable>().PickUp(transform);
             }
+            Debug.Log("Siendo pickeado por " + gameObject.name);
         }
 
         private void DropObject()
@@ -81,6 +82,11 @@ namespace ScorbotScripts
             }
 
             _pickedObject = null;
+        }
+
+        public void test()
+        {
+            Debug.Log("si se puede");
         }
     }
 }
