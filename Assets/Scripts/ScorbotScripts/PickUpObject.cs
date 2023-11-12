@@ -7,7 +7,7 @@ namespace ScorbotScripts
     {
         private GameObject _pickedObject;
         public GameObject _targetGameObject;
-        private bool _isObjectPicked;
+        public bool _isObjectPicked;
         private bool _canPickUp = true;
         private Animator _animator;
         private static readonly int IsOpen = Animator.StringToHash("IsOpen");

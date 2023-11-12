@@ -3,34 +3,26 @@ using System.Collections.Generic;
 using ScorbotScripts;
 using UnityEngine;
 
-public class test2 : StateMachineBehaviour
+public class PickObjectAfterAnimation : StateMachineBehaviour
 {
-    private PickUpObject pickUpObject;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        pickUpObject = animator.GetComponentInChildren<PickUpObject>();
     }
 
-     //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        if (pickUpObject._targetGameObject)
-        {
-            pickUpObject.PickUpToggle();
-        } 
-    }
+    // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
+    //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    //{
+    //    
+    //}
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    // override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    // {
-    //     PickUpObject pickUpObject = animator.GetComponentInChildren<PickUpObject>();
-    //     if (pickUpObject._targetGameObject)
-    //     {
-    //         pickUpObject.PickUpToggle();
-    //         animator.SetBool("exit", true);
-    //     } 
-    // }
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        PickUpObject pickUpObject = animator.GetComponentInChildren<PickUpObject>();
+        pickUpObject.PickUpToggle();
+        Debug.Log("PICKUP TOGGLE");
+    }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
