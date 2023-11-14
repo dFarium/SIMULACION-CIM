@@ -5,12 +5,14 @@ namespace ScorbotScripts
 {
     public class Pickupable : MonoBehaviour
     {
+        [SerializeField] private bool isAnimated;
         private Rigidbody _rigidbody;
+
         private void Start()
         {
             _rigidbody = GetComponent<Rigidbody>();
         }
-        
+
         public void PickUp(Transform parent)
         {
             _rigidbody.isKinematic = true;
@@ -18,12 +20,11 @@ namespace ScorbotScripts
             transform.SetParent(parent);
             //transform.localPosition = Vector3.zero;
         }
-        
+
         public void Drop()
         {
-            _rigidbody.isKinematic = false;
+            if (!isAnimated) _rigidbody.isKinematic = false;
             transform.parent = null;
         }
-        
     }
 }

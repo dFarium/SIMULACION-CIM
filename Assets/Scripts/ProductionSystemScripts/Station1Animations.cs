@@ -31,16 +31,20 @@ public class Station1Animations : MonoBehaviour
         animationState = animator.GetCurrentAnimatorStateInfo(0);
         normalizedTime = animationState.normalizedTime;
         
-        
-        if(animationState.IsName("LeaveAruco") && !pickUpObject._isObjectPicked)
-        {
-            pickUpObject.PickUpToggle();
-        }
-        
     }
 
     public void StartAnimation()
     {
         animator.SetBool("IDLING", false);
+    }
+    
+    public void StopAnimation()
+    {
+        animator.SetBool("IDLING", true);
+    }
+
+    public void PickObject()
+    {
+        pickUpObject.PickUpToggle();
     }
 }
