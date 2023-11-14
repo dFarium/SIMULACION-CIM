@@ -15,15 +15,14 @@ namespace ScorbotScripts
 
         public void PickUp(Transform parent)
         {
-            _rigidbody.isKinematic = true;
-            //targetTransform.localPosition = Vector3.zero;
+            if (_rigidbody != null) _rigidbody.isKinematic = true;
             transform.SetParent(parent);
             //transform.localPosition = Vector3.zero;
         }
 
         public void Drop()
         {
-            if (!isAnimated) _rigidbody.isKinematic = false;
+            if (_rigidbody != null) _rigidbody.isKinematic = false;
             transform.parent = null;
         }
     }
