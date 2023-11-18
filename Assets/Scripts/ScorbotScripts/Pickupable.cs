@@ -5,7 +5,6 @@ namespace ScorbotScripts
 {
     public class Pickupable : MonoBehaviour
     {
-        [SerializeField] private bool isAnimated;
         private Rigidbody _rigidbody;
 
         private void Start()

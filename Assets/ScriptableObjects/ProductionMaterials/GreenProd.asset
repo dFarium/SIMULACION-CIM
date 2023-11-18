@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7528384f09f08044f862169541092e57, type: 3}
   m_Name: GreenProd
   m_EditorClassIdentifier: 
-  baseMaterial: {fileID: 9056420106238908782, guid: 91c235f1c32e6b349baa6ef0b6ff5647, type: 3}
+  baseMaterial: {fileID: 8614079349280160908, guid: 2c05c885cdfe02845849e88cbc7d8f6d, type: 3}
   finalProductMaterial: {fileID: 2100000, guid: 570f9b103a2a33b41b4867013103ecc6, type: 2}
   manufacturingTime: 3

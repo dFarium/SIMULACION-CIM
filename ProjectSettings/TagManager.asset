@@ -30,6 +30,8 @@ TagManager:
   - ModoPausa
   - IgnorarColision
   - Tooltip
+  - Aruco
+  - Material
   layers:
   - Default
   - TransparentFX

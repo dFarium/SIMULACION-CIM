@@ -5,7 +5,7 @@ namespace ScorbotScripts
 {
     public class PickUpObject : MonoBehaviour
     {
-        private GameObject _pickedObject;
+        public GameObject _pickedObject;
         public GameObject _targetGameObject;
         public bool _isObjectPicked;
         private bool _canPickUp = true;
