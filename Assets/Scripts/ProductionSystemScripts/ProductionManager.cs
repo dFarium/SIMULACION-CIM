@@ -5,6 +5,7 @@ using UnityEngine.Serialization;
 
 public class ProductionManager : MonoBehaviour
 {
+    //TODO REHACER GESTOR DE PRODUCCIÓN
     [Header("Production Status")] [SerializeField]
     private float productionTimer;
 
