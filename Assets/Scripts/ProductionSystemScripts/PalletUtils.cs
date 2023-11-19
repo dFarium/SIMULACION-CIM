@@ -5,10 +5,18 @@ using UnityEngine;
 
 public class PalletUtils : MonoBehaviour
 {
-    [SerializeField] StationAnimations station1, station2, station3;
+    public delegate void PalletSpawnedAction(GameObject pallet);
+
+    public static event PalletSpawnedAction OnPalletSpawned;
+
+
+    private void SetPallet()
+    {
+        OnPalletSpawned?.Invoke(gameObject);
+    }
 
     private void Start()
     {
-        station1.currentPallet = gameObject;
+        SetPallet();
     }
 }

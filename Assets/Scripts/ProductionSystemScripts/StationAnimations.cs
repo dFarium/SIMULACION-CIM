@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using ScorbotScripts;
@@ -17,8 +18,15 @@ public class StationAnimations : MonoBehaviour
     [SerializeField]private List<Transform> arucoTargetTransforms = new List<Transform>();
 
 // Start is called before the first frame update
-    void Start()
+
+    private void Awake()
     {
+        PalletUtils.OnPalletSpawned += SetCurrentPallet;
+    }
+
+    private void Start()
+    {
+        PalletUtils.OnPalletSpawned += SetCurrentPallet;
         animator = GetComponent<Animator>();
         pickUpObject = GetComponentInChildren<PickUpObject>();
         animationStates.Add("Idle");
@@ -27,9 +35,19 @@ public class StationAnimations : MonoBehaviour
         animationStates.Add("LeaveAruco");
         animator.Play(animationStates[0]);
     }
+    
+    private void OnDestroy()
+    {
+        PalletUtils.OnPalletSpawned -= SetCurrentPallet;
+    }
+
+    private void SetCurrentPallet(GameObject pallet)
+    {
+        currentPallet = pallet;
+    }
 
     //Update is called once per frame
-    void Update()
+    private void Update()
     {
         animationState = animator.GetCurrentAnimatorStateInfo(0);
         normalizedTime = animationState.normalizedTime;
@@ -79,4 +97,6 @@ public class StationAnimations : MonoBehaviour
     {
         currentAruco.transform.parent = currentPallet.transform;
     }
+
+    
 }
