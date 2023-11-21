@@ -59,7 +59,10 @@ namespace ScorbotScripts
 
         private void OnTriggerExit(Collider other)
         {
-            _targetGameObject = null;
+            if (other.gameObject == _targetGameObject)
+            {
+                _targetGameObject = null;   
+            }
         }
 
         private void PickUp()
