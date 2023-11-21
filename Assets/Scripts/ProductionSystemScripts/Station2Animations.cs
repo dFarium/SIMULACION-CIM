@@ -1,12 +1,10 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using ScorbotScripts;
 using UnityEngine;
 
-public class StationAnimations : StationAnimationsBase
+public class Station2Animations : StationAnimationsBase
 {
-// Start is called before the first frame update
+    [SerializeField] private Transform millBase;
     public void StartAnimation()
     {
         animator.SetBool("IDLING", false);
@@ -15,5 +13,11 @@ public class StationAnimations : StationAnimationsBase
     public void StopAnimation()
     {
         animator.SetBool("IDLING", true);
+    }
+
+    public void SetMaterialInMill()
+    {
+        LeaveMaterialInPosition(0);
+        currentMaterial.transform.SetParent(millBase.transform);
     }
 }
