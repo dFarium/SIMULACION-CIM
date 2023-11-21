@@ -98,26 +98,34 @@ public class SpeedValue : MonoBehaviour
             {
                 numericButton.SetActive(false);
             }
-            controlMainText.text = defaultControlText;
+            controlMainText.text = "SPEED IN "+ speedTextValue.text;
+            StartCoroutine(confirmDelay(1));
+            
             controlMainText.gameObject.SetActive(true);
             numericText.gameObject.SetActive(false);
             auxiliarText.gameObject.SetActive(false);
         }
         else
         {
-            Debug.Log("error speed");
+            //Debug.Log("error speed");
             controlMainText.text = "ERROR SPEED INVALIDA";
             controlMainText.gameObject.SetActive(true);
             numericText.gameObject.SetActive(false);
             auxiliarText.gameObject.SetActive(false);
-            StartCoroutine(textDelay(1));
+            StartCoroutine(errorDelay(1));
             
         }
     }
 
-    private IEnumerator textDelay(int numero)
+    private IEnumerator errorDelay(int numero)
     {
         yield return new WaitForSeconds(numero);
         SpeedModifier();
+    }
+    
+    private IEnumerator confirmDelay(int numero)
+    {
+        yield return new WaitForSeconds(numero);
+        controlMainText.text = defaultControlText;
     }
 }

@@ -98,7 +98,7 @@ public class SetDestinationPosition : MonoBehaviour
     {
         //comprueba que el valor esta dentro del rango
         int.TryParse(saveText.text, out int index);
-        if (index>0 && index<100)
+        if (index>0 && index<101)
         {
             Debug.Log("ejecutando confirmacion, isRecord: "+isRecord);
             saveNumber = index;
