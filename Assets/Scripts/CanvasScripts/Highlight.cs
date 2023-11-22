@@ -15,8 +15,6 @@ public class Highlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     {
         button = GetComponent<Button>();
         tooltip = FindAnyObjectByType<Tooltip>();
-
-        button.onClick.AddListener(OnClickButton);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -25,11 +23,6 @@ public class Highlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     }
 
     public void OnPointerExit(PointerEventData eventData)
-    {
-        tooltip.HideTooltip();
-    }
-
-    private void OnClickButton()
     {
         tooltip.HideTooltip();
     }
