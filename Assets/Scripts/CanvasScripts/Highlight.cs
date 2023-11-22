@@ -4,7 +4,7 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Highlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class Highlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler
 {
     [TextArea(0, 10)] [SerializeField] private string text;
     private Tooltip tooltip;
@@ -15,7 +15,7 @@ public class Highlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     {
         button = GetComponent<Button>();
         tooltip = FindAnyObjectByType<Tooltip>();
-        
+
         button.onClick.AddListener(OnClickButton);
     }
 
@@ -28,8 +28,13 @@ public class Highlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     {
         tooltip.HideTooltip();
     }
-    
+
     private void OnClickButton()
+    {
+        tooltip.HideTooltip();
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
     {
         tooltip.HideTooltip();
     }
