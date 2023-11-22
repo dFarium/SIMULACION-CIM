@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using ScorbotScripts;
 using UnityEngine;
 
-public class StationAnimations : StationAnimationsBase
+public class Station1Animations : StationAnimationsBase
 {
 // Start is called before the first frame update
     public void StartAnimation()
