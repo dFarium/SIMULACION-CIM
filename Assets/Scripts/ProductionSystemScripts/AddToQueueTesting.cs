@@ -9,7 +9,7 @@ public class AddToQueueTesting : MonoBehaviour
     [Header("ESSENTIAL")] [SerializeField]
     private List<ProductionMaterial> productionMaterials = new List<ProductionMaterial>();
 
-    
+
     [SerializeField] private ProductionManager productionManager;
 
 
@@ -19,7 +19,8 @@ public class AddToQueueTesting : MonoBehaviour
         Random random = new Random();
         foreach (ProductionMaterial productionMaterial in productionMaterials)
         {
-            productionManager.AddToQueue(productionMaterial, random.Next(1,101), false);
+            productionManager.AddToQueue(productionMaterial, random.Next(1, 10), false,
+                productionMaterial.manufacturingTime);
         }
     }
 }

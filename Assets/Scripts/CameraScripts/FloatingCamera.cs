@@ -18,7 +18,6 @@ public class FloatingCamera : MonoBehaviour
     {
         camera1 = Camera.main;
     }
-    
 
 
     private void Update()
@@ -32,7 +31,8 @@ public class FloatingCamera : MonoBehaviour
         HorizontalMovement();
         VerticalMovement();
     }
-
+    
+    // Movimiento horizontal (WASD)
     private void HorizontalMovement()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
@@ -52,6 +52,7 @@ public class FloatingCamera : MonoBehaviour
         transform.Translate(move * (moveSpeed * Time.deltaTime));
     }
 
+    // Movimiento vertical (espacio y shift)
     private void VerticalMovement()
     {
         //Elevación de la camara
@@ -59,18 +60,20 @@ public class FloatingCamera : MonoBehaviour
         {
             transform.Translate(Vector3.up * (moveSpeed * Time.deltaTime));
         }
-        else if (Input.GetKey(KeyCode.C))
+        else if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
         {
             transform.Translate(Vector3.down * (moveSpeed * Time.deltaTime));
         }
     }
 
+    // Bloquea el cursor
     public void LockCursor()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
 
+    // Desbloquea el cursor
     public void UnlockCursor()
     {
         Cursor.lockState = CursorLockMode.None;
@@ -78,6 +81,7 @@ public class FloatingCamera : MonoBehaviour
         cameraManager.SwtichToDefaultCamera();
     }
 
+    // Habilita la cámara
     public void EnableCamera()
     {
         CinemachinePOV pov = virtualCamera.GetCinemachineComponent<CinemachinePOV>();

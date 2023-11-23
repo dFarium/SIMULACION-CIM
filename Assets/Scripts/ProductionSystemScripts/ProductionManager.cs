@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Time = UnityEngine.Time;
 
 public class ProductionManager : MonoBehaviour
 {
@@ -17,87 +18,66 @@ public class ProductionManager : MonoBehaviour
     [SerializeField] private List<ProductionQueueItem> productionQueue = new List<ProductionQueueItem>();
     private GameObject currentFinalProduct; // Variable para almacenar el producto final actual
     private bool isBaseMaterialSpawned;
+    private int queueCounter = 0;
+    private SortingType sortingType = SortingType.Priority;
 
-    // Clase para almacenar los elementos de la cola de producción
-    [System.Serializable]
-    public class ProductionQueueItem
-    {
-        [FormerlySerializedAs("material")] public ProductionMaterial productionMaterial;
-        public float priority;
-        public bool requiresManualReview;
-        
-        public ProductionQueueItem(ProductionMaterial productionMaterial, float priority, bool requiresManualReview)
-        {
-            this.productionMaterial = productionMaterial;
-            this.priority = priority;
-            this.requiresManualReview = requiresManualReview;
-        }
-    }
 
     // Agrega un elemento a la cola de producción
-    public void AddToQueue(ProductionMaterial productionMaterial, float priority, bool requiresManualReview)
+    public void AddToQueue(ProductionMaterial productionMaterial, float priority, bool requiresManualReview,
+        float manufacturingTime)
     {
-        ProductionQueueItem newItem = new ProductionQueueItem(productionMaterial, priority, requiresManualReview);
+        queueCounter++;
+        ProductionQueueItem newItem =
+            new ProductionQueueItem(productionMaterial, priority, requiresManualReview, queueCounter);
         productionQueue.Add(newItem);
-        SortQueueByPriority(); // Ordena la cola después de agregar un elemento.
+        productionQueue.SortQueueByDropdownSelection(sortingType);
     }
 
-    // Elimina un elemento de la cola de producción
-    public void RemoveFromQueue(ProductionQueueItem item)
-    {
-        productionQueue.Remove(item);
-    }
 
-    //Ordena la cola de producción por prioridad, de mayor a menor
-    public void SortQueueByPriority()
-    {
-        productionQueue.Sort((a, b) => b.priority.CompareTo(a.priority));
-    }
-    
     // Spawnea el material base en la fresadora
-    public void SpawnBaseMaterial(ProductionMaterial productionMaterial, Transform spawnPoint)
+    private void SpawnBaseMaterial(ProductionMaterial productionMaterial, Transform spawnPoint)
     {
         currentProduction = Instantiate(productionMaterial.baseMaterial, spawnPoint);
     }
-    
-    //Lógica de producción
-    private void Update()
-    {
-        // Cooldown timer de la fresadora
-        if (cooldownTimer > 0)
-        {
-            cooldownTimer -= Time.deltaTime;
-            return;
-        }
 
-        // Si existe un producto final al comenzar un nuevo producto, se elimina
-        if (finalProduct)
-        {
-            Destroy(finalProduct);
-        }
-
-        // Si no hay elementos en cola de producción, no se hace nada más
-        if (productionQueue.Count == 0)
-        {
-            return;
-        }
-
-        // Si no se ha spawnado el material base, hazlo
-        if (!isBaseMaterialSpawned)
-        {
-            SpawnBaseMaterial(productionQueue[0].productionMaterial, station2SpawnPoint);
-            isBaseMaterialSpawned = true;
-        }
-
-        // Incrementar el tiempo de producción
-        productionTimer += Time.deltaTime;
-
-        // Si el tiempo de producción es mayor al tiempo de manufactura, spawnea el producto final
-        if (productionTimer > productionQueue[0].productionMaterial.manufacturingTime)
-        {
-            CompleteProduction();
-        }
-    }
+    //TODO REHACER GESTOR DE PRODUCCIÓN
+    // private void Update()
+    // {
+    //     // Cooldown timer de la fresadora
+    //     if (cooldownTimer > 0)
+    //     {
+    //         cooldownTimer -= Time.deltaTime;
+    //         return;
+    //     }
+    //
+    //     // Si existe un producto final al comenzar un nuevo producto, se elimina
+    //     if (finalProduct)
+    //     {
+    //         Destroy(finalProduct);
+    //     }
+    //
+    //     // Si no hay elementos en cola de producción, no se hace nada más
+    //     if (productionQueue.Count == 0)
+    //     {
+    //         return;
+    //     }
+    //
+    //     // Si no se ha spawnado el material base, hazlo
+    //     if (!isBaseMaterialSpawned)
+    //     {
+    //         SpawnBaseMaterial(productionQueue[0].productionMaterial, station2SpawnPoint);
+    //         isBaseMaterialSpawned = true;
+    //     }
+    //
+    //     // Incrementar el tiempo de producción
+    //     productionTimer += Time.deltaTime;
+    //
+    //     // Si el tiempo de producción es mayor al tiempo de manufactura, spawnea el producto final
+    //     if (productionTimer > productionQueue[0].productionMaterial.manufacturingTime)
+    //     {
+    //         CompleteProduction();
+    //     }
+    // }
 
     // Lógica de spawneo del producto final
     private void CompleteProduction()
@@ -106,11 +86,43 @@ public class ProductionManager : MonoBehaviour
         MeshRenderer meshRenderer = currentProduction.GetComponent<MeshRenderer>();
         meshRenderer.material = productionQueue[0].productionMaterial.finalProductMaterial;
         finalProduct = currentProduction;
-        RemoveFromQueue(productionQueue[0]);
+        productionQueue.RemoveFirstFromQueue();
         productionTimer = 0;
         isBaseMaterialSpawned = false;
 
         // Se reinicia el cooldown
         cooldownTimer = cooldownTime;
+    }
+
+    public void ResetProductionQueue()
+    {
+        productionQueue.Clear();
+        queueCounter = 0;
+    }
+
+    public void DropdownIndexChanged(int index)
+    {
+        // Asegurarse de que el índice esté dentro de los límites del enum SortingType
+        if (index >= 0 && index < System.Enum.GetNames(typeof(SortingType)).Length)
+        {
+            sortingType = (SortingType)index;
+            Debug.Log("SortingType changed to: " + sortingType);
+
+            // Llamar al método SortQueue con el nuevo tipo de ordenamiento
+            productionQueue.SortQueueByDropdownSelection(sortingType);
+        }
+        else
+        {
+            Debug.LogWarning("Index out of range for SortingType");
+        }
+    }
+
+    public enum SortingType
+    {
+        Priority,
+        Fifo,
+        Lifo,
+        LongestTime,
+        LeastTime
     }
 }
