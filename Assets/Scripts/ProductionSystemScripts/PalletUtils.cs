@@ -9,10 +9,11 @@ public class PalletUtils : MonoBehaviour
     public delegate void PalletSpawnedAction(GameObject pallet);
 
     public static event PalletSpawnedAction OnPalletSpawned;
-
+    [SerializeField] private ProductionManager productionManager;
+    public bool hasArrived = false;
     [SerializeField] private Transform[] stationsWaypoints;
     [SerializeField] private float targetDistance = 0.1f;
-    [SerializeField] private int stationIndex = 0;
+    public int stationIndex = 0;
     private DOTweenPath tweenPath;
 
 
@@ -34,7 +35,10 @@ public class PalletUtils : MonoBehaviour
             //El pallet llega a la estación
             tweenPath.DOPause();
             gameObject.transform.position = stationsWaypoints[stationIndex].position;
+            productionManager.OnPalletArrived(stationIndex);
+            hasArrived = true;
             UpdateIndex();
+            
         }
     }
 
@@ -62,5 +66,6 @@ public class PalletUtils : MonoBehaviour
     public void MoveToNextStation()
     {
         tweenPath.DOPlay();
+        hasArrived = false;
     }
 }

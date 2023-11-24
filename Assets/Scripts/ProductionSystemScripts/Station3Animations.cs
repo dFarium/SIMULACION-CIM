@@ -8,6 +8,7 @@ public class Station3Animations : StationAnimationsBase
     public void StartAnimation()
     {
         animator.SetBool("IDLING", false);
+        animator.SetBool("LEAVEPALLET", false);
     }
 
     public void StopAnimation()
@@ -19,5 +20,17 @@ public class Station3Animations : StationAnimationsBase
     {
         LeaveMaterialInPosition(storageIndex);
         currentMaterial.transform.SetParent(storagePosition);
+    }
+    
+    public override void MovePalletToNextStation()
+    {
+        currentPallet.GetComponent<PalletUtils>().MoveToNextStation();
+        animator.SetBool("LEAVEPALLET", true);
+        productionManager.EndCurrentProduction();
+    }
+
+    public void SetStorage()
+    {
+        animator.SetBool("IsBeingStored", productionManager.currentProductionQueueItem.isBeingStored);
     }
 }

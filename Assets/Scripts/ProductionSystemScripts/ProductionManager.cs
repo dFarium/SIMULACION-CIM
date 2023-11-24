@@ -6,103 +6,130 @@ using Time = UnityEngine.Time;
 
 public class ProductionManager : MonoBehaviour
 {
-    [Header("Stations")] 
-    [SerializeField] private Station1Animations station1;
+    [Header("Station Animations")] [SerializeField]
+    private Station1Animations station1;
+
     [SerializeField] private Station2Animations station2;
     [SerializeField] private Station3Animations station3;
 
-    //TODO REHACER GESTOR DE PRODUCCIÓN
-    [Header("Production Status")] [SerializeField]
-    private float productionTimer;
+    [FormerlySerializedAs("millAnimations")] [SerializeField]
+    private MillAnimations mill;
 
-    [SerializeField] private GameObject currentProduction;
-    [SerializeField] private GameObject finalProduct;
-    [SerializeField] private float cooldownTime = 5f;
-    [SerializeField] private float cooldownTimer = 0;
+    [Header("Station Lights")] [SerializeField]
+    private List<GameObject> stationLights = new List<GameObject>();
+
+    [Header("Pallet Related")] [SerializeField]
+    private PalletUtils pallet;
+
+    [SerializeField] private Transform baseMaterialSpawnPoint;
+    [SerializeField] private Transform arucoSpawnPoint;
+    [SerializeField] private GameObject aruco;
+    private GameObject currentAruco;
+
+    [Header("Production Settings & Status")] [SerializeField]
+    private GameObject currentProduction;
+
+    [SerializeField] private ProductionMaterial currentProductionMaterial;
     [SerializeField] private List<ProductionQueueItem> productionQueue = new List<ProductionQueueItem>();
-    private GameObject currentFinalProduct; // Variable para almacenar el producto final actual
-    private bool isBaseMaterialSpawned;
-    private int queueCounter = 0;
+    [FormerlySerializedAs("currentQueueItem")] public ProductionQueueItem currentProductionQueueItem;
     private SortingType sortingType = SortingType.Priority;
-
-    [SerializeField] private List<GameObject> stationLights = new List<GameObject>();
+    private int queueCounter = 0;
+    private GameObject currentFinalProduct;
 
 
     // Agrega un elemento a la cola de producción
-    public void AddToQueue(ProductionMaterial productionMaterial, float priority, bool requiresManualReview)
+    public void AddToQueue(ProductionMaterial productionMaterial, float priority, bool isBeingStored)
     {
         queueCounter++;
-        ProductionQueueItem newItem =
-            new ProductionQueueItem(productionMaterial, priority, requiresManualReview, queueCounter);
+        var newItem = new ProductionQueueItem(productionMaterial, priority, isBeingStored, queueCounter);
         productionQueue.Add(newItem);
         productionQueue.SortQueueByDropdownSelection(sortingType);
+
+        // If this was the first item added to the queue and the pallet has arrived, start an animation.
+        if (productionQueue.Count >= 1 && pallet.stationIndex == 1 && pallet.hasArrived)
+        {
+            Debug.Log("pasa por aqui?");
+            OnPalletArrived(pallet.stationIndex, pallet.hasArrived);
+        }
     }
 
 
     // Spawnea el material base en la fresadora
     private void SpawnBaseMaterial(ProductionMaterial productionMaterial, Transform spawnPoint)
     {
-        currentProduction = Instantiate(productionMaterial.baseMaterial, spawnPoint);
-    }
-
-    //TODO REHACER GESTOR DE PRODUCCIÓN
-    // private void Update()
-    // {
-    //     // Cooldown timer de la fresadora
-    //     if (cooldownTimer > 0)
-    //     {
-    //         cooldownTimer -= Time.deltaTime;
-    //         return;
-    //     }
-    //
-    //     // Si existe un producto final al comenzar un nuevo producto, se elimina
-    //     if (finalProduct)
-    //     {
-    //         Destroy(finalProduct);
-    //     }
-    //
-    //     // Si no hay elementos en cola de producción, no se hace nada más
-    //     if (productionQueue.Count == 0)
-    //     {
-    //         return;
-    //     }
-    //
-    //     // Si no se ha spawnado el material base, hazlo
-    //     if (!isBaseMaterialSpawned)
-    //     {
-    //         SpawnBaseMaterial(productionQueue[0].productionMaterial, station2SpawnPoint);
-    //         isBaseMaterialSpawned = true;
-    //     }
-    //
-    //     // Incrementar el tiempo de producción
-    //     productionTimer += Time.deltaTime;
-    //
-    //     // Si el tiempo de producción es mayor al tiempo de manufactura, spawnea el producto final
-    //     if (productionTimer > productionQueue[0].productionMaterial.manufacturingTime)
-    //     {
-    //         CompleteProduction();
-    //     }
-    // }
-
-    // Lógica de spawneo del producto final
-    private void CompleteProduction()
-    {
-        // Se coloca el color al producto final
-        MeshRenderer meshRenderer = currentProduction.GetComponent<MeshRenderer>();
-        meshRenderer.material = productionQueue[0].productionMaterial.finalProductMaterial;
-        finalProduct = currentProduction;
-        productionQueue.RemoveFirstFromQueue();
-        productionTimer = 0;
-        isBaseMaterialSpawned = false;
-
-        // Se reinicia el cooldown
-        cooldownTimer = cooldownTime;
+        currentAruco = Instantiate(aruco, arucoSpawnPoint.position, arucoSpawnPoint.rotation);
+        currentProduction = Instantiate(productionMaterial.baseMaterial, spawnPoint.position, spawnPoint.rotation);
     }
 
     public void ResetProductionQueue()
     {
         productionQueue.Clear();
         queueCounter = 0;
+    }
+
+    //Cuando llega pallet a estacion, comenzar animacion
+    public void OnPalletArrived(int currentStation)
+    {
+        //Si la estación es la 1 y hay elementos en la cola de producción...
+        if (currentStation == 0 && productionQueue.Count > 0)
+        {
+            //Si no se ha creado el material base aún y no hay ninguna producción en curso
+            SetCurrentProduction();
+        }
+
+        // Si hay una producción en curso...
+        if (currentProduction)
+        {
+            // Iniciamos la animación de producción
+            StartStationAnimation(currentStation);
+        }
+    }
+    
+    //Para cuando no hay cola de producción antes de llegar a la estación 1 y se le agrega despues
+    public void OnPalletArrived(int currentStation,bool hasArrived)
+    {
+        if (currentStation == 1 && productionQueue.Count > 0 && hasArrived)
+        {
+            //Si no se ha creado el material base aún y no hay ninguna producción en curso
+            SetCurrentProduction();
+        }
+
+        // Si hay una producción en curso...
+        if (currentProduction)
+        {
+            // Iniciamos la animación de producción
+            StartStationAnimation(0);
+        }
+    }
+
+    public void SetCurrentProduction()
+    {
+        if (!currentProduction)
+        {
+            //Obtener el primer elemento
+            currentProductionQueueItem = productionQueue[0];
+            currentProductionMaterial = currentProductionQueueItem.productionMaterial;
+
+            //Crear material base en almacén de la estación 1
+            SpawnBaseMaterial(currentProductionQueueItem.productionMaterial, baseMaterialSpawnPoint);
+                
+        }
+    }
+
+    public void StartStationAnimation(int currentStation)
+    {
+        switch (currentStation)
+        {
+            case 0:
+                station1.StartAnimation();
+                break;
+            case 1:
+                station2.StartAnimation();
+                break;
+            case 2:
+                station3.StartAnimation();
+                break;
+        }
     }
 
     public void DropdownIndexChanged(int index)
@@ -119,6 +146,25 @@ public class ProductionManager : MonoBehaviour
         else
         {
             Debug.LogWarning("Index out of range for SortingType");
+        }
+    }
+
+    public IEnumerator MaterialProductionConversion()
+    {
+        yield return new WaitForSeconds(currentProductionMaterial.manufacturingTime);
+        mill.StopMillAnimation();
+        MeshRenderer meshRenderer = currentProduction.GetComponent<MeshRenderer>();
+        meshRenderer.material = currentProductionMaterial.finalProductMaterial;
+    }
+
+    public void EndCurrentProduction()
+    {
+        if (currentProduction)
+        {
+            Destroy(currentProduction);
+            Destroy(currentAruco);
+            currentProduction = null;
+            productionQueue.RemoveFirstFromQueue();
         }
     }
 
