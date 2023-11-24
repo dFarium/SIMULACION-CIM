@@ -19,8 +19,7 @@ public class AddToQueueTesting : MonoBehaviour
         Random random = new Random();
         foreach (ProductionMaterial productionMaterial in productionMaterials)
         {
-            productionManager.AddToQueue(productionMaterial, random.Next(1, 10), false,
-                productionMaterial.manufacturingTime);
+            productionManager.AddToQueue(productionMaterial, random.Next(1, 100), false);
         }
     }
 }

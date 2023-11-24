@@ -6,6 +6,11 @@ using Time = UnityEngine.Time;
 
 public class ProductionManager : MonoBehaviour
 {
+    [Header("Stations")] 
+    [SerializeField] private Station1Animations station1;
+    [SerializeField] private Station2Animations station2;
+    [SerializeField] private Station3Animations station3;
+
     //TODO REHACER GESTOR DE PRODUCCIÓN
     [Header("Production Status")] [SerializeField]
     private float productionTimer;
@@ -14,17 +19,17 @@ public class ProductionManager : MonoBehaviour
     [SerializeField] private GameObject finalProduct;
     [SerializeField] private float cooldownTime = 5f;
     [SerializeField] private float cooldownTimer = 0;
-    [SerializeField] private Transform station1SpawnPoint, station2SpawnPoint;
     [SerializeField] private List<ProductionQueueItem> productionQueue = new List<ProductionQueueItem>();
     private GameObject currentFinalProduct; // Variable para almacenar el producto final actual
     private bool isBaseMaterialSpawned;
     private int queueCounter = 0;
     private SortingType sortingType = SortingType.Priority;
 
+    [SerializeField] private List<GameObject> stationLights = new List<GameObject>();
+
 
     // Agrega un elemento a la cola de producción
-    public void AddToQueue(ProductionMaterial productionMaterial, float priority, bool requiresManualReview,
-        float manufacturingTime)
+    public void AddToQueue(ProductionMaterial productionMaterial, float priority, bool requiresManualReview)
     {
         queueCounter++;
         ProductionQueueItem newItem =
