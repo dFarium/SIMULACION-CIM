@@ -15,7 +15,7 @@ public class SpeedValue : MonoBehaviour
     [SerializeField] private TextMeshProUGUI auxiliarText;
     [SerializeField] private TextMeshProUGUI numericText;
     
-    private string defaultControlText = "Esperando Accion";
+    private string defaultControlText = "awaiting  action";
     
     [SerializeField] private List<Button> interactableButtons = new List<Button>();
     [SerializeField] private List<GameObject> numericButtons = new List<GameObject>();
@@ -69,8 +69,28 @@ public class SpeedValue : MonoBehaviour
      
     public void Cancel()
     {
-        numericText.text = speedTextValue.text;
-        Confirm();
+        //numericText.text = speedTextValue.text;
+        foreach (Button buttons  in interactableButtons)
+        {
+            buttons.interactable=true;
+        }
+        
+        foreach (GameObject hideButton in hideButtons)
+        {
+            hideButton.SetActive(true);
+        }
+        
+        foreach (GameObject numericButton in numericButtons)
+        {
+            numericButton.SetActive(false);
+        }
+        controlMainText.text = "Aborted";
+        StartCoroutine(textDelay(1));
+            
+        controlMainText.gameObject.SetActive(true);
+        numericText.gameObject.SetActive(false);
+        auxiliarText.gameObject.SetActive(false);
+        //Confirm();
     }
     
     /* Verifica que el valor de speed este dentro del limite 1~100
@@ -98,8 +118,8 @@ public class SpeedValue : MonoBehaviour
             {
                 numericButton.SetActive(false);
             }
-            controlMainText.text = "SPEED IN "+ speedTextValue.text;
-            StartCoroutine(confirmDelay(1));
+            controlMainText.text = "SPEED "+ speedTextValue.text +"... DONE";
+            StartCoroutine(textDelay(1));
             
             controlMainText.gameObject.SetActive(true);
             numericText.gameObject.SetActive(false);
@@ -108,7 +128,7 @@ public class SpeedValue : MonoBehaviour
         else
         {
             //Debug.Log("error speed");
-            controlMainText.text = "ERROR SPEED INVALIDA";
+            controlMainText.text = "INVALID SPEED";
             controlMainText.gameObject.SetActive(true);
             numericText.gameObject.SetActive(false);
             auxiliarText.gameObject.SetActive(false);
@@ -123,7 +143,7 @@ public class SpeedValue : MonoBehaviour
         SpeedModifier();
     }
     
-    private IEnumerator confirmDelay(int numero)
+    private IEnumerator textDelay(int numero)
     {
         yield return new WaitForSeconds(numero);
         controlMainText.text = defaultControlText;

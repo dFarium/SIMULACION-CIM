@@ -14,7 +14,7 @@ public class SetDestinationPosition : MonoBehaviour
     [SerializeField] private TextMeshProUGUI auxiliarText;
     [SerializeField] private TextMeshProUGUI saveText;
     
-    private string defaultControlText = "Esperando Accion";
+    private string defaultControlText = "awaiting  action";
     
     [SerializeField] private List<Button> interactableButtons = new List<Button>();
     [SerializeField] private List<GameObject> numericButtons = new List<GameObject>();
@@ -43,11 +43,11 @@ public class SetDestinationPosition : MonoBehaviour
     {
         if (isRecord)
         {
-            auxiliarText.text = "Save memory: ";   
+            auxiliarText.text = "Record Position ";   
         }
         else
         {
-            auxiliarText.text = "Load memory: ";
+            auxiliarText.text = "Go Position ";
         }
         saveText.text = "_";
         
