@@ -4,53 +4,57 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
+using TMPro;
 using Time = UnityEngine.Time;
 
 [System.Serializable]
-
-
 public class ProductionManager : MonoBehaviour
 {
-    [Header("Station Animations")] [SerializeField]
+    [Header("Animations")] [SerializeField]
     private Station1Animations station1;
 
     [SerializeField] private Station2Animations station2;
     [SerializeField] private Station3Animations station3;
 
-    [FormerlySerializedAs("millAnimations")] [SerializeField]
-    private MillAnimations mill;
+    [SerializeField] private MillAnimations mill;
 
-    [Header("Station Lights")] [SerializeField]
-    private List<GameObject> stationLights = new List<GameObject>();
+    [SerializeField] private List<GameObject> stationLights = new List<GameObject>();
 
-    [Header("Pallet Related")] [SerializeField]
-    private PalletUtils pallet;
+    [SerializeField] private PalletUtils pallet;
 
-    [SerializeField] private Transform baseMaterialSpawnPoint;
+    [Header("Production spawn points")] [SerializeField]
+    private Transform baseMaterialSpawnPoint;
+
     [SerializeField] private Transform arucoSpawnPoint;
-    [SerializeField] private GameObject aruco;
-    private GameObject currentAruco;
 
-    [Header("Production Settings & Status")] [SerializeField]
-    private GameObject currentProduction;
+    [Header("Production materials")] [SerializeField]
+    private GameObject aruco;
 
+    [Header("Production Status")] private GameObject currentAruco;
+
+    [SerializeField] private GameObject currentProduction;
     [SerializeField] private ProductionMaterial currentProductionMaterial;
     [SerializeField] private List<ProductionQueueItem> productionQueue = new List<ProductionQueueItem>();
-
-    [FormerlySerializedAs("currentQueueItem")]
     public ProductionQueueItem currentProductionQueueItem;
-
     [SerializeField] private GameObject materialPreviewCamera;
-    [SerializeField] private MeshRenderer materialPreview;
+    [SerializeField] private MeshRenderer productionPreview;
+    [SerializeField] private MeshRenderer nextProductionPreview;
+    [SerializeField] private TextMeshProUGUI currentProductionText;
+    [SerializeField] private TextMeshProUGUI nextProductionText;
     private SortingType sortingType = SortingType.Priority;
     private int queueCounter = 0;
     private GameObject currentFinalProduct;
-    
+
+
     [System.Serializable]
-    public class ProductionStatusEvent : UnityEvent<ProductionStatus> { }
+    public class ProductionStatusEvent : UnityEvent<ProductionStatus>
+    {
+    }
+
     public ProductionStatusEvent onProductionStatusChanged;
-    
+
     private ProductionStatus _currentProductionStatus = ProductionStatus.Idle;
+
     public ProductionStatus CurrentProductionStatus
     {
         get => _currentProductionStatus;
@@ -63,11 +67,11 @@ public class ProductionManager : MonoBehaviour
             }
         }
     }
-    
+
 
     public void Start()
     {
-        materialPreview.gameObject.SetActive(false);
+        productionPreview.gameObject.SetActive(false);
     }
 
     // Agrega un elemento a la cola de producción
@@ -90,10 +94,11 @@ public class ProductionManager : MonoBehaviour
     // Spawnea el material base en la fresadora
     private void SpawnBaseMaterial(ProductionMaterial productionMaterial, Transform spawnPoint)
     {
+        currentProductionText.text = productionMaterial.materialName;
         currentAruco = Instantiate(aruco, arucoSpawnPoint.position, arucoSpawnPoint.rotation);
         currentProduction = Instantiate(productionMaterial.baseMaterial, spawnPoint.position, spawnPoint.rotation);
-        materialPreview.material = currentProduction.GetComponent<MeshRenderer>().material;
-        materialPreview.gameObject.SetActive(true);
+        productionPreview.material = currentProduction.GetComponent<MeshRenderer>().material;
+        productionPreview.gameObject.SetActive(true);
     }
 
     public void ResetProductionQueue()
@@ -156,6 +161,7 @@ public class ProductionManager : MonoBehaviour
         {
             case 0:
                 station1.StartAnimation();
+                SetNextProductionPreview();
                 CurrentProductionStatus = ProductionStatus.GettingMaterial;
                 break;
             case 1:
@@ -194,7 +200,7 @@ public class ProductionManager : MonoBehaviour
         mill.StopMillAnimation();
         MeshRenderer meshRenderer = currentProduction.GetComponent<MeshRenderer>();
         meshRenderer.material = currentProductionMaterial.finalProductMaterial;
-        materialPreview.material = meshRenderer.material;
+        productionPreview.material = meshRenderer.material;
     }
 
 
@@ -204,12 +210,31 @@ public class ProductionManager : MonoBehaviour
         {
             Destroy(currentProduction);
             Destroy(currentAruco);
-            materialPreview.gameObject.SetActive(false);
+            currentProductionText.text = "";
+            productionPreview.gameObject.SetActive(false);
             currentProduction = null;
             productionQueue.RemoveFirstFromQueue();
         }
     }
-    
+
+    public void SetNextProductionPreview()
+    {
+        ProductionQueueItem nextMaterial = productionQueue.GetNextItem();
+        
+        if (nextMaterial != null)
+        {
+            nextProductionPreview.material = nextMaterial.productionMaterial.finalProductMaterial;
+            nextProductionText.text = nextMaterial.productionMaterial.materialName;
+            nextProductionPreview.gameObject.SetActive(true);
+            nextProductionText.gameObject.GetComponent<CanvasGroup>().alpha = 1;
+        }
+        else
+        {
+            nextProductionPreview.gameObject.SetActive(false);
+            nextProductionText.gameObject.GetComponent<CanvasGroup>().alpha = 0;
+        }
+    }
+
     public enum SortingType
     {
         Priority,

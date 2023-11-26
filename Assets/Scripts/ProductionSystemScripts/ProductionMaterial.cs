@@ -6,6 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ProductionMaterial", menuName = "Production Material")]
 public class ProductionMaterial : ScriptableObject
 {
+    public string materialName;
     public GameObject baseMaterial;
     public UnityEngine.Material finalProductMaterial;
     public float manufacturingTime;

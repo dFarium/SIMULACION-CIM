@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7528384f09f08044f862169541092e57, type: 3}
   m_Name: RedProd
   m_EditorClassIdentifier: 
+  materialName: Bloque Rojo
   baseMaterial: {fileID: 8614079349280160908, guid: 2c05c885cdfe02845849e88cbc7d8f6d, type: 3}
   finalProductMaterial: {fileID: 2100000, guid: bf6ff16a61bc90b4dba795bcba157c1f, type: 2}
   manufacturingTime: 4
