@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
 using TMPro;
+using UnityEngine.UI;
 using Time = UnityEngine.Time;
 
 [System.Serializable]
@@ -35,21 +36,28 @@ public class ProductionManager : MonoBehaviour
     [SerializeField] private GameObject currentProduction;
     [SerializeField] private ProductionMaterial currentProductionMaterial;
     [SerializeField] private List<ProductionQueueItem> productionQueue = new List<ProductionQueueItem>();
-    public ProductionQueueItem currentProductionQueueItem;
+    public ProductionQueueItem currentProductionQueueItem = null;
     [SerializeField] private GameObject materialPreviewCamera;
     [SerializeField] private MeshRenderer productionPreview;
     [SerializeField] private MeshRenderer nextProductionPreview;
     [SerializeField] private TextMeshProUGUI currentProductionText;
     [SerializeField] private TextMeshProUGUI nextProductionText;
+    [SerializeField] private TMP_Dropdown productionQueueDropdown;
     private SortingType sortingType = SortingType.Priority;
     private int queueCounter = 0;
     private GameObject currentFinalProduct;
+
+
+    //[Header("Events")] [SerializeField] private GameObject queueItemPrefab;
+    //[SerializeField] private Transform queueListTransform;
+    //private float offset = 0;
 
 
     [System.Serializable]
     public class ProductionStatusEvent : UnityEvent<ProductionStatus>
     {
     }
+
 
     public ProductionStatusEvent onProductionStatusChanged;
 
@@ -72,6 +80,7 @@ public class ProductionManager : MonoBehaviour
     public void Start()
     {
         productionPreview.gameObject.SetActive(false);
+        UpdateProductionQueueDropdown();
     }
 
     // Agrega un elemento a la cola de producción
@@ -81,6 +90,8 @@ public class ProductionManager : MonoBehaviour
         var newItem = new ProductionQueueItem(productionMaterial, priority, isBeingStored, queueCounter);
         productionQueue.Add(newItem);
         productionQueue.SortQueueByDropdownSelection(sortingType);
+        //InstantiateListButton(newItem, offset);
+        //offset -= 30;
 
         // If this was the first item added to the queue and the pallet has arrived, start an animation.
         if (productionQueue.Count >= 1 && pallet.stationIndex == 1 && pallet.hasArrived)
@@ -90,6 +101,7 @@ public class ProductionManager : MonoBehaviour
         }
 
         SetNextProductionPreview();
+        UpdateProductionQueueDropdown();
     }
 
 
@@ -154,6 +166,7 @@ public class ProductionManager : MonoBehaviour
 
             //Crear material base en almacén de la estación 1
             SpawnBaseMaterial(currentProductionQueueItem.productionMaterial, baseMaterialSpawnPoint);
+            productionQueue.RemoveFirstFromQueue();
         }
     }
 
@@ -172,9 +185,14 @@ public class ProductionManager : MonoBehaviour
                 break;
             case 2:
                 station3.StartAnimation();
-                CurrentProductionStatus = productionQueue[0].isBeingStored
-                    ? ProductionStatus.Storing
-                    : ProductionStatus.Disposing;
+                if (currentProductionQueueItem.isBeingStored)
+                {
+                    CurrentProductionStatus = ProductionStatus.Storing;
+                }
+                else
+                {
+                    CurrentProductionStatus = ProductionStatus.Disposing;
+                }
                 break;
         }
     }
@@ -215,15 +233,15 @@ public class ProductionManager : MonoBehaviour
             currentProductionText.text = "";
             productionPreview.gameObject.SetActive(false);
             currentProduction = null;
-            productionQueue.RemoveFirstFromQueue();
+            currentProductionQueueItem = null;
             SetNextProductionPreview();
+            UpdateProductionQueueDropdown();
         }
     }
 
     public void SetNextProductionPreview()
     {
-        
-        ProductionQueueItem nextMaterial = productionQueue.GetItem(1);
+        ProductionQueueItem nextMaterial = productionQueue.GetItem(0);
 
         if (nextMaterial != null)
         {
@@ -238,6 +256,34 @@ public class ProductionManager : MonoBehaviour
             nextProductionText.gameObject.GetComponent<CanvasGroup>().alpha = 0;
         }
     }
+
+    private void UpdateProductionQueueDropdown()
+    {
+        List<string> queueItems = new List<string>();
+        queueItems.Add("Lista de producción");
+        
+        foreach (ProductionQueueItem item in productionQueue)
+        {
+            queueItems.Add(item.productionMaterial.materialName + " - " + item.priority);
+        }
+
+        productionQueueDropdown.ClearOptions();
+        productionQueueDropdown.AddOptions(queueItems);
+    }
+
+
+    // public void InstantiateListButton(ProductionQueueItem productionQueueItem, float offset)
+    // {
+    //     Vector3 posOffset = new Vector3(0, offset, 0);
+    //     GameObject queueItemObject =
+    //         Instantiate(queueItemPrefab, queueListTransform.position + posOffset, Quaternion.identity,
+    //             queueListTransform);
+    //     TextMeshProUGUI queueItemText = queueItemObject.transform.Find("ItemText").GetComponent<TextMeshProUGUI>();
+    //     Button queueItemButton = queueItemObject.transform.Find("RemoveButton").GetComponentInChildren<Button>();
+    //
+    //     queueItemText.text = productionQueueItem.productionMaterial.materialName + " - " + productionQueueItem.priority;
+    //     queueItemButton.onClick.AddListener(() => productionQueue.Remove(productionQueueItem));
+    // }
 
     public enum SortingType
     {

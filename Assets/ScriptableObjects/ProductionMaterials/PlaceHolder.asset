@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7528384f09f08044f862169541092e57, type: 3}
   m_Name: PlaceHolder
   m_EditorClassIdentifier: 
-  materialName: Bloque Blanco
+  materialName: Seleccione...
   baseMaterial: {fileID: 8614079349280160908, guid: 2c05c885cdfe02845849e88cbc7d8f6d, type: 3}
   finalProductMaterial: {fileID: 2100000, guid: 02dedeb20f5ea8a48bd7582c17fe2c53, type: 2}
   manufacturingTime: 5
