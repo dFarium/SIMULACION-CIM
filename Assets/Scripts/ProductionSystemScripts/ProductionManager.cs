@@ -88,6 +88,8 @@ public class ProductionManager : MonoBehaviour
             Debug.Log("pasa por aqui?");
             OnPalletArrived(pallet.stationIndex, pallet.hasArrived);
         }
+
+        SetNextProductionPreview();
     }
 
 
@@ -214,13 +216,15 @@ public class ProductionManager : MonoBehaviour
             productionPreview.gameObject.SetActive(false);
             currentProduction = null;
             productionQueue.RemoveFirstFromQueue();
+            SetNextProductionPreview();
         }
     }
 
     public void SetNextProductionPreview()
     {
-        ProductionQueueItem nextMaterial = productionQueue.GetNextItem();
         
+        ProductionQueueItem nextMaterial = productionQueue.GetItem(1);
+
         if (nextMaterial != null)
         {
             nextProductionPreview.material = nextMaterial.productionMaterial.finalProductMaterial;

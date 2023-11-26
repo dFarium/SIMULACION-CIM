@@ -76,14 +76,15 @@ public static class ProductionQueueUtils
     }
     
     // Devuelve el siguiente elemento en la cola de producción después del índice proporcionado, o null si dicho elemento no existe
-    public static ProductionQueueItem GetNextItem(this List<ProductionQueueItem> productionQueue)
+    public static ProductionQueueItem GetItem(this List<ProductionQueueItem> productionQueue, int index)
     {
-        if (productionQueue.Count > 1)
+        if (index < productionQueue.Count)
         {
-            return productionQueue[1];
+            return productionQueue[index];
         }
 
         return null;
     }
+
     
 }
