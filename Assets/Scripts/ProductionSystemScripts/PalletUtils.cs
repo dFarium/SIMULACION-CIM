@@ -33,6 +33,7 @@ public class PalletUtils : MonoBehaviour
         if (Vector3.Distance(gameObject.transform.position, stationsWaypoints[stationIndex].position) <= targetDistance)
         {
             //El pallet llega a la estación
+            productionManager.CurrentProductionStatus = ProductionManager.ProductionStatus.Idle;
             tweenPath.DOPause();
             gameObject.transform.position = stationsWaypoints[stationIndex].position;
             productionManager.OnPalletArrived(stationIndex);

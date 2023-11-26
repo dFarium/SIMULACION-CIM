@@ -1,8 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 using Time = UnityEngine.Time;
+
+[System.Serializable]
+
 
 public class ProductionManager : MonoBehaviour
 {
@@ -31,11 +36,39 @@ public class ProductionManager : MonoBehaviour
 
     [SerializeField] private ProductionMaterial currentProductionMaterial;
     [SerializeField] private List<ProductionQueueItem> productionQueue = new List<ProductionQueueItem>();
-    [FormerlySerializedAs("currentQueueItem")] public ProductionQueueItem currentProductionQueueItem;
+
+    [FormerlySerializedAs("currentQueueItem")]
+    public ProductionQueueItem currentProductionQueueItem;
+
+    [SerializeField] private GameObject materialPreviewCamera;
+    [SerializeField] private MeshRenderer materialPreview;
     private SortingType sortingType = SortingType.Priority;
     private int queueCounter = 0;
     private GameObject currentFinalProduct;
+    
+    [System.Serializable]
+    public class ProductionStatusEvent : UnityEvent<ProductionStatus> { }
+    public ProductionStatusEvent onProductionStatusChanged;
+    
+    private ProductionStatus _currentProductionStatus = ProductionStatus.Idle;
+    public ProductionStatus CurrentProductionStatus
+    {
+        get => _currentProductionStatus;
+        set
+        {
+            if (_currentProductionStatus != value)
+            {
+                _currentProductionStatus = value;
+                onProductionStatusChanged?.Invoke(_currentProductionStatus);
+            }
+        }
+    }
+    
 
+    public void Start()
+    {
+        materialPreview.gameObject.SetActive(false);
+    }
 
     // Agrega un elemento a la cola de producción
     public void AddToQueue(ProductionMaterial productionMaterial, float priority, bool isBeingStored)
@@ -59,6 +92,8 @@ public class ProductionManager : MonoBehaviour
     {
         currentAruco = Instantiate(aruco, arucoSpawnPoint.position, arucoSpawnPoint.rotation);
         currentProduction = Instantiate(productionMaterial.baseMaterial, spawnPoint.position, spawnPoint.rotation);
+        materialPreview.material = currentProduction.GetComponent<MeshRenderer>().material;
+        materialPreview.gameObject.SetActive(true);
     }
 
     public void ResetProductionQueue()
@@ -84,9 +119,9 @@ public class ProductionManager : MonoBehaviour
             StartStationAnimation(currentStation);
         }
     }
-    
+
     //Para cuando no hay cola de producción antes de llegar a la estación 1 y se le agrega despues
-    public void OnPalletArrived(int currentStation,bool hasArrived)
+    public void OnPalletArrived(int currentStation, bool hasArrived)
     {
         if (currentStation == 1 && productionQueue.Count > 0 && hasArrived)
         {
@@ -112,7 +147,6 @@ public class ProductionManager : MonoBehaviour
 
             //Crear material base en almacén de la estación 1
             SpawnBaseMaterial(currentProductionQueueItem.productionMaterial, baseMaterialSpawnPoint);
-                
         }
     }
 
@@ -122,12 +156,17 @@ public class ProductionManager : MonoBehaviour
         {
             case 0:
                 station1.StartAnimation();
+                CurrentProductionStatus = ProductionStatus.GettingMaterial;
                 break;
             case 1:
                 station2.StartAnimation();
+                CurrentProductionStatus = ProductionStatus.Producing;
                 break;
             case 2:
                 station3.StartAnimation();
+                CurrentProductionStatus = productionQueue[0].isBeingStored
+                    ? ProductionStatus.Storing
+                    : ProductionStatus.Disposing;
                 break;
         }
     }
@@ -155,7 +194,9 @@ public class ProductionManager : MonoBehaviour
         mill.StopMillAnimation();
         MeshRenderer meshRenderer = currentProduction.GetComponent<MeshRenderer>();
         meshRenderer.material = currentProductionMaterial.finalProductMaterial;
+        materialPreview.material = meshRenderer.material;
     }
+
 
     public void EndCurrentProduction()
     {
@@ -163,11 +204,12 @@ public class ProductionManager : MonoBehaviour
         {
             Destroy(currentProduction);
             Destroy(currentAruco);
+            materialPreview.gameObject.SetActive(false);
             currentProduction = null;
             productionQueue.RemoveFirstFromQueue();
         }
     }
-
+    
     public enum SortingType
     {
         Priority,
@@ -175,5 +217,18 @@ public class ProductionManager : MonoBehaviour
         Lifo,
         LongestTime,
         LeastTime
+    }
+
+    public enum ProductionStatus
+    {
+        Idle,
+        ToStation1,
+        GettingMaterial,
+        ToStation2,
+        Producing,
+        ToStation3,
+        Storing,
+        Disposing,
+        Finished
     }
 }

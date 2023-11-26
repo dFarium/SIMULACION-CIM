@@ -24,20 +24,22 @@ public class Station2Animations : StationAnimationsBase
         LeaveMaterialInPosition(0);
         currentMaterial.transform.SetParent(millBase.transform);
     }
-    
+
     public void StartMillAnimation()
     {
+        productionManager.CurrentProductionStatus = ProductionManager.ProductionStatus.Producing;
         millAnimator.StartMillAnimation();
     }
-    
+
     public void StopMillAnimation()
     {
         millAnimator.StopMillAnimation();
     }
-    
+
     public override void MovePalletToNextStation()
     {
         currentPallet.GetComponent<PalletUtils>().MoveToNextStation();
         animator.SetBool("LEAVEPALLET", true);
+        productionManager.CurrentProductionStatus = ProductionManager.ProductionStatus.ToStation3;
     }
 }

@@ -9,14 +9,17 @@ namespace ScorbotScripts
         public GameObject _targetGameObject;
         public bool _isObjectPicked;
         private bool _canPickUp = true;
-        private Animator _animator;
+        private Animator gripAnimator;
         private static readonly int IsOpen = Animator.StringToHash("IsOpen");
         private static readonly int HasMaterial = Animator.StringToHash("HasMaterial");
 
         private void Start()
         {
-            _animator = GetComponentInParent<Animator>();
-            _animator.SetBool(IsOpen, _canPickUp);
+            gripAnimator = GetComponentInParent<Animator>();
+            if (gripAnimator.name == "Mano")
+            {
+                gripAnimator.SetBool(IsOpen, _canPickUp);
+            }
         }
 
         public void PickUpToggle()
@@ -26,7 +29,10 @@ namespace ScorbotScripts
             {
                 Debug.Log("ABRIENDO PINZAS");
                 _canPickUp = true;
-                _animator.SetBool(IsOpen, _canPickUp);
+                if (gripAnimator.name == "Mano")
+                {
+                    gripAnimator.SetBool(IsOpen, _canPickUp);
+                }
                 DropObject();
                 return;
             }
@@ -36,8 +42,11 @@ namespace ScorbotScripts
             {
                 Debug.Log("TOMANDO OBJETO,CERRANDO PINZAS");
                 _canPickUp = false;
-                _animator.SetBool(IsOpen, _canPickUp);
-                _animator.SetBool(HasMaterial, true);
+                if (gripAnimator.name == "Mano")
+                {
+                    gripAnimator.SetBool(IsOpen, _canPickUp);
+                    gripAnimator.SetBool(HasMaterial, true);
+                }
                 PickUp();
                 return;
             }
@@ -45,8 +54,11 @@ namespace ScorbotScripts
             //Si no hay objecto en rango, se cierran las pinzas
             Debug.Log("NADA QUE TOMAR,CERRANDO PINZAS");
             _canPickUp = false;
-            _animator.SetBool(IsOpen, _canPickUp);
-            _animator.SetBool(HasMaterial, false);
+            if (gripAnimator.name == "Mano")
+            {
+                gripAnimator.SetBool(IsOpen, _canPickUp);
+                gripAnimator.SetBool(HasMaterial, false);
+            }
         }
 
         private void OnTriggerEnter(Collider other)
@@ -61,7 +73,7 @@ namespace ScorbotScripts
         {
             if (other.gameObject == _targetGameObject)
             {
-                _targetGameObject = null;   
+                _targetGameObject = null;
             }
         }
 
@@ -73,6 +85,7 @@ namespace ScorbotScripts
                 _pickedObject = _targetGameObject;
                 _pickedObject.GetComponent<Pickupable>().PickUp(transform);
             }
+
             Debug.Log("Siendo pickeado por " + gameObject.name);
         }
 
@@ -85,11 +98,6 @@ namespace ScorbotScripts
             }
 
             _pickedObject = null;
-        }
-
-        public void test()
-        {
-            Debug.Log("si se puede");
         }
     }
 }

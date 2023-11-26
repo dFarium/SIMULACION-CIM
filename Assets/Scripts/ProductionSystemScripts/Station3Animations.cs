@@ -26,6 +26,7 @@ public class Station3Animations : StationAnimationsBase
     {
         currentPallet.GetComponent<PalletUtils>().MoveToNextStation();
         animator.SetBool("LEAVEPALLET", true);
+        productionManager.CurrentProductionStatus = ProductionManager.ProductionStatus.Finished;
         productionManager.EndCurrentProduction();
     }
 
