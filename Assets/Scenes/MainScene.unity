@@ -18065,6 +18065,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 925599640946001438}
+  windowManager: {fileID: 0}
 --- !u!114 &925599640323565736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37730,6 +37731,23 @@ MonoBehaviour:
   bGroupButtons:
   - {fileID: 1851123003665060401}
   - {fileID: 1851123002998524837}
+  interactableButtons:
+  - {fileID: 1851123002552810799}
+  - {fileID: 1851123002874848204}
+  - {fileID: 1851123002954290630}
+  - {fileID: 2100818309650064275}
+  - {fileID: 7479553644192854217}
+  - {fileID: 6799039378596352968}
+  - {fileID: 1851123002815857999}
+  - {fileID: 1851123002246246793}
+  - {fileID: 1851123002487391926}
+  - {fileID: 1851123003225760684}
+  - {fileID: 1851123002356974929}
+  - {fileID: 722043385622236496}
+  - {fileID: 6849993907927177550}
+  - {fileID: 1504623884482906959}
+  - {fileID: 1851123003341908754}
+  - {fileID: 1851123003475788547}
   groupText: {fileID: 630759387}
 --- !u!114 &1851123002356974928
 MonoBehaviour:
@@ -40898,6 +40916,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 1851123003171456706}
+  windowManager: {fileID: 0}
 --- !u!224 &1851123003475788544
 RectTransform:
   m_ObjectHideFlags: 0
