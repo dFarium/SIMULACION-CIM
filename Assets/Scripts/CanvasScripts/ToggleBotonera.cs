@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class ToggleBotonera : MonoBehaviour
@@ -31,6 +32,11 @@ public class ToggleBotonera : MonoBehaviour
         controlButton.image.color = Color.white;
         foreach (Button buttons  in interactableButtons)
         {
+            EventTrigger eventButtonTrigger = buttons.GetComponent<EventTrigger>();
+            if (eventButtonTrigger != null)
+            {
+                eventButtonTrigger.enabled = false;
+            }
             buttons.interactable=false;
         }
     }
@@ -41,6 +47,11 @@ public class ToggleBotonera : MonoBehaviour
         controlButton.image.color = defaultColor;
         foreach (Button buttons  in interactableButtons)
         {
+            EventTrigger eventButtonTrigger = buttons.GetComponent<EventTrigger>();
+            if (eventButtonTrigger != null)
+            {
+                eventButtonTrigger.enabled = true;
+            }
             buttons.interactable=true;
         }
     }

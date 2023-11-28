@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class SetDestinationPosition : MonoBehaviour
@@ -57,6 +58,11 @@ public class SetDestinationPosition : MonoBehaviour
         
         foreach (Button buttons  in interactableButtons)
         {
+            EventTrigger eventButtonTrigger = buttons.GetComponent<EventTrigger>();
+            if (eventButtonTrigger != null)
+            {
+                eventButtonTrigger.enabled = false;
+            }
             buttons.interactable=false;
         }
         
@@ -80,6 +86,11 @@ public class SetDestinationPosition : MonoBehaviour
         
         foreach (Button buttons  in interactableButtons)
         {
+            EventTrigger eventButtonTrigger = buttons.GetComponent<EventTrigger>();
+            if (eventButtonTrigger != null)
+            {
+                eventButtonTrigger.enabled = true;
+            }
             buttons.interactable=true;
         }
         
@@ -104,6 +115,11 @@ public class SetDestinationPosition : MonoBehaviour
             saveNumber = index;
             foreach (Button buttons  in interactableButtons)
             {
+                EventTrigger eventButtonTrigger = buttons.GetComponent<EventTrigger>();
+                if (eventButtonTrigger != null)
+                {
+                    eventButtonTrigger.enabled = true;
+                }
                 buttons.interactable=true;
             }
         
@@ -148,12 +164,12 @@ public class SetDestinationPosition : MonoBehaviour
             controlMainText.gameObject.SetActive(true);
             saveText.gameObject.SetActive(false);
             auxiliarText.gameObject.SetActive(false);
-            StartCoroutine(textDelay(1));
+            StartCoroutine(TextDelay(1));
         }
         
     }
     
-    private IEnumerator textDelay(int numero)
+    private IEnumerator TextDelay(int numero) 
     {
         yield return new WaitForSeconds(numero);
         ToggleButton();

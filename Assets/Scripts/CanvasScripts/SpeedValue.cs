@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
@@ -37,7 +38,13 @@ public class SpeedValue : MonoBehaviour
         auxiliarText.gameObject.SetActive(true);
         foreach (Button buttons  in interactableButtons)
         {
+            EventTrigger eventButtonTrigger = buttons.GetComponent<EventTrigger>();
+            if (eventButtonTrigger != null)
+            {
+                eventButtonTrigger.enabled = false;
+            }
             buttons.interactable=false;
+            
         }
         
         foreach (GameObject hideButton in hideButtons)
@@ -72,6 +79,11 @@ public class SpeedValue : MonoBehaviour
         //numericText.text = speedTextValue.text;
         foreach (Button buttons  in interactableButtons)
         {
+            EventTrigger eventButtonTrigger = buttons.GetComponent<EventTrigger>();
+            if (eventButtonTrigger != null)
+            {
+                eventButtonTrigger.enabled = true;
+            }
             buttons.interactable=true;
         }
         
@@ -85,7 +97,7 @@ public class SpeedValue : MonoBehaviour
             numericButton.SetActive(false);
         }
         controlMainText.text = "Aborted";
-        StartCoroutine(textDelay(1));
+        StartCoroutine(TextDelay(1));
             
         controlMainText.gameObject.SetActive(true);
         numericText.gameObject.SetActive(false);
@@ -106,6 +118,11 @@ public class SpeedValue : MonoBehaviour
             speedTextValue.text = numericText.text;
             foreach (Button buttons  in interactableButtons)
             {
+                EventTrigger eventButtonTrigger = buttons.GetComponent<EventTrigger>();
+                if (eventButtonTrigger != null)
+                {
+                    eventButtonTrigger.enabled = true;
+                }
                 buttons.interactable=true;
             }
         
@@ -119,7 +136,7 @@ public class SpeedValue : MonoBehaviour
                 numericButton.SetActive(false);
             }
             controlMainText.text = "SPEED "+ speedTextValue.text +"... DONE";
-            StartCoroutine(textDelay(1));
+            StartCoroutine(TextDelay(1));
             
             controlMainText.gameObject.SetActive(true);
             numericText.gameObject.SetActive(false);
@@ -132,18 +149,18 @@ public class SpeedValue : MonoBehaviour
             controlMainText.gameObject.SetActive(true);
             numericText.gameObject.SetActive(false);
             auxiliarText.gameObject.SetActive(false);
-            StartCoroutine(errorDelay(1));
+            StartCoroutine(ErrorDelay(1));
             
         }
     }
 
-    private IEnumerator errorDelay(int numero)
+    private IEnumerator ErrorDelay(int numero)
     {
         yield return new WaitForSeconds(numero);
         SpeedModifier();
     }
     
-    private IEnumerator textDelay(int numero)
+    private IEnumerator TextDelay(int numero)
     {
         yield return new WaitForSeconds(numero);
         controlMainText.text = defaultControlText;
