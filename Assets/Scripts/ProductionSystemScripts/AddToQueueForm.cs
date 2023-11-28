@@ -128,7 +128,7 @@ public class AddToQueueForm : MonoBehaviour
 
         yield return new WaitForSeconds(3);
 
-        statusText.text = "Selecciona una prioridad";
+        statusText.text = "";
     }
 
     public IEnumerator AddToQueueSuccess()

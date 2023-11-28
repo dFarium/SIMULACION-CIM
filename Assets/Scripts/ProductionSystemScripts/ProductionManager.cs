@@ -42,6 +42,8 @@ public class ProductionManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI currentProductionText;
     [SerializeField] private TextMeshProUGUI nextProductionText;
     [SerializeField] private TMP_Dropdown productionQueueDropdown;
+    [SerializeField] private TMP_Dropdown removeItemDropdown;
+    [SerializeField] private TextMeshProUGUI sortingTypeText;
     private SortingType sortingType = SortingType.Priority;
     private int queueCounter = 0;
     private GameObject currentFinalProduct;
@@ -79,11 +81,12 @@ public class ProductionManager : MonoBehaviour
     public void Start()
     {
         productionPreview.gameObject.SetActive(false);
-        UpdateProductionQueueDropdown();
         for (int i = 0; i < stationLights.Count; i++)
         {
             SetLight(i,true);
         }
+        sortingTypeText.text = "Los elementos están ordenados por:\n" + TranslateSortingType(sortingType);
+        UpdateProductionQueueDropdown();
     }
 
     public void StartProduction()
@@ -141,6 +144,7 @@ public class ProductionManager : MonoBehaviour
     {
         productionQueue.Clear();
         queueCounter = 0;
+        UpdateProductionQueueDropdown();
     }
 
     //Cuando llega pallet a estacion, comenzar animacion
@@ -165,6 +169,12 @@ public class ProductionManager : MonoBehaviour
     public void OnPalletLeave(int currentStation)
     {
         SetLight(currentStation, true);
+    }
+
+    public void RemoveFromQueue(int index)
+    {
+        productionQueue.RemoveAt(index-1);
+        UpdateProductionQueueDropdown();
     }
 
     //Para cuando no hay cola de producción antes de llegar a la estación 1 y se le agrega despues
@@ -226,16 +236,18 @@ public class ProductionManager : MonoBehaviour
         }
     }
 
-    public void DropdownIndexChanged(int index)
+    public void SortTypeDropdownIndexChanged(int index)
     {
         // Asegurarse de que el índice esté dentro de los límites del enum SortingType
         if (index >= 0 && index < System.Enum.GetNames(typeof(SortingType)).Length)
         {
             sortingType = (SortingType)index;
+            sortingTypeText.text = "Los elementos están ordenados por:\n" + TranslateSortingType(sortingType);
             Debug.Log("SortingType changed to: " + sortingType);
 
             // Llamar al método SortQueue con el nuevo tipo de ordenamiento
             productionQueue.SortQueueByDropdownSelection(sortingType);
+            UpdateProductionQueueDropdown();
         }
         else
         {
@@ -285,7 +297,7 @@ public class ProductionManager : MonoBehaviour
             nextProductionText.gameObject.GetComponent<CanvasGroup>().alpha = 0;
         }
     }
-
+    
     private void UpdateProductionQueueDropdown()
     {
         List<string> queueItems = new List<string>();
@@ -294,26 +306,35 @@ public class ProductionManager : MonoBehaviour
         foreach (ProductionQueueItem item in productionQueue)
         {
             queueItems.Add(item.productionMaterial.materialName + " - " + item.priority);
+            
         }
 
         productionQueueDropdown.ClearOptions();
         productionQueueDropdown.AddOptions(queueItems);
+        queueItems[0] = "Seleccione...";
+        removeItemDropdown.ClearOptions();
+        removeItemDropdown.AddOptions(queueItems);
     }
-
-
-    // public void InstantiateListButton(ProductionQueueItem productionQueueItem, float offset)
-    // {
-    //     Vector3 posOffset = new Vector3(0, offset, 0);
-    //     GameObject queueItemObject =
-    //         Instantiate(queueItemPrefab, queueListTransform.position + posOffset, Quaternion.identity,
-    //             queueListTransform);
-    //     TextMeshProUGUI queueItemText = queueItemObject.transform.Find("ItemText").GetComponent<TextMeshProUGUI>();
-    //     Button queueItemButton = queueItemObject.transform.Find("RemoveButton").GetComponentInChildren<Button>();
-    //
-    //     queueItemText.text = productionQueueItem.productionMaterial.materialName + " - " + productionQueueItem.priority;
-    //     queueItemButton.onClick.AddListener(() => productionQueue.Remove(productionQueueItem));
-    // }
-
+    
+    private string TranslateSortingType(SortingType type)
+    {
+        switch (type)
+        {
+            case SortingType.Priority:
+                return "Prioridad";
+            case SortingType.Fifo:
+                return "Primero en entrar, primero en salir";
+            case SortingType.Lifo:
+                return "Último en entrar, primero en salir";
+            case SortingType.LongestTime:
+                return "Tiempo más largo";
+            case SortingType.LeastTime:
+                return "Tiempo más corto";
+            default:
+                return "Desconocido";
+        }
+    }
+    
     public enum SortingType
     {
         Priority,
