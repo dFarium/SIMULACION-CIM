@@ -79,11 +79,6 @@ public class SetDestinationPosition : MonoBehaviour
     
     public void Cancel()
     {
-        controlMainText.text = defaultControlText;
-        controlMainText.gameObject.SetActive(true);
-        saveText.gameObject.SetActive(false);
-        auxiliarText.gameObject.SetActive(false);
-        
         foreach (Button buttons  in interactableButtons)
         {
             EventTrigger eventButtonTrigger = buttons.GetComponent<EventTrigger>();
@@ -103,6 +98,12 @@ public class SetDestinationPosition : MonoBehaviour
         {
             numericButton.SetActive(false);
         }
+
+        controlMainText.text = "Aborted";
+        StartCoroutine(TextDelay(1));
+        controlMainText.gameObject.SetActive(true);
+        saveText.gameObject.SetActive(false);
+        auxiliarText.gameObject.SetActive(false);
     }
     
     public void Confirm()
@@ -164,17 +165,22 @@ public class SetDestinationPosition : MonoBehaviour
             controlMainText.gameObject.SetActive(true);
             saveText.gameObject.SetActive(false);
             auxiliarText.gameObject.SetActive(false);
-            StartCoroutine(TextDelay(1));
+            StartCoroutine(ErrorDelay(1));
         }
         
     }
     
-    private IEnumerator TextDelay(int numero) 
+    private IEnumerator ErrorDelay(int numero) 
     {
         yield return new WaitForSeconds(numero);
         ToggleButton();
     }
     
+    private IEnumerator TextDelay(int numero)
+    {
+        yield return new WaitForSeconds(numero);
+        controlMainText.text = defaultControlText;
+    }
     
     public void LoadAndSetPosition()
     {
