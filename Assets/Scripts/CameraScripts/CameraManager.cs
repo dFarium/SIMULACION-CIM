@@ -9,6 +9,7 @@ public class CameraManager : MonoBehaviour
 {
     [SerializeField] private List<CinemachineVirtualCameraBase> _virtualCameras;
     [SerializeField] private CinemachineVirtualCameraBase _defaultCamera;
+    [SerializeField] private FloatingCamera _floatingCamera;
     private CinemachineVirtualCameraBase _activeCamera;
 
 
@@ -35,5 +36,21 @@ public class CameraManager : MonoBehaviour
         }
 
         _defaultCamera.gameObject.SetActive(true);
+    }
+
+    public void SwitchCameraDropdown(int cameraIndex)
+    {
+        Debug.Log(cameraIndex);
+        foreach (CinemachineVirtualCameraBase virtualCameraBase in _virtualCameras)
+        {
+            virtualCameraBase.gameObject.SetActive(false);
+        }
+
+        _virtualCameras[cameraIndex].gameObject.SetActive(true);
+
+        if (cameraIndex == 5)
+        {
+            _floatingCamera.EnableCamera();
+        }
     }
 }

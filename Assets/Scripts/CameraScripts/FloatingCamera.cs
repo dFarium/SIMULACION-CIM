@@ -80,7 +80,7 @@ public class FloatingCamera : MonoBehaviour
         Cursor.visible = true;
         cameraManager.SwtichToDefaultCamera();
     }
-
+    
     // Habilita la cámara
     public void EnableCamera()
     {

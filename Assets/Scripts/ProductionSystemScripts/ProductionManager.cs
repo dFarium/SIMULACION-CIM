@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
@@ -26,11 +27,12 @@ public class ProductionManager : MonoBehaviour
     [SerializeField] private Transform arucoSpawnPoint;
     [SerializeField] private GameObject aruco;
 
-    [Header("Production Status")] private GameObject currentAruco;
-    [SerializeField] private GameObject currentProduction;
-    [SerializeField] private ProductionMaterial currentProductionMaterial;
-    [SerializeField] private List<ProductionQueueItem> productionQueue = new List<ProductionQueueItem>();
+    [Header("Production Status")] 
     public ProductionQueueItem currentProductionQueueItem = null;
+    private GameObject currentProduction;
+    private ProductionMaterial currentProductionMaterial;
+    private List<ProductionQueueItem> productionQueue = new List<ProductionQueueItem>();
+    private GameObject currentAruco;
 
     [Header("UI Elements")] [SerializeField]
     private MeshRenderer productionPreview;
@@ -41,6 +43,11 @@ public class ProductionManager : MonoBehaviour
     [SerializeField] private TMP_Dropdown productionQueueDropdown;
     [SerializeField] private TMP_Dropdown removeItemDropdown;
     [SerializeField] private TextMeshProUGUI sortingTypeText;
+    
+    [Header("Camera Settings")]
+    [SerializeField] private CinemachineFreeLook freeLookCamera;
+    [SerializeField] private Transform freeLookCameraDefaultTransform;
+    
     private SortingType sortingType = SortingType.Priority;
     private int queueCounter = 0;
     private GameObject currentFinalProduct;
@@ -129,11 +136,16 @@ public class ProductionManager : MonoBehaviour
     // Spawnea el material base en la fresadora
     private void SpawnBaseMaterial(ProductionMaterial productionMaterial, Transform spawnPoint)
     {
+        //Crear material base en almacén de la estación 1
         currentProductionText.text = productionMaterial.materialName;
         currentAruco = Instantiate(aruco, arucoSpawnPoint.position, arucoSpawnPoint.rotation);
         currentProduction = Instantiate(productionMaterial.baseMaterial, spawnPoint.position, spawnPoint.rotation);
         productionPreview.material = currentProduction.GetComponent<MeshRenderer>().material;
         productionPreview.gameObject.SetActive(true);
+        
+        //Seguir la producción con la cámara
+        freeLookCamera.LookAt = currentProduction.transform;
+        freeLookCamera.Follow = currentProduction.transform;
     }
 
     public void ResetProductionQueue()
@@ -265,6 +277,7 @@ public class ProductionManager : MonoBehaviour
     {
         if (currentProduction)
         {
+            //Limpiar valores
             Destroy(currentProduction);
             Destroy(currentAruco);
             currentProductionText.text = "";
@@ -273,6 +286,10 @@ public class ProductionManager : MonoBehaviour
             currentProductionQueueItem = null;
             SetNextProductionPreview();
             UpdateProductionQueueDropdown();
+            
+            //Resetear la cámara
+            freeLookCamera.LookAt = freeLookCameraDefaultTransform;
+            freeLookCamera.Follow = freeLookCameraDefaultTransform;
         }
     }
 
