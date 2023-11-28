@@ -32,7 +32,6 @@ public class ProductionManager : MonoBehaviour
     private GameObject aruco;
 
     [Header("Production Status")] private GameObject currentAruco;
-
     [SerializeField] private GameObject currentProduction;
     [SerializeField] private ProductionMaterial currentProductionMaterial;
     [SerializeField] private List<ProductionQueueItem> productionQueue = new List<ProductionQueueItem>();
@@ -81,6 +80,30 @@ public class ProductionManager : MonoBehaviour
     {
         productionPreview.gameObject.SetActive(false);
         UpdateProductionQueueDropdown();
+        for (int i = 0; i < stationLights.Count; i++)
+        {
+            SetLight(i,true);
+        }
+    }
+
+    public void StartProduction()
+    {
+        pallet.gameObject.SetActive(true);
+    }
+
+    public void SetLight(int index, bool state)
+    {
+        Renderer rendererComponent = stationLights[index].GetComponent<Renderer>();
+        if (state)
+        {
+            rendererComponent.materials[1].DisableKeyword("_EMISSION");
+            rendererComponent.materials[2].EnableKeyword("_EMISSION");
+        }
+        else
+        {
+            rendererComponent.materials[1].EnableKeyword("_EMISSION");
+            rendererComponent.materials[2].DisableKeyword("_EMISSION");
+        }
     }
 
     // Agrega un elemento a la cola de producción
@@ -96,7 +119,6 @@ public class ProductionManager : MonoBehaviour
         // If this was the first item added to the queue and the pallet has arrived, start an animation.
         if (productionQueue.Count >= 1 && pallet.stationIndex == 1 && pallet.hasArrived)
         {
-            Debug.Log("pasa por aqui?");
             OnPalletArrived(pallet.stationIndex, pallet.hasArrived);
         }
 
@@ -124,6 +146,7 @@ public class ProductionManager : MonoBehaviour
     //Cuando llega pallet a estacion, comenzar animacion
     public void OnPalletArrived(int currentStation)
     {
+        SetLight(currentStation, false);
         //Si la estación es la 1 y hay elementos en la cola de producción...
         if (currentStation == 0 && productionQueue.Count > 0)
         {
@@ -137,6 +160,11 @@ public class ProductionManager : MonoBehaviour
             // Iniciamos la animación de producción
             StartStationAnimation(currentStation);
         }
+    }
+    
+    public void OnPalletLeave(int currentStation)
+    {
+        SetLight(currentStation, true);
     }
 
     //Para cuando no hay cola de producción antes de llegar a la estación 1 y se le agrega despues
@@ -193,6 +221,7 @@ public class ProductionManager : MonoBehaviour
                 {
                     CurrentProductionStatus = ProductionStatus.Disposing;
                 }
+
                 break;
         }
     }
@@ -261,7 +290,7 @@ public class ProductionManager : MonoBehaviour
     {
         List<string> queueItems = new List<string>();
         queueItems.Add("Lista de producción");
-        
+
         foreach (ProductionQueueItem item in productionQueue)
         {
             queueItems.Add(item.productionMaterial.materialName + " - " + item.priority);
