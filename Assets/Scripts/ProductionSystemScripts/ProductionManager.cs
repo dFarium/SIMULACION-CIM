@@ -16,28 +16,25 @@ public class ProductionManager : MonoBehaviour
 
     [SerializeField] private Station2Animations station2;
     [SerializeField] private Station3Animations station3;
-
     [SerializeField] private MillAnimations mill;
-
-    [SerializeField] private List<GameObject> stationLights = new List<GameObject>();
-
+    [SerializeField] private List<MeshRenderer> stationLights = new List<MeshRenderer>();
     [SerializeField] private PalletUtils pallet;
 
     [Header("Production spawn points")] [SerializeField]
     private Transform baseMaterialSpawnPoint;
 
     [SerializeField] private Transform arucoSpawnPoint;
-
-    [Header("Production materials")] [SerializeField]
-    private GameObject aruco;
+    [SerializeField] private GameObject aruco;
 
     [Header("Production Status")] private GameObject currentAruco;
     [SerializeField] private GameObject currentProduction;
     [SerializeField] private ProductionMaterial currentProductionMaterial;
     [SerializeField] private List<ProductionQueueItem> productionQueue = new List<ProductionQueueItem>();
     public ProductionQueueItem currentProductionQueueItem = null;
-    [SerializeField] private GameObject materialPreviewCamera;
-    [SerializeField] private MeshRenderer productionPreview;
+
+    [Header("UI Elements")] [SerializeField]
+    private MeshRenderer productionPreview;
+
     [SerializeField] private MeshRenderer nextProductionPreview;
     [SerializeField] private TextMeshProUGUI currentProductionText;
     [SerializeField] private TextMeshProUGUI nextProductionText;
@@ -83,8 +80,9 @@ public class ProductionManager : MonoBehaviour
         productionPreview.gameObject.SetActive(false);
         for (int i = 0; i < stationLights.Count; i++)
         {
-            SetLight(i,true);
+            SetLight(i, true);
         }
+
         sortingTypeText.text = "Los elementos están ordenados por:\n" + TranslateSortingType(sortingType);
         UpdateProductionQueueDropdown();
     }
@@ -96,16 +94,15 @@ public class ProductionManager : MonoBehaviour
 
     public void SetLight(int index, bool state)
     {
-        Renderer rendererComponent = stationLights[index].GetComponent<Renderer>();
         if (state)
         {
-            rendererComponent.materials[1].DisableKeyword("_EMISSION");
-            rendererComponent.materials[2].EnableKeyword("_EMISSION");
+            stationLights[index].materials[1].DisableKeyword("_EMISSION");
+            stationLights[index].materials[2].EnableKeyword("_EMISSION");
         }
         else
         {
-            rendererComponent.materials[1].EnableKeyword("_EMISSION");
-            rendererComponent.materials[2].DisableKeyword("_EMISSION");
+            stationLights[index].materials[1].EnableKeyword("_EMISSION");
+            stationLights[index].materials[2].DisableKeyword("_EMISSION");
         }
     }
 
@@ -128,8 +125,7 @@ public class ProductionManager : MonoBehaviour
         SetNextProductionPreview();
         UpdateProductionQueueDropdown();
     }
-
-
+    
     // Spawnea el material base en la fresadora
     private void SpawnBaseMaterial(ProductionMaterial productionMaterial, Transform spawnPoint)
     {
@@ -165,7 +161,7 @@ public class ProductionManager : MonoBehaviour
             StartStationAnimation(currentStation);
         }
     }
-    
+
     public void OnPalletLeave(int currentStation)
     {
         SetLight(currentStation, true);
@@ -173,7 +169,7 @@ public class ProductionManager : MonoBehaviour
 
     public void RemoveFromQueue(int index)
     {
-        productionQueue.RemoveAt(index-1);
+        productionQueue.RemoveAt(index - 1);
         UpdateProductionQueueDropdown();
     }
 
@@ -205,6 +201,7 @@ public class ProductionManager : MonoBehaviour
             //Crear material base en almacén de la estación 1
             SpawnBaseMaterial(currentProductionQueueItem.productionMaterial, baseMaterialSpawnPoint);
             productionQueue.RemoveFirstFromQueue();
+            UpdateProductionQueueDropdown();
         }
     }
 
@@ -264,7 +261,6 @@ public class ProductionManager : MonoBehaviour
         productionPreview.material = meshRenderer.material;
     }
 
-
     public void EndCurrentProduction()
     {
         if (currentProduction)
@@ -297,7 +293,7 @@ public class ProductionManager : MonoBehaviour
             nextProductionText.gameObject.GetComponent<CanvasGroup>().alpha = 0;
         }
     }
-    
+
     private void UpdateProductionQueueDropdown()
     {
         List<string> queueItems = new List<string>();
@@ -306,7 +302,6 @@ public class ProductionManager : MonoBehaviour
         foreach (ProductionQueueItem item in productionQueue)
         {
             queueItems.Add(item.productionMaterial.materialName + " - " + item.priority);
-            
         }
 
         productionQueueDropdown.ClearOptions();
@@ -315,7 +310,7 @@ public class ProductionManager : MonoBehaviour
         removeItemDropdown.ClearOptions();
         removeItemDropdown.AddOptions(queueItems);
     }
-    
+
     private string TranslateSortingType(SortingType type)
     {
         switch (type)
@@ -334,7 +329,7 @@ public class ProductionManager : MonoBehaviour
                 return "Desconocido";
         }
     }
-    
+
     public enum SortingType
     {
         Priority,
