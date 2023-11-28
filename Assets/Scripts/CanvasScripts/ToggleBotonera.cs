@@ -30,6 +30,7 @@ public class ToggleBotonera : MonoBehaviour
     
     public void apagarBotonera()
     {
+        StopAllCoroutines();
         //Manda un mensaje que indica que el control esta desactivado y lo desactiva
         controlMainText.text = "Control disabled";
         StartCoroutine(TextDelay(1, false));
