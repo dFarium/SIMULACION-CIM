@@ -66,6 +66,9 @@ public class PalletUtils : MonoBehaviour
     
     public void MoveToNextStation()
     {
+        //Mantiene el valor entre 0 a 2
+        int previousStationIndex = (stationIndex + 2) % 3;
+        productionManager.OnPalletLeave(previousStationIndex);
         tweenPath.DOPlay();
         hasArrived = false;
     }
