@@ -84,6 +84,13 @@ public class ProductionManager : MonoBehaviour
 
     public void Start()
     {
+
+        foreach (var light in stationLights)
+        {
+            light.material.globalIlluminationFlags = MaterialGlobalIlluminationFlags.None;
+            light.materials[1].DisableKeyword("_EMISSION");
+            light.materials[2].DisableKeyword("_EMISSION");
+        }
         productionPreview.gameObject.SetActive(false);
         for (int i = 0; i < stationLights.Count; i++)
         {
@@ -103,13 +110,13 @@ public class ProductionManager : MonoBehaviour
     {
         if (state)
         {
-            stationLights[index].sharedMaterials[1].DisableKeyword("_EMISSION");
-            stationLights[index].sharedMaterials[2].EnableKeyword("_EMISSION");
+            stationLights[index].materials[1].DisableKeyword("_EMISSION");
+            stationLights[index].materials[2].EnableKeyword("_EMISSION");
         }
         else
         {
-            stationLights[index].sharedMaterials[1].EnableKeyword("_EMISSION");
-            stationLights[index].sharedMaterials[2].DisableKeyword("_EMISSION");
+            stationLights[index].materials[1].EnableKeyword("_EMISSION");
+            stationLights[index].materials[2].DisableKeyword("_EMISSION");
         }
     }
 

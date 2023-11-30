@@ -21,11 +21,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Scorbot.unity
     guid: 4a329ae248924dc4881954bb71cebabd
   - enabled: 1
-    path: Assets/Scenes/MainScene.unity
-    guid: 0056a118f8f889b4eaede950bc5a3757
-  - enabled: 1
     path: Assets/Scenes/MainMenuScene.unity
     guid: 0701c39a0850b5e44a9347a2a6c524bc
+  - enabled: 1
+    path: Assets/Scenes/MainScene.unity
+    guid: 0056a118f8f889b4eaede950bc5a3757
   - enabled: 1
     path: Assets/Scenes/MS E1.unity
     guid: ff0cb2326415c7b45929dee2f7eb9b82
