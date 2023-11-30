@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -7,8 +8,8 @@ public class RemoveFromQueueForm : MonoBehaviour
 {
     [SerializeField] private ProductionManager productionManager;
     [SerializeField] private TMP_Dropdown dropdown;
-    [SerializeField] private TextMeshProUGUI statusText; 
-    
+    [SerializeField] private TextMeshProUGUI statusText;
+
     public void RemoveFromQueue()
     {
         if (dropdown.value != 0)
@@ -29,7 +30,6 @@ public class RemoveFromQueueForm : MonoBehaviour
         dropdown.value = 0;
     }
     
-    
     public IEnumerator RemoveFromQueueError()
     {
         statusText.color = Color.red;
@@ -45,5 +45,4 @@ public class RemoveFromQueueForm : MonoBehaviour
         yield return new WaitForSeconds(3);
         statusText.text = "";
     }
-    
 }
