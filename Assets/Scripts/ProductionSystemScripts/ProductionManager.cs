@@ -103,13 +103,13 @@ public class ProductionManager : MonoBehaviour
     {
         if (state)
         {
-            stationLights[index].materials[1].DisableKeyword("_EMISSION");
-            stationLights[index].materials[2].EnableKeyword("_EMISSION");
+            stationLights[index].sharedMaterials[1].DisableKeyword("_EMISSION");
+            stationLights[index].sharedMaterials[2].EnableKeyword("_EMISSION");
         }
         else
         {
-            stationLights[index].materials[1].EnableKeyword("_EMISSION");
-            stationLights[index].materials[2].DisableKeyword("_EMISSION");
+            stationLights[index].sharedMaterials[1].EnableKeyword("_EMISSION");
+            stationLights[index].sharedMaterials[2].DisableKeyword("_EMISSION");
         }
     }
 

@@ -7,20 +7,25 @@ using UnityEngine.Serialization;
 
 public class CameraManager : MonoBehaviour
 {
-    [SerializeField] private List<CinemachineVirtualCameraBase> _virtualCameras;
-    [SerializeField] private CinemachineVirtualCameraBase _defaultCamera;
+    [SerializeField] private List<CinemachineVirtualCameraBase> virtualCameras;
+    [SerializeField] private CinemachineVirtualCameraBase defaultCamera;
+
+    [SerializeField]
+    private List<CinemachineVirtualCameraBase> ringBufferCameras = new List<CinemachineVirtualCameraBase>();
+
     [SerializeField] private FloatingCamera _floatingCamera;
+    private int currentCameraIndex = 1;
     private CinemachineVirtualCameraBase _activeCamera;
 
 
-    public void Start()
+    public void OnEnable()
     {
-        SwitchCamera(_defaultCamera);
+        SwitchCamera(defaultCamera);
     }
 
     public void SwitchCamera(CinemachineVirtualCameraBase camera)
     {
-        foreach (CinemachineVirtualCameraBase virtualCameraBase in _virtualCameras)
+        foreach (CinemachineVirtualCameraBase virtualCameraBase in virtualCameras)
         {
             virtualCameraBase.gameObject.SetActive(false);
         }
@@ -28,25 +33,37 @@ public class CameraManager : MonoBehaviour
         camera.gameObject.SetActive(true);
     }
 
-    public void SwtichToDefaultCamera()
+    public void SwitchToNextCamera()
     {
-        foreach (CinemachineVirtualCameraBase virtualCameraBase in _virtualCameras)
+        foreach (CinemachineVirtualCameraBase virtualCameraBase in virtualCameras)
         {
             virtualCameraBase.gameObject.SetActive(false);
         }
 
-        _defaultCamera.gameObject.SetActive(true);
+        // Asume que currentCameraIndex es 0, 1 o 2.
+        ringBufferCameras[currentCameraIndex].gameObject.SetActive(true);
+        currentCameraIndex = (currentCameraIndex + 1) % 3;
+    }
+
+    public void SwtichToDefaultCamera()
+    {
+        foreach (CinemachineVirtualCameraBase virtualCameraBase in virtualCameras)
+        {
+            virtualCameraBase.gameObject.SetActive(false);
+        }
+
+        defaultCamera.gameObject.SetActive(true);
     }
 
     public void SwitchCameraDropdown(int cameraIndex)
     {
         Debug.Log(cameraIndex);
-        foreach (CinemachineVirtualCameraBase virtualCameraBase in _virtualCameras)
+        foreach (CinemachineVirtualCameraBase virtualCameraBase in virtualCameras)
         {
             virtualCameraBase.gameObject.SetActive(false);
         }
 
-        _virtualCameras[cameraIndex].gameObject.SetActive(true);
+        virtualCameras[cameraIndex].gameObject.SetActive(true);
 
         if (cameraIndex == 5)
         {

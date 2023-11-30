@@ -16,6 +16,7 @@ namespace ScorbotScripts
         private void Start()
         {
             gripAnimator = GetComponentInParent<Animator>();
+            if(!gripAnimator) return;
             if (gripAnimator.name == "Mano")
             {
                 gripAnimator.SetBool(IsOpen, _canPickUp);
