@@ -5667,6 +5667,7 @@ MonoBehaviour:
   - {fileID: 469290870}
   - {fileID: 1754061223}
   _defaultCamera: {fileID: 37846626}
+  _floatingCamera: {fileID: 0}
 --- !u!1 &777823196
 GameObject:
   m_ObjectHideFlags: 0
@@ -11772,7 +11773,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: 'Camara Libre
 
-    (WASD, C y SPACE)'
+    (WASD, SHIFT y SPACE)'
 --- !u!1 &1497270192
 GameObject:
   m_ObjectHideFlags: 0
