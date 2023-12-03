@@ -20,4 +20,4 @@ Asegúrese de tener instalado Unity 2021.3.29f1
 
 ## Licencia
 
-Este proyecto está bajo la licencia MIT - ver el archivo [LICENSE.md](LICENSE.md) para más detalles.
+Este proyecto está bajo la licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
