@@ -10,9 +10,12 @@ Este proyecto está desarrollado en Unity 2021.3.29f1 y utiliza C# 9.0 como leng
 Asegúrese de tener instalado Unity 2021.3.29f1
 
 1. Asegúrese de que su entorno de desarrollo esté configurado correctamente.
-2. Clone este repositorio: `git clone https://github.com/dFarium/SIMULACION-CIM.git`
-3. Abra el proyecto clonado desde [Unity Hub](https://unity.com/download).
-4. Todos los scripts de C# se pueden encontrar en: `[proyecto]/Assets/Scripts`
+2. Clone este repositorio:
+```bash
+ git clone https://github.com/dFarium/SIMULACION-CIM.git
+```
+4. Abra el proyecto clonado desde [Unity Hub](https://unity.com/download).
+5. Todos los scripts de C# se pueden encontrar en: `[proyecto]/Assets/Scripts`
 
 
 ## Licencia
