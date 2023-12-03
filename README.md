@@ -15,7 +15,7 @@ Asegúrese de tener instalado Unity 2021.3.29f1
  git clone https://github.com/dFarium/SIMULACION-CIM.git
 ```
 4. Abra el proyecto clonado desde [Unity Hub](https://unity.com/download).
-5. Todos los scripts de C# se pueden encontrar en: `[proyecto]/Assets/Scripts`
+5. Todos los scripts de C# se pueden encontrar en: [Assets/Scripts](/Assets/Scripts)
 
 
 ## Licencia
