@@ -19,7 +19,7 @@ namespace ScorbotScripts
             if(!gripAnimator) return;
             if (gripAnimator.name == "Mano")
             {
-                gripAnimator.SetBool(IsOpen, _canPickUp);
+                gripAnimator.SetBool("IsOpen", _canPickUp);
             }
         }
 
@@ -32,7 +32,7 @@ namespace ScorbotScripts
                 _canPickUp = true;
                 if (gripAnimator.name == "Mano")
                 {
-                    gripAnimator.SetBool(IsOpen, _canPickUp);
+                    gripAnimator.SetBool("IsOpen", _canPickUp);
                 }
                 DropObject();
                 return;
@@ -45,8 +45,8 @@ namespace ScorbotScripts
                 _canPickUp = false;
                 if (gripAnimator.name == "Mano")
                 {
-                    gripAnimator.SetBool(IsOpen, _canPickUp);
-                    gripAnimator.SetBool(HasMaterial, true);
+                    gripAnimator.SetBool("IsOpen", _canPickUp);
+                    gripAnimator.SetBool("HasMaterial", true);
                 }
                 PickUp();
                 return;
@@ -57,8 +57,8 @@ namespace ScorbotScripts
             _canPickUp = false;
             if (gripAnimator.name == "Mano")
             {
-                gripAnimator.SetBool(IsOpen, _canPickUp);
-                gripAnimator.SetBool(HasMaterial, false);
+                gripAnimator.SetBool("IsOpen", _canPickUp);
+                gripAnimator.SetBool("HasMaterial", false);
             }
         }
 
