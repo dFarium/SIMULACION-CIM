@@ -978,6 +978,8 @@ GameObject:
   - component: {fileID: 124621368}
   - component: {fileID: 124621367}
   - component: {fileID: 124621366}
+  - component: {fileID: 124621370}
+  - component: {fileID: 124621369}
   m_Layer: 0
   m_Name: Joints XYZ
   m_TagString: Untagged
@@ -1093,6 +1095,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 124621364}
   m_CullTransparentMesh: 1
+--- !u!114 &124621369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124621364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd92a6f1703f15549a996ff8db8cd1e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panels:
+  - {fileID: 541361236}
+  - {fileID: 460570013}
+  - {fileID: 2139202917}
+--- !u!114 &124621370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124621364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 124621369}
+          m_TargetAssemblyTypeName: PanelColor, Assembly-CSharp
+          m_MethodName: PointerDownPanel
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 124621369}
+          m_TargetAssemblyTypeName: PanelColor, Assembly-CSharp
+          m_MethodName: PointerUpPanel
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &129560577
 GameObject:
   m_ObjectHideFlags: 0
@@ -10381,7 +10444,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -138.5, y: 343}
+  m_AnchoredPosition: {x: -525.2445, y: 437.36108}
   m_SizeDelta: {x: 58, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1188401570
