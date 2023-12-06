@@ -78,7 +78,7 @@ public class FloatingCamera : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        cameraManager.SwtichToDefaultCamera();
+        cameraManager.SwitchToDefaultStationCameraFromIndex(cameraManager.currentStationIndex);
     }
     
     // Habilita la cámara

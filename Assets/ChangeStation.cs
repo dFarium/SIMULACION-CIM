@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ChangeStation : MonoBehaviour
 {
-    [SerializeField] private List<CameraManager> cameraManagers = new List<CameraManager>();
+    [SerializeField] private CameraManager cameraManager;
     [SerializeField] private List<CanvasGroup> canvasGroups = new List<CanvasGroup>();
     [SerializeField] private List<ToggleWindow> buttonBoxes = new List<ToggleWindow>();
 
@@ -12,34 +12,34 @@ public class ChangeStation : MonoBehaviour
     public void ChangeStationTo(int index)
     {
         HideStationButtonBoxes();
-        DisbleCameras();
-        switch (index - 1)
+        int parsedIndex = index - 1;
+        switch (parsedIndex)
         {
             case 0:
-                cameraManagers[0].SwtichToDefaultCamera();
+                Debug.Log(parsedIndex);
+                cameraManager.SwitchToDefaultStationCameraFromIndex(parsedIndex);
+                cameraManager.currentStationIndex = 0;
                 EnableStationButtons(0);
                 break;
             case 1:
-                cameraManagers[1].SwtichToDefaultCamera();
+                Debug.Log(parsedIndex);
+                cameraManager.SwitchToDefaultStationCameraFromIndex(parsedIndex);
+                cameraManager.currentStationIndex = 1;
                 EnableStationButtons(1);
                 break;
             case 2:
-                cameraManagers[2].SwtichToDefaultCamera();
+                Debug.Log(parsedIndex);
+                cameraManager.SwitchToDefaultStationCameraFromIndex(parsedIndex);
+                cameraManager.currentStationIndex = 2;
                 EnableStationButtons(2);
                 break;
             default:
+                cameraManager.SwitchToSceneDefaultCamera();
                 Debug.Log("Opcion no valida");
                 break;
         }
     }
 
-    public void DisbleCameras()
-    {
-        foreach (CameraManager cameraManager in cameraManagers)
-        {
-            cameraManager.DisableAllCameras();
-        }
-    }
 
     private void EnableStationButtons(int index)
     {
