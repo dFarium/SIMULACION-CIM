@@ -17,12 +17,7 @@ public class CameraManager : MonoBehaviour
     private int currentCameraIndex = 1;
     private CinemachineVirtualCameraBase _activeCamera;
 
-
-    public void OnEnable()
-    {
-        SwitchCamera(defaultCamera);
-    }
-
+    
     public void SwitchCamera(CinemachineVirtualCameraBase camera)
     {
         foreach (CinemachineVirtualCameraBase virtualCameraBase in virtualCameras)
@@ -68,6 +63,14 @@ public class CameraManager : MonoBehaviour
         if (cameraIndex == 5)
         {
             _floatingCamera.EnableCamera();
+        }
+    }
+
+    public void DisableAllCameras()
+    {
+        foreach (CinemachineVirtualCameraBase virtualCameraBase in virtualCameras)
+        {
+            virtualCameraBase.gameObject.SetActive(false);
         }
     }
 }

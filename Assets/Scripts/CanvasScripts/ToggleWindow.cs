@@ -24,4 +24,9 @@ public class ToggleWindow : MonoBehaviour
             interfaz.SetActive(true);
         }
     }
+
+    public void DisableWindow()
+    {
+        interfaz.SetActive(false);
+    }
 }
