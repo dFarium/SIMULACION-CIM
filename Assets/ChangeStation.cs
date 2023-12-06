@@ -35,6 +35,7 @@ public class ChangeStation : MonoBehaviour
                 break;
             default:
                 cameraManager.SwitchToSceneDefaultCamera();
+                HideAllButtons();
                 Debug.Log("Opcion no valida");
                 break;
         }
@@ -43,12 +44,7 @@ public class ChangeStation : MonoBehaviour
 
     private void EnableStationButtons(int index)
     {
-        foreach (CanvasGroup canvasGroup in canvasGroups)
-        {
-            canvasGroup.alpha = 0;
-            canvasGroup.interactable = false;
-            canvasGroup.blocksRaycasts = false;
-        }
+        HideAllButtons();
 
         canvasGroups[index].alpha = 1;
         canvasGroups[index].interactable = true;
@@ -69,6 +65,16 @@ public class ChangeStation : MonoBehaviour
             Debug.LogWarning("FALTA ASIGNAR EL TOGGLE WINDOW DE LA ESTACION 2");
             buttonBoxes[0].DisableWindow();
             buttonBoxes[2].DisableWindow();
+        }
+    }
+
+    private void HideAllButtons()
+    {
+        foreach (CanvasGroup canvasGroup in canvasGroups)
+        {
+            canvasGroup.alpha = 0;
+            canvasGroup.interactable = false;
+            canvasGroup.blocksRaycasts = false;
         }
     }
 }
