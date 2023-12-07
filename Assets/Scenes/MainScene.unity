@@ -566,7 +566,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1, y: 1}
+    m_SensorSize: {x: 36, y: 24}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -5419,7 +5419,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -711.8, y: 335.59998}
+  m_AnchoredPosition: {x: -716.9, y: 335.59998}
   m_SizeDelta: {x: 427.6734, y: 84.5633}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &515928428
@@ -5520,7 +5520,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 0.3
 --- !u!222 &515928431
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8664,7 +8664,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -744.9, y: -230.76001}
+  m_AnchoredPosition: {x: -719, y: -272}
   m_SizeDelta: {x: 322.12, y: 84.565}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &727436834
@@ -8862,7 +8862,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 744378629}
-  - component: {fileID: 744378630}
   m_Layer: 0
   m_Name: CamerasStation1
   m_TagString: Untagged
@@ -8889,36 +8888,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &744378630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 744378627}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89bda20c1cb8ad242852fabfbd3327fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  station1Cameras: []
-  station2Cameras: []
-  station3Cameras: []
-  station1RingBufferCameras: []
-  station2RingBufferCameras: []
-  station3RingBufferCameras: []
-  sceneDefaultCamera: {fileID: 0}
-  station1DefaultCamera: {fileID: 0}
-  station2DefaultCamera: {fileID: 0}
-  station3DefaultCamera: {fileID: 0}
-  _floatingCamera: {fileID: 0}
-  virtualCameras:
-  - {fileID: 37846626}
-  - {fileID: 1589275382}
-  - {fileID: 469290870}
-  - {fileID: 1754061223}
-  defaultCamera: {fileID: 37846626}
-  currentStationIndex: 0
 --- !u!1 &753634076
 GameObject:
   m_ObjectHideFlags: 0
@@ -11433,7 +11402,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -711.8, y: 428.7}
+  m_AnchoredPosition: {x: -716.9, y: 428.7}
   m_SizeDelta: {x: 427.6734, y: 84.5633}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &975542078
@@ -11549,7 +11518,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 0.3
 --- !u!222 &975542081
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14849,7 +14818,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -711.8, y: 428.7}
+  m_AnchoredPosition: {x: -716.9, y: 428.7}
   m_SizeDelta: {x: 427.6734, y: 84.5633}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1170750272
@@ -14965,7 +14934,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 0.3
 --- !u!222 &1170750275
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18149,8 +18118,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1449106004}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.27900013, y: -1.7179999, z: -1.593}
+  m_LocalRotation: {x: -0.013346434, y: -0.00014998621, z: -0.0000020019593, w: 0.99991095}
+  m_LocalPosition: {x: -0.00000011920929, y: -0.99999994, z: -11.200001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18194,7 +18163,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1, y: 1}
+    m_SensorSize: {x: 36, y: 24}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -18386,7 +18355,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -744.9, y: -230.76001}
+  m_AnchoredPosition: {x: -719, y: -272}
   m_SizeDelta: {x: 322.12, y: 84.565}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1453778812
@@ -18474,7 +18443,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 0.3
 --- !u!222 &1453778814
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18809,7 +18778,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -711.8, y: 428.7}
+  m_AnchoredPosition: {x: -716.9, y: 435.1}
   m_SizeDelta: {x: 427.6734, y: 84.5633}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1472781566
@@ -18910,7 +18879,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 0.3
 --- !u!222 &1472781568
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19771,8 +19740,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1573221926}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.27900013, y: -1.7179999, z: -1.593}
+  m_LocalRotation: {x: -0.04965934, y: -0.00014981451, z: -0.00000744888, w: 0.99876624}
+  m_LocalPosition: {x: -0.00000011920929, y: -0.99999994, z: -11.200001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -19816,7 +19785,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1, y: 1}
+    m_SensorSize: {x: 36, y: 24}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -21606,7 +21575,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -744.9, y: -230.76001}
+  m_AnchoredPosition: {x: -719, y: -272}
   m_SizeDelta: {x: 322.12, y: 84.565}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1684641632
@@ -22489,7 +22458,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -711.8, y: 335.59998}
+  m_AnchoredPosition: {x: -716.9, y: 335.59998}
   m_SizeDelta: {x: 427.6734, y: 84.5633}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1798526893
@@ -22590,7 +22559,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 0.3
 --- !u!222 &1798526896
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -23458,7 +23427,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -711.8, y: 335.6}
+  m_AnchoredPosition: {x: -716.9, y: 335.6}
   m_SizeDelta: {x: 427.6734, y: 84.5633}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1839770257
@@ -23546,7 +23515,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 0.3
 --- !u!222 &1839770259
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -26710,7 +26679,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1, y: 1}
+    m_SensorSize: {x: 36, y: 24}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
