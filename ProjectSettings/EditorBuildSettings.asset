@@ -24,18 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenuScene.unity
     guid: 0701c39a0850b5e44a9347a2a6c524bc
   - enabled: 1
-    path: Assets/Scenes/BORRARScene.unity
-    guid: 0056a118f8f889b4eaede950bc5a3757
-  - enabled: 0
-    path: Assets/Scenes/MS E1.unity
-    guid: ff0cb2326415c7b45929dee2f7eb9b82
-  - enabled: 0
-    path: Assets/Scenes/MS E2.unity
-    guid: b44295b69ba5dff439de462c36478964
-  - enabled: 0
-    path: Assets/Scenes/MS E3.unity
-    guid: f784610466a767646818f9397bcfc22d
+    path: Assets/Scenes/MainScene.unity
+    guid: baf3ae266fb6bec46827bee5ece1770d
   - enabled: 1
-    path: Assets/Scenes/pAIpoSystemPROD.unity
-    guid: 2ffaab5dfc21b7141bce4fb727c46d5d
+    path: Assets/Scenes/ProductionSystem.unity
+    guid: 45fb05ab05b9f3948a9696a794cc28e7
   m_configObjects: {}
