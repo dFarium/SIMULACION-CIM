@@ -613,6 +613,7 @@ GameObject:
   - component: {fileID: 19612070}
   - component: {fileID: 19612069}
   - component: {fileID: 19612068}
+  - component: {fileID: 19612072}
   m_Layer: 0
   m_Name: '- Axis 1 X'
   m_TagString: Untagged
@@ -723,6 +724,51 @@ RectTransform:
   m_AnchoredPosition: {x: 94, y: -47}
   m_SizeDelta: {x: 44.3247, y: 28.3162}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &19612072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19612067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 75644480}
+          m_TargetAssemblyTypeName: ScorbotScripts.IKMovement, Assembly-CSharp
+          m_MethodName: DetenerMovimiento
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 75644480}
+          m_TargetAssemblyTypeName: ScorbotScripts.IKMovement, Assembly-CSharp
+          m_MethodName: XMovement
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &19681556
 GameObject:
   m_ObjectHideFlags: 0
@@ -4839,6 +4885,7 @@ GameObject:
   - component: {fileID: 285310720}
   - component: {fileID: 285310719}
   - component: {fileID: 285310718}
+  - component: {fileID: 285310722}
   m_Layer: 0
   m_Name: + Axis 2 Y
   m_TagString: Untagged
@@ -4949,6 +4996,51 @@ RectTransform:
   m_AnchoredPosition: {x: 94, y: -47}
   m_SizeDelta: {x: 44.3247, y: 28.3162}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &285310722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285310717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 75644480}
+          m_TargetAssemblyTypeName: ScorbotScripts.IKMovement, Assembly-CSharp
+          m_MethodName: DetenerMovimiento
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 75644480}
+          m_TargetAssemblyTypeName: ScorbotScripts.IKMovement, Assembly-CSharp
+          m_MethodName: ZMovement
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
 --- !u!1 &298178803
 GameObject:
   m_ObjectHideFlags: 0
@@ -22167,9 +22259,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1235854231}
-          m_TargetAssemblyTypeName: ScorbotScripts.HingeJointMovement, Assembly-CSharp
-          m_MethodName: StopRotating
+        - m_Target: {fileID: 1235854232}
+          m_TargetAssemblyTypeName: RotateLeaf, Assembly-CSharp
+          m_MethodName: DetenerMovimiento
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -22183,9 +22275,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1235854231}
-          m_TargetAssemblyTypeName: ScorbotScripts.HingeJointMovement, Assembly-CSharp
-          m_MethodName: Rotate
+        - m_Target: {fileID: 1235854232}
+          m_TargetAssemblyTypeName: RotateLeaf, Assembly-CSharp
+          m_MethodName: RotateLeafObject
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -22193,7 +22285,7 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 1
+            m_BoolArgument: 0
           m_CallState: 2
 --- !u!1 &1065521590
 GameObject:
@@ -26502,6 +26594,7 @@ GameObject:
   - component: {fileID: 1181985895}
   - component: {fileID: 1181985894}
   - component: {fileID: 1181985893}
+  - component: {fileID: 1181985897}
   m_Layer: 0
   m_Name: + Axis 1 X
   m_TagString: Untagged
@@ -26612,6 +26705,51 @@ RectTransform:
   m_AnchoredPosition: {x: 94, y: -47}
   m_SizeDelta: {x: 44.3247, y: 28.3162}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1181985897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181985892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 75644480}
+          m_TargetAssemblyTypeName: ScorbotScripts.IKMovement, Assembly-CSharp
+          m_MethodName: DetenerMovimiento
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 75644480}
+          m_TargetAssemblyTypeName: ScorbotScripts.IKMovement, Assembly-CSharp
+          m_MethodName: XMovement
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
 --- !u!1 &1183820829
 GameObject:
   m_ObjectHideFlags: 0
@@ -27673,6 +27811,7 @@ GameObject:
   - component: {fileID: 1235854228}
   - component: {fileID: 1235854227}
   - component: {fileID: 1235854231}
+  - component: {fileID: 1235854232}
   m_Layer: 0
   m_Name: "Mu\xF1eca"
   m_TagString: Untagged
@@ -27876,6 +28015,23 @@ MonoBehaviour:
   IKProcesor: {fileID: 907737914}
   IKTarget: {fileID: 75644475}
   Mano: {fileID: 2053971808}
+--- !u!114 &1235854232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235854222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0307710aa00581b4daaf8731e5b7ef8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leaf: {fileID: 75644475}
+  momentum: 0.3
+  speedText: {fileID: 2067700000}
+  speed: 0
+  movPositivo: 0
 --- !u!1 &1240689184
 GameObject:
   m_ObjectHideFlags: 0
@@ -31887,6 +32043,7 @@ GameObject:
   - component: {fileID: 1430391377}
   - component: {fileID: 1430391376}
   - component: {fileID: 1430391375}
+  - component: {fileID: 1430391379}
   m_Layer: 0
   m_Name: + Axis 3 Z
   m_TagString: Untagged
@@ -31997,6 +32154,51 @@ RectTransform:
   m_AnchoredPosition: {x: 94, y: -47}
   m_SizeDelta: {x: 44.3247, y: 28.3162}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1430391379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430391374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 75644480}
+          m_TargetAssemblyTypeName: ScorbotScripts.IKMovement, Assembly-CSharp
+          m_MethodName: DetenerMovimiento
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 75644480}
+          m_TargetAssemblyTypeName: ScorbotScripts.IKMovement, Assembly-CSharp
+          m_MethodName: YMovement
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
 --- !u!1 &1439342594
 GameObject:
   m_ObjectHideFlags: 0
@@ -37352,9 +37554,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1235854231}
-          m_TargetAssemblyTypeName: ScorbotScripts.HingeJointMovement, Assembly-CSharp
-          m_MethodName: StopRotating
+        - m_Target: {fileID: 1235854232}
+          m_TargetAssemblyTypeName: RotateLeaf, Assembly-CSharp
+          m_MethodName: DetenerMovimiento
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -37368,9 +37570,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1235854231}
-          m_TargetAssemblyTypeName: ScorbotScripts.HingeJointMovement, Assembly-CSharp
-          m_MethodName: Rotate
+        - m_Target: {fileID: 1235854232}
+          m_TargetAssemblyTypeName: RotateLeaf, Assembly-CSharp
+          m_MethodName: RotateLeafObject
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -37378,7 +37580,7 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 0
+            m_BoolArgument: 1
           m_CallState: 2
 --- !u!1 &1640310430
 GameObject:
@@ -38187,6 +38389,7 @@ GameObject:
   - component: {fileID: 1655973108}
   - component: {fileID: 1655973107}
   - component: {fileID: 1655973106}
+  - component: {fileID: 1655973110}
   m_Layer: 0
   m_Name: '- Axis 2 Y'
   m_TagString: Untagged
@@ -38297,6 +38500,51 @@ RectTransform:
   m_AnchoredPosition: {x: 94, y: -47}
   m_SizeDelta: {x: 44.3247, y: 28.3162}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1655973110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655973105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 75644480}
+          m_TargetAssemblyTypeName: ScorbotScripts.IKMovement, Assembly-CSharp
+          m_MethodName: DetenerMovimiento
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 75644480}
+          m_TargetAssemblyTypeName: ScorbotScripts.IKMovement, Assembly-CSharp
+          m_MethodName: ZMovement
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1657435747
 GameObject:
   m_ObjectHideFlags: 0
@@ -46165,6 +46413,7 @@ GameObject:
   - component: {fileID: 1987278942}
   - component: {fileID: 1987278941}
   - component: {fileID: 1987278940}
+  - component: {fileID: 1987278944}
   m_Layer: 0
   m_Name: '- Axis 3 Z'
   m_TagString: Untagged
@@ -46275,6 +46524,51 @@ RectTransform:
   m_AnchoredPosition: {x: 94, y: -47}
   m_SizeDelta: {x: 44.3247, y: 28.3162}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1987278944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987278939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 75644480}
+          m_TargetAssemblyTypeName: ScorbotScripts.IKMovement, Assembly-CSharp
+          m_MethodName: DetenerMovimiento
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 75644480}
+          m_TargetAssemblyTypeName: ScorbotScripts.IKMovement, Assembly-CSharp
+          m_MethodName: YMovement
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1991266926
 GameObject:
   m_ObjectHideFlags: 0

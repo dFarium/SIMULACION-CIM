@@ -92,11 +92,11 @@ namespace ScorbotScripts
                 float movimientoX = momentum * speed * Time.deltaTime;
                 if (movPositivo)
                 {
-                    transform.Translate(movimientoX, 0, 0);
+                    transform.Translate(movimientoX, 0, 0,Space.World);
                 }
                 else
                 {
-                    transform.Translate(-movimientoX, 0, 0);
+                    transform.Translate(-movimientoX, 0, 0,Space.World);
                 }
 
                 yield return null;
@@ -112,11 +112,11 @@ namespace ScorbotScripts
                 float movimientoY = momentum* speed * Time.deltaTime;
                 if (movPositivo)
                 {
-                    transform.Translate(0, movimientoY, 0);
+                    transform.Translate(0, movimientoY, 0,Space.World);
                 }
                 else
                 {
-                    transform.Translate(0, -movimientoY, 0);
+                    transform.Translate(0, -movimientoY, 0, Space.World);
                 }
 
                 yield return null;
@@ -132,11 +132,11 @@ namespace ScorbotScripts
                 float movimientoZ = momentum* speed * Time.deltaTime;
                 if (movPositivo)
                 {
-                    transform.Translate(0, 0, movimientoZ);
+                    transform.Translate(0, 0, movimientoZ,Space.World);
                 }
                 else
                 {
-                    transform.Translate(0, 0, -movimientoZ);
+                    transform.Translate(0, 0, -movimientoZ,Space.World);
                 }
 
                 yield return null;
