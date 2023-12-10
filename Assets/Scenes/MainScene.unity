@@ -3777,14 +3777,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 210858110}
-  m_LocalRotation: {x: 0.2422529, y: -0.07600127, z: -0.24241586, w: 0.936361}
+  m_LocalRotation: {x: 0.23143673, y: -0.07268599, z: -0.24311742, w: 0.939174}
   m_LocalPosition: {x: -0.0936, y: 0.1002, z: -0.0277}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1235854226}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 24.634, y: -16.606, z: -32.68}
+  m_LocalEulerAnglesHint: {x: 23.539, y: -15.764, z: -32.331}
 --- !u!114 &210858112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4003,7 +4003,7 @@ MonoBehaviour:
   enable: 1
   mainAxis: {x: 0, y: 0, z: 1}
   secondaryAxis: {x: 0, y: 1, z: 0}
-  zeroRotation: {x: -0, y: -0, z: -0, w: 1}
+  zeroRotation: {x: 6.617445e-24, y: -0, z: 0.26962975, w: 0.9629641}
   limitsOffset: {x: 0, y: 0, z: 0}
   limitAngle: 157
   applyEveryFrame: 0
@@ -4068,7 +4068,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 220513431}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 6.617445e-24, y: -0, z: 0.26962975, w: 0.9629641}
   m_LocalPosition: {x: -0.22351393, y: 0.080302894, z: -0.008475944}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4077,7 +4077,7 @@ Transform:
   - {fileID: 1235854226}
   m_Father: {fileID: 1577742364}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 31.284}
 --- !u!64 &220513436
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -26258,7 +26258,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1088203855}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.015224457, y: 0.053213716, z: 0.019866034}
+  m_LocalPosition: {x: -0.015224457, y: 0.05321372, z: 0.01986603}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -27752,7 +27752,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1120296899}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 210858112}
+        m_TargetAssemblyTypeName: ScorbotScripts.PickUpObject, Assembly-CSharp
+        m_MethodName: PickUpToggle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1120296899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28622,7 +28634,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1156432393}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.053996503, y: -0.012028754, z: -0.019933984}
+  m_LocalPosition: {x: -0.053996503, y: -0.01202875, z: -0.01993398}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -31259,8 +31271,9 @@ GameObject:
   - component: {fileID: 1235854227}
   - component: {fileID: 1235854231}
   - component: {fileID: 1235854232}
+  - component: {fileID: 1235854233}
   m_Layer: 0
-  m_Name: "Mu\xF1eca"
+  m_Name: Mano
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31281,7 +31294,7 @@ MonoBehaviour:
   enable: 1
   mainAxis: {x: 1, y: -0.6, z: 0}
   secondaryAxis: {x: 0, y: 1, z: 0}
-  zeroRotation: {x: -0, y: -0, z: -0, w: 1}
+  zeroRotation: {x: 0.4392168, y: -0.26853302, z: 0.0018328128, w: 0.85730696}
   limitsOffset: {x: 0, y: 0, z: 0}
   limitAngle: 180
   applyEveryFrame: 0
@@ -31346,7 +31359,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1235854222}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0.4392168, y: -0.26853302, z: 0.0018328128, w: 0.85730696}
   m_LocalPosition: {x: -0.08121061, y: 0.055367827, z: 0.00008520484}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -31357,7 +31370,7 @@ Transform:
   - {fileID: 210858111}
   m_Father: {fileID: 220513435}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 48.944, y: -44.313, z: -20.755}
 --- !u!114 &1235854227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31479,6 +31492,27 @@ MonoBehaviour:
   speedText: {fileID: 2067700000}
   speed: 0
   movPositivo: 0
+--- !u!95 &1235854233
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235854222}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e3a907cb4a9034a49b20c665d5602a70, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1240689184
 GameObject:
   m_ObjectHideFlags: 0
@@ -37606,7 +37640,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 3
-  m_FollowOffset: {x: 0, y: 0.8817971, z: -1.161022}
+  m_FollowOffset: {x: 0, y: 1.043287, z: -1.217055}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -49035,7 +49069,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 3
-  m_FollowOffset: {x: 0, y: 0.8817971, z: -1.161022}
+  m_FollowOffset: {x: 0, y: 1.043287, z: -1.217055}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -53321,7 +53355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 3
-  m_FollowOffset: {x: 0, y: 0.8817971, z: -1.161022}
+  m_FollowOffset: {x: 0, y: 1.043287, z: -1.217055}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
