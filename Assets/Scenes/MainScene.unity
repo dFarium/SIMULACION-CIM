@@ -1634,7 +1634,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 75644475}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.7240002, y: 0.39599997, z: -0.2421999}
+  m_LocalPosition: {x: 0.608, y: 0.558, z: 0.281}
   m_LocalScale: {x: 0.03, y: 0.03, z: 0.03}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1707,9 +1707,9 @@ MonoBehaviour:
   ikTarget: {fileID: 75644476}
   center: {fileID: 1368767487}
   movPositivo: 0
-  maxLength: 0.68
+  maxLength: 0.98
   minLength: 0.23
-  speedText: {fileID: 0}
+  speedText: {fileID: 1025832285}
   speed: 0
 --- !u!114 &75644481
 MonoBehaviour:
@@ -1739,10 +1739,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stationNumber: 2
-  saveNumber: 0
-  controlMainText: {fileID: 0}
-  auxiliarText: {fileID: 0}
-  saveText: {fileID: 0}
+  saveNumber: 1
+  controlMainText: {fileID: 427209993}
+  auxiliarText: {fileID: 298178805}
+  saveText: {fileID: 1981938769}
   interactableButtons: []
   numericButtons: []
   hideButtons: []
@@ -3345,6 +3345,7 @@ GameObject:
   - component: {fileID: 220513438}
   - component: {fileID: 220513436}
   - component: {fileID: 220513437}
+  - component: {fileID: 220513440}
   m_Layer: 0
   m_Name: Antebrazo
   m_TagString: Untagged
@@ -3483,7 +3484,7 @@ HingeJoint:
   m_GameObject: {fileID: 220513431}
   m_ConnectedBody: {fileID: 1577742368}
   m_ConnectedArticulationBody: {fileID: 0}
-  m_Anchor: {x: 0, y: 0.09614667, z: 0}
+  m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
@@ -3492,7 +3493,7 @@ HingeJoint:
     spring: 0
     damper: 0
     targetPosition: 0
-  m_UseMotor: 0
+  m_UseMotor: 1
   m_Motor:
     targetVelocity: 0
     force: 100
@@ -3525,7 +3526,25 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
+--- !u!114 &220513440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220513431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7b98c93dd5d096419c83fa472d29a6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedText: {fileID: 2067700000}
+  _rotationSpeed: 0
+  baseSpeed: 0.2
+  IKProcesor: {fileID: 907737914}
+  IKTarget: {fileID: 75644475}
+  Mano: {fileID: 1235854222}
 --- !u!1 &226550712
 GameObject:
   m_ObjectHideFlags: 0
@@ -13032,7 +13051,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1851123003785416157}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -20672,11 +20691,11 @@ RectTransform:
   m_GameObject: {fileID: 1025832284}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0000001, y: 1, z: 1.0000001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1851123003785416157}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -23236,6 +23255,7 @@ GameObject:
   - component: {fileID: 1090615031}
   - component: {fileID: 1090615030}
   - component: {fileID: 1090615029}
+  - component: {fileID: 1090615032}
   m_Layer: 0
   m_Name: + Axis 1
   m_TagString: Untagged
@@ -23346,6 +23366,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1090615027}
   m_CullTransparentMesh: 1
+--- !u!114 &1090615032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090615027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1363573164}
+          m_TargetAssemblyTypeName: ScorbotScripts.HingeJointMovement, Assembly-CSharp
+          m_MethodName: StopRotating
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1363573164}
+          m_TargetAssemblyTypeName: ScorbotScripts.HingeJointMovement, Assembly-CSharp
+          m_MethodName: Rotate
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1090873731
 GameObject:
   m_ObjectHideFlags: 0
@@ -27423,6 +27488,7 @@ GameObject:
   - component: {fileID: 1235854229}
   - component: {fileID: 1235854228}
   - component: {fileID: 1235854227}
+  - component: {fileID: 1235854231}
   m_Layer: 0
   m_Name: "Mu\xF1eca"
   m_TagString: Untagged
@@ -27574,7 +27640,7 @@ HingeJoint:
     spring: 0
     damper: 0
     targetPosition: 0
-  m_UseMotor: 0
+  m_UseMotor: 1
   m_Motor:
     targetVelocity: 0
     force: 100
@@ -27608,6 +27674,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1235854231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235854222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7b98c93dd5d096419c83fa472d29a6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedText: {fileID: 2067700000}
+  _rotationSpeed: 0
+  baseSpeed: 0.2
+  IKProcesor: {fileID: 907737914}
+  IKTarget: {fileID: 75644475}
+  Mano: {fileID: 1235854222}
 --- !u!1 &1240689184
 GameObject:
   m_ObjectHideFlags: 0
@@ -30035,11 +30119,12 @@ GameObject:
   - component: {fileID: 1363573159}
   - component: {fileID: 1363573158}
   - component: {fileID: 1363573157}
-  - component: {fileID: 1363573156}
   - component: {fileID: 1363573163}
   - component: {fileID: 1363573162}
   - component: {fileID: 1363573160}
   - component: {fileID: 1363573161}
+  - component: {fileID: 1363573156}
+  - component: {fileID: 1363573164}
   m_Layer: 0
   m_Name: Hombro
   m_TagString: Untagged
@@ -30186,7 +30271,7 @@ HingeJoint:
     spring: 0
     damper: 0
     targetPosition: 0
-  m_UseMotor: 0
+  m_UseMotor: 1
   m_Motor:
     targetVelocity: 0
     force: 100
@@ -30219,7 +30304,25 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
+--- !u!114 &1363573164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363573155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7b98c93dd5d096419c83fa472d29a6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedText: {fileID: 2067700000}
+  _rotationSpeed: 0
+  baseSpeed: 0.2
+  IKProcesor: {fileID: 907737914}
+  IKTarget: {fileID: 75644475}
+  Mano: {fileID: 1235854222}
 --- !u!1 &1368767486
 GameObject:
   m_ObjectHideFlags: 0
@@ -35589,6 +35692,7 @@ GameObject:
   - component: {fileID: 1577742367}
   - component: {fileID: 1577742365}
   - component: {fileID: 1577742366}
+  - component: {fileID: 1577742369}
   m_Layer: 0
   m_Name: Brazo 2
   m_TagString: Untagged
@@ -35736,7 +35840,7 @@ HingeJoint:
     spring: 0
     damper: 0
     targetPosition: 0
-  m_UseMotor: 0
+  m_UseMotor: 1
   m_Motor:
     targetVelocity: 0
     force: 100
@@ -35769,7 +35873,25 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
+--- !u!114 &1577742369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577742360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7b98c93dd5d096419c83fa472d29a6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedText: {fileID: 2067700000}
+  _rotationSpeed: 0
+  baseSpeed: 0.2
+  IKProcesor: {fileID: 907737914}
+  IKTarget: {fileID: 75644475}
+  Mano: {fileID: 1235854222}
 --- !u!1 &1584245854
 GameObject:
   m_ObjectHideFlags: 0
@@ -40368,7 +40490,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1851123003785416157}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -45564,7 +45686,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1851123003785416157}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -45890,10 +46012,10 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1 &2004365197
 GameObject:
   m_ObjectHideFlags: 0
@@ -47117,11 +47239,12 @@ GameObject:
   - component: {fileID: 2064712006}
   - component: {fileID: 2064712005}
   - component: {fileID: 2064712004}
-  - component: {fileID: 2064712003}
   - component: {fileID: 2064712010}
   - component: {fileID: 2064712009}
   - component: {fileID: 2064712007}
+  - component: {fileID: 2064712003}
   - component: {fileID: 2064712008}
+  - component: {fileID: 2064712011}
   m_Layer: 0
   m_Name: Brazo 1
   m_TagString: Untagged
@@ -47269,7 +47392,7 @@ HingeJoint:
     spring: 0
     damper: 0
     targetPosition: 0
-  m_UseMotor: 0
+  m_UseMotor: 1
   m_Motor:
     targetVelocity: 0
     force: 100
@@ -47302,7 +47425,25 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
+--- !u!114 &2064712011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064712002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7b98c93dd5d096419c83fa472d29a6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedText: {fileID: 2067700000}
+  _rotationSpeed: 0
+  baseSpeed: 0.2
+  IKProcesor: {fileID: 907737914}
+  IKTarget: {fileID: 75644475}
+  Mano: {fileID: 1235854222}
 --- !u!1 &2067699998
 GameObject:
   m_ObjectHideFlags: 0
@@ -68427,10 +68568,10 @@ RectTransform:
   m_Children:
   - {fileID: 427209995}
   - {fileID: 298178804}
-  - {fileID: 1025832287}
   - {fileID: 1981938771}
   - {fileID: 630759386}
   - {fileID: 1802108363}
+  - {fileID: 1025832287}
   - {fileID: 2038624630}
   m_Father: {fileID: 1851123003462592627}
   m_RootOrder: 1
