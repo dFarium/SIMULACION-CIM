@@ -2019,6 +2019,7 @@ MonoBehaviour:
   - {fileID: 1439342598}
   - {fileID: 1693010422}
   - {fileID: 597321255}
+  - {fileID: 415346668}
   numericButtons:
   - {fileID: 1039011633}
   - {fileID: 113437195}
@@ -9272,6 +9273,7 @@ GameObject:
   - component: {fileID: 415346670}
   - component: {fileID: 415346669}
   - component: {fileID: 415346668}
+  - component: {fileID: 415346671}
   - component: {fileID: 415346667}
   m_Layer: 0
   m_Name: PerillaButton
@@ -9369,6 +9371,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 415346671}
+        m_TargetAssemblyTypeName: DisableButtons, Assembly-CSharp
+        m_MethodName: SwitchEnableButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &415346669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9407,6 +9421,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 415346665}
   m_CullTransparentMesh: 1
+--- !u!114 &415346671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415346665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4dd3f1e168d2824c8c4ba82a095340c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableButtons:
+  - {fileID: 684153409}
+  - {fileID: 10764989}
+  - {fileID: 1430361235}
+  - {fileID: 1106456191}
+  - {fileID: 2132477725}
+  - {fileID: 1044541549}
+  - {fileID: 544673430}
+  - {fileID: 679529649}
+  - {fileID: 1090615029}
+  - {fileID: 1550927570}
+  - {fileID: 1790172884}
+  - {fileID: 1181985893}
+  - {fileID: 285310718}
+  - {fileID: 1430391375}
+  - {fileID: 176433417}
+  - {fileID: 1637093329}
+  - {fileID: 1918025705}
+  - {fileID: 1905496553}
+  - {fileID: 351672328}
+  - {fileID: 887120876}
+  - {fileID: 50877143}
+  - {fileID: 1418640817}
+  - {fileID: 258793176}
+  - {fileID: 1176382336}
+  - {fileID: 71607504}
+  - {fileID: 1897452337}
+  - {fileID: 19612068}
+  - {fileID: 1655973106}
+  - {fileID: 1987278940}
+  - {fileID: 1464212090}
+  - {fileID: 1064559925}
+  - {fileID: 409588018}
+  - {fileID: 2032171120}
+  - {fileID: 1114246037}
+  - {fileID: 1241692013}
+  - {fileID: 411356807}
+  - {fileID: 429381017}
+  - {fileID: 966517980}
+  - {fileID: 1183820833}
+  - {fileID: 968122775}
+  - {fileID: 328100435}
+  - {fileID: 1644389185}
+  - {fileID: 1315755422}
+  - {fileID: 1120296898}
+  - {fileID: 505126687}
+  - {fileID: 1439342598}
+  - {fileID: 1693010422}
+  - {fileID: 597321255}
+  - {fileID: 398744273}
+  - {fileID: 1891085773}
+  - {fileID: 1955332677}
+  - {fileID: 2061821965}
+  - {fileID: 1039011635}
+  - {fileID: 113437197}
+  - {fileID: 458105810}
+  - {fileID: 306401850}
+  - {fileID: 985161177}
+  - {fileID: 1311296787}
+  - {fileID: 842334724}
+  - {fileID: 1310098402}
+  - {fileID: 1697746492}
+  - {fileID: 1026133148}
 --- !u!1 &422817443
 GameObject:
   m_ObjectHideFlags: 0
@@ -44424,6 +44513,7 @@ MonoBehaviour:
   - {fileID: 1439342598}
   - {fileID: 1693010422}
   - {fileID: 597321255}
+  - {fileID: 415346668}
   numericButtons:
   - {fileID: 1039011633}
   - {fileID: 113437195}
