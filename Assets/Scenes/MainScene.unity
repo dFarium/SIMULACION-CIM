@@ -30436,7 +30436,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1205635528}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.5, y: 0.61, z: 1.48}
+  m_LocalPosition: {x: -2.718, y: 0.61, z: 1.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45396,6 +45396,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1726727274}
   - component: {fileID: 1726727275}
+  - component: {fileID: 1726727276}
   m_Layer: 0
   m_Name: Scorbot 9 CIM
   m_TagString: Untagged
@@ -45436,6 +45437,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44cc664143fd23741b492ef15f6d0fbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1726727276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726727273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e31160a9d61102e418d1f48248033e44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  momentum: 0.002
+  speedText: {fileID: 2067700000}
+  speed: 0
+  movPositivo: 0
+  limitR: {fileID: 1641914571}
+  limitL: {fileID: 1205635528}
 --- !u!1 &1730562071
 GameObject:
   m_ObjectHideFlags: 0
@@ -50065,6 +50084,7 @@ GameObject:
   - component: {fileID: 1905496555}
   - component: {fileID: 1905496554}
   - component: {fileID: 1905496553}
+  - component: {fileID: 1905496556}
   m_Layer: 0
   m_Name: + Axis 7
   m_TagString: Untagged
@@ -50175,6 +50195,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1905496551}
   m_CullTransparentMesh: 1
+--- !u!114 &1905496556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905496551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1726727276}
+          m_TargetAssemblyTypeName: RailMovement, Assembly-CSharp
+          m_MethodName: DetenerMovimiento
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1726727276}
+          m_TargetAssemblyTypeName: RailMovement, Assembly-CSharp
+          m_MethodName: XMovement
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
 --- !u!1 &1906898729
 GameObject:
   m_ObjectHideFlags: 0
@@ -53700,6 +53765,7 @@ GameObject:
   - component: {fileID: 2032171122}
   - component: {fileID: 2032171121}
   - component: {fileID: 2032171120}
+  - component: {fileID: 2032171124}
   m_Layer: 0
   m_Name: '- Axis 7'
   m_TagString: Untagged
@@ -53810,6 +53876,51 @@ RectTransform:
   m_AnchoredPosition: {x: 94, y: -47}
   m_SizeDelta: {x: 44.3247, y: 28.3162}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2032171124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032171119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1726727276}
+          m_TargetAssemblyTypeName: RailMovement, Assembly-CSharp
+          m_MethodName: DetenerMovimiento
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1726727276}
+          m_TargetAssemblyTypeName: RailMovement, Assembly-CSharp
+          m_MethodName: XMovement
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2038624629
 GameObject:
   m_ObjectHideFlags: 0
