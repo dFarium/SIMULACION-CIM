@@ -29,16 +29,19 @@ TagManager:
   - ModoPlay
   - ModoPausa
   - IgnorarColision
+  - Tooltip
+  - Aruco
+  - Material
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - RobotCollision
   - Water
   - UI
-  - 
-  - 
-  - 
+  - IK_Target
+  - PickUp
+  - Material
   - 
   - 
   - 
