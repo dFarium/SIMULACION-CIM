@@ -576,6 +576,7 @@ GameObject:
   - component: {fileID: 10764990}
   - component: {fileID: 10764989}
   - component: {fileID: 10764992}
+  - component: {fileID: 10764993}
   m_Layer: 0
   m_Name: AXIS 1
   m_TagString: Untagged
@@ -736,6 +737,19 @@ MonoBehaviour:
   - {fileID: 1064559925}
   - {fileID: 409588018}
   - {fileID: 2032171120}
+--- !u!114 &10764993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10764985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: "Selecciona un eje \nde movimiento"
 --- !u!1 &19612067
 GameObject:
   m_ObjectHideFlags: 0
@@ -749,6 +763,7 @@ GameObject:
   - component: {fileID: 19612069}
   - component: {fileID: 19612068}
   - component: {fileID: 19612072}
+  - component: {fileID: 19612073}
   m_Layer: 0
   m_Name: '- Axis 1 X'
   m_TagString: Untagged
@@ -904,6 +919,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &19612073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19612067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: "Mov. negativo en \neje seleccionado"
 --- !u!1 &19681556
 GameObject:
   m_ObjectHideFlags: 0
@@ -1347,6 +1375,7 @@ GameObject:
   - component: {fileID: 50877144}
   - component: {fileID: 50877143}
   - component: {fileID: 50877146}
+  - component: {fileID: 50877147}
   m_Layer: 0
   m_Name: AXIS 5
   m_TagString: Untagged
@@ -1506,6 +1535,19 @@ MonoBehaviour:
   - {fileID: 1464212090}
   - {fileID: 409588018}
   - {fileID: 2032171120}
+--- !u!114 &50877147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 50877139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: "Selecciona un eje \nde movimiento"
 --- !u!1 &55588194
 GameObject:
   m_ObjectHideFlags: 0
@@ -1555,6 +1597,7 @@ GameObject:
   - component: {fileID: 71136555}
   - component: {fileID: 71136554}
   - component: {fileID: 71136553}
+  - component: {fileID: 71136556}
   m_Layer: 0
   m_Name: EmergencyButton
   m_TagString: Untagged
@@ -1664,6 +1707,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 71136550}
   m_CullTransparentMesh: 1
+--- !u!114 &71136556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71136550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: "Nada \nasignado"
 --- !u!1 &71607503
 GameObject:
   m_ObjectHideFlags: 0
@@ -1677,6 +1733,7 @@ GameObject:
   - component: {fileID: 71607505}
   - component: {fileID: 71607504}
   - component: {fileID: 71607508}
+  - component: {fileID: 71607509}
   m_Layer: 0
   m_Name: '- Axis 2'
   m_TagString: Untagged
@@ -1832,6 +1889,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+--- !u!114 &71607509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71607503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: "Mov. negativo en \neje seleccionado"
 --- !u!1 &75644475
 GameObject:
   m_ObjectHideFlags: 0
@@ -3248,6 +3318,7 @@ GameObject:
   - component: {fileID: 176433418}
   - component: {fileID: 176433417}
   - component: {fileID: 176433420}
+  - component: {fileID: 176433421}
   m_Layer: 0
   m_Name: + Axis 4
   m_TagString: Untagged
@@ -3403,6 +3474,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &176433421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176433415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: "Mov. positivo en \neje seleccionado"
 --- !u!1 &180907163
 GameObject:
   m_ObjectHideFlags: 0
@@ -4068,7 +4152,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 220513431}
-  m_LocalRotation: {x: 6.617445e-24, y: -0, z: 0.26962975, w: 0.9629641}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.22351393, y: 0.080302894, z: -0.008475944}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4889,6 +4973,7 @@ GameObject:
   - component: {fileID: 258793178}
   - component: {fileID: 258793177}
   - component: {fileID: 258793176}
+  - component: {fileID: 258793179}
   m_Layer: 0
   m_Name: '- Sin Mov'
   m_TagString: Untagged
@@ -4999,6 +5084,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 258793172}
   m_CullTransparentMesh: 1
+--- !u!114 &258793179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258793172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: "Nada \nasignado"
 --- !u!1 &260686883
 GameObject:
   m_ObjectHideFlags: 0
@@ -5383,6 +5481,7 @@ GameObject:
   - component: {fileID: 285310719}
   - component: {fileID: 285310718}
   - component: {fileID: 285310722}
+  - component: {fileID: 285310723}
   m_Layer: 0
   m_Name: + Axis 2 Y
   m_TagString: Untagged
@@ -5538,6 +5637,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+--- !u!114 &285310723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285310717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: "Mov. positivo en \neje seleccionado"
 --- !u!1 &298178803
 GameObject:
   m_ObjectHideFlags: 0
@@ -8878,6 +8990,8 @@ GameObject:
   - component: {fileID: 411356809}
   - component: {fileID: 411356808}
   - component: {fileID: 411356807}
+  - component: {fileID: 411356810}
+  - component: {fileID: 411356811}
   m_Layer: 0
   m_Name: AXIS 8
   m_TagString: Untagged
@@ -8950,7 +9064,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 411356808}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 411356811}
+        m_TargetAssemblyTypeName: SelectedMove, Assembly-CSharp
+        m_MethodName: ShowSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &411356808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8989,6 +9115,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 411356803}
   m_CullTransparentMesh: 1
+--- !u!114 &411356810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411356803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: "Nada \nasignado"
+--- !u!114 &411356811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411356803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f473bc087036f2c4d9b44e89c1ddd22b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selected:
+  - {fileID: 679529649}
+  - {fileID: 258793176}
+  unselected:
+  - {fileID: 1090615029}
+  - {fileID: 1550927570}
+  - {fileID: 1790172884}
+  - {fileID: 176433417}
+  - {fileID: 1637093329}
+  - {fileID: 1905496553}
+  - {fileID: 1181985893}
+  - {fileID: 285310718}
+  - {fileID: 1430391375}
+  - {fileID: 1176382336}
+  - {fileID: 71607504}
+  - {fileID: 1897452337}
+  - {fileID: 19612068}
+  - {fileID: 1655973106}
+  - {fileID: 1987278940}
+  - {fileID: 1464212090}
+  - {fileID: 1064559925}
+  - {fileID: 2032171120}
 --- !u!1 &412683911
 GameObject:
   m_ObjectHideFlags: 0
@@ -9275,6 +9448,7 @@ GameObject:
   - component: {fileID: 415346668}
   - component: {fileID: 415346671}
   - component: {fileID: 415346667}
+  - component: {fileID: 415346672}
   m_Layer: 0
   m_Name: PerillaButton
   m_TagString: Untagged
@@ -9496,6 +9670,19 @@ MonoBehaviour:
   - {fileID: 1310098402}
   - {fileID: 1697746492}
   - {fileID: 1026133148}
+--- !u!114 &415346672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415346665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: "Deshabilita el \nmodo manual"
 --- !u!1 &422817443
 GameObject:
   m_ObjectHideFlags: 0
@@ -9778,6 +9965,8 @@ GameObject:
   - component: {fileID: 429381019}
   - component: {fileID: 429381018}
   - component: {fileID: 429381017}
+  - component: {fileID: 429381020}
+  - component: {fileID: 429381021}
   m_Layer: 0
   m_Name: AXIS 9
   m_TagString: Untagged
@@ -9850,7 +10039,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 429381018}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 429381021}
+        m_TargetAssemblyTypeName: SelectedMove, Assembly-CSharp
+        m_MethodName: ShowSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &429381018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9889,6 +10090,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 429381013}
   m_CullTransparentMesh: 1
+--- !u!114 &429381020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429381013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: "Nada \nasignado"
+--- !u!114 &429381021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429381013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f473bc087036f2c4d9b44e89c1ddd22b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selected:
+  - {fileID: 679529649}
+  - {fileID: 258793176}
+  unselected:
+  - {fileID: 1090615029}
+  - {fileID: 1550927570}
+  - {fileID: 1790172884}
+  - {fileID: 176433417}
+  - {fileID: 1637093329}
+  - {fileID: 1905496553}
+  - {fileID: 1181985893}
+  - {fileID: 285310718}
+  - {fileID: 1430391375}
+  - {fileID: 1176382336}
+  - {fileID: 71607504}
+  - {fileID: 1897452337}
+  - {fileID: 19612068}
+  - {fileID: 1655973106}
+  - {fileID: 1987278940}
+  - {fileID: 1464212090}
+  - {fileID: 1064559925}
+  - {fileID: 2032171120}
 --- !u!1 &458105808
 GameObject:
   m_ObjectHideFlags: 0
@@ -12394,6 +12642,7 @@ GameObject:
   - component: {fileID: 544673431}
   - component: {fileID: 544673430}
   - component: {fileID: 544673434}
+  - component: {fileID: 544673435}
   m_Layer: 0
   m_Name: AXIS 3 Z
   m_TagString: Untagged
@@ -12554,6 +12803,19 @@ MonoBehaviour:
   - {fileID: 1064559925}
   - {fileID: 409588018}
   - {fileID: 2032171120}
+--- !u!114 &544673435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544673429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: "Selecciona un eje \nde movimiento"
 --- !u!1 &546706701
 GameObject:
   m_ObjectHideFlags: 0
@@ -16098,6 +16360,7 @@ GameObject:
   - component: {fileID: 679529651}
   - component: {fileID: 679529650}
   - component: {fileID: 679529649}
+  - component: {fileID: 679529652}
   m_Layer: 0
   m_Name: + Sin Mov
   m_TagString: Untagged
@@ -16208,6 +16471,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 679529645}
   m_CullTransparentMesh: 1
+--- !u!114 &679529652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679529645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: "Nada \nasignado"
 --- !u!1 &684153405
 GameObject:
   m_ObjectHideFlags: 0
@@ -19849,6 +20125,7 @@ GameObject:
   - component: {fileID: 887120877}
   - component: {fileID: 887120876}
   - component: {fileID: 887120879}
+  - component: {fileID: 887120880}
   m_Layer: 0
   m_Name: AXIS 4
   m_TagString: Untagged
@@ -20008,6 +20285,19 @@ MonoBehaviour:
   - {fileID: 1064559925}
   - {fileID: 409588018}
   - {fileID: 2032171120}
+--- !u!114 &887120880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 887120872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: "Selecciona un eje \nde movimiento"
 --- !u!1 &888601239
 GameObject:
   m_ObjectHideFlags: 0
@@ -22107,6 +22397,8 @@ GameObject:
   - component: {fileID: 966517982}
   - component: {fileID: 966517981}
   - component: {fileID: 966517980}
+  - component: {fileID: 966517983}
+  - component: {fileID: 966517984}
   m_Layer: 0
   m_Name: AXIS 0
   m_TagString: Untagged
@@ -22179,7 +22471,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 966517981}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 966517984}
+        m_TargetAssemblyTypeName: SelectedMove, Assembly-CSharp
+        m_MethodName: ShowSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &966517981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22218,6 +22522,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 966517976}
   m_CullTransparentMesh: 1
+--- !u!114 &966517983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966517976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: "Nada \nasignado"
+--- !u!114 &966517984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966517976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f473bc087036f2c4d9b44e89c1ddd22b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selected:
+  - {fileID: 679529649}
+  - {fileID: 258793176}
+  unselected:
+  - {fileID: 1090615029}
+  - {fileID: 1550927570}
+  - {fileID: 1790172884}
+  - {fileID: 176433417}
+  - {fileID: 1637093329}
+  - {fileID: 1905496553}
+  - {fileID: 1181985893}
+  - {fileID: 285310718}
+  - {fileID: 1430391375}
+  - {fileID: 1176382336}
+  - {fileID: 71607504}
+  - {fileID: 1897452337}
+  - {fileID: 19612068}
+  - {fileID: 1655973106}
+  - {fileID: 1987278940}
+  - {fileID: 1464212090}
+  - {fileID: 1064559925}
+  - {fileID: 2032171120}
 --- !u!1 &968122771
 GameObject:
   m_ObjectHideFlags: 0
@@ -24779,6 +25130,7 @@ GameObject:
   - component: {fileID: 1044541550}
   - component: {fileID: 1044541549}
   - component: {fileID: 1044541553}
+  - component: {fileID: 1044541554}
   m_Layer: 0
   m_Name: AXIS 2 Y
   m_TagString: Untagged
@@ -24939,6 +25291,19 @@ MonoBehaviour:
   - {fileID: 1064559925}
   - {fileID: 409588018}
   - {fileID: 2032171120}
+--- !u!114 &1044541554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1044541548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: "Selecciona un eje \nde movimiento"
 --- !u!1 &1051658818
 GameObject:
   m_ObjectHideFlags: 0
@@ -25172,6 +25537,7 @@ GameObject:
   - component: {fileID: 1064559926}
   - component: {fileID: 1064559925}
   - component: {fileID: 1064559929}
+  - component: {fileID: 1064559930}
   m_Layer: 0
   m_Name: '- Axis 5'
   m_TagString: Untagged
@@ -25327,6 +25693,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1064559930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064559924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: "Mov. negativo en \neje seleccionado"
 --- !u!1 &1065521590
 GameObject:
   m_ObjectHideFlags: 0
@@ -26526,6 +26905,7 @@ GameObject:
   - component: {fileID: 1090615030}
   - component: {fileID: 1090615029}
   - component: {fileID: 1090615032}
+  - component: {fileID: 1090615033}
   m_Layer: 0
   m_Name: + Axis 1
   m_TagString: Untagged
@@ -26681,6 +27061,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1090615033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090615027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: "Mov. positivo en \neje seleccionado"
 --- !u!1 &1090873731
 GameObject:
   m_ObjectHideFlags: 0
@@ -26966,6 +27359,7 @@ GameObject:
   - component: {fileID: 1106456192}
   - component: {fileID: 1106456191}
   - component: {fileID: 1106456194}
+  - component: {fileID: 1106456195}
   m_Layer: 0
   m_Name: AXIS 3
   m_TagString: Untagged
@@ -27126,6 +27520,19 @@ MonoBehaviour:
   - {fileID: 1064559925}
   - {fileID: 409588018}
   - {fileID: 2032171120}
+--- !u!114 &1106456195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106456187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: "Selecciona un eje \nde movimiento"
 --- !u!1 &1112421321
 GameObject:
   m_ObjectHideFlags: 0
@@ -27273,6 +27680,7 @@ GameObject:
   - component: {fileID: 1114246039}
   - component: {fileID: 1114246038}
   - component: {fileID: 1114246037}
+  - component: {fileID: 1114246040}
   m_Layer: 0
   m_Name: RUN
   m_TagString: Untagged
@@ -27383,6 +27791,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1114246033}
   m_CullTransparentMesh: 1
+--- !u!114 &1114246040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114246033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: "Ejecuta posici\xF3n\npor defecto"
 --- !u!1 &1115939668
 GameObject:
   m_ObjectHideFlags: 0
@@ -27680,6 +28101,7 @@ GameObject:
   - component: {fileID: 1120296900}
   - component: {fileID: 1120296899}
   - component: {fileID: 1120296898}
+  - component: {fileID: 1120296901}
   m_Layer: 0
   m_Name: OPEN CLOSE
   m_TagString: Untagged
@@ -27803,6 +28225,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1120296894}
   m_CullTransparentMesh: 1
+--- !u!114 &1120296901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120296894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: 'Abre/Cierra
+
+    la pinza'
 --- !u!1 &1126603509
 GameObject:
   m_ObjectHideFlags: 0
@@ -29461,6 +29898,7 @@ GameObject:
   - component: {fileID: 1176382337}
   - component: {fileID: 1176382336}
   - component: {fileID: 1176382340}
+  - component: {fileID: 1176382341}
   m_Layer: 0
   m_Name: '- Axis 1'
   m_TagString: Untagged
@@ -29616,6 +30054,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+--- !u!114 &1176382341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176382335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: "Mov. negativo en \neje seleccionado"
 --- !u!1 &1176675953
 GameObject:
   m_ObjectHideFlags: 0
@@ -29782,6 +30233,7 @@ GameObject:
   - component: {fileID: 1181985894}
   - component: {fileID: 1181985893}
   - component: {fileID: 1181985897}
+  - component: {fileID: 1181985898}
   m_Layer: 0
   m_Name: + Axis 1 X
   m_TagString: Untagged
@@ -29937,6 +30389,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+--- !u!114 &1181985898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181985892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: "Mov. positivo en \neje seleccionado"
 --- !u!1 &1183820829
 GameObject:
   m_ObjectHideFlags: 0
@@ -29949,6 +30414,7 @@ GameObject:
   - component: {fileID: 1183820835}
   - component: {fileID: 1183820834}
   - component: {fileID: 1183820833}
+  - component: {fileID: 1183820836}
   m_Layer: 0
   m_Name: CONTROL ON
   m_TagString: Untagged
@@ -30071,6 +30537,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1183820829}
   m_CullTransparentMesh: 1
+--- !u!114 &1183820836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183820829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: 'Enciende/Apaga
+
+    la botonera'
 --- !u!1 &1184327614
 GameObject:
   m_ObjectHideFlags: 0
@@ -31359,7 +31840,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1235854222}
-  m_LocalRotation: {x: 0.4392168, y: -0.26853302, z: 0.0018328128, w: 0.85730696}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.08121061, y: 0.055367827, z: 0.00008520484}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -31674,6 +32155,7 @@ GameObject:
   - component: {fileID: 1241692014}
   - component: {fileID: 1241692013}
   - component: {fileID: 1241692016}
+  - component: {fileID: 1241692017}
   m_Layer: 0
   m_Name: AXIS 7
   m_TagString: Untagged
@@ -31833,6 +32315,23 @@ MonoBehaviour:
   - {fileID: 1464212090}
   - {fileID: 1064559925}
   - {fileID: 409588018}
+--- !u!114 &1241692017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241692009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: 'Selecciona el riel
+
+    para movilizarlo
+
+'
 --- !u!1 &1243438061
 GameObject:
   m_ObjectHideFlags: 0
@@ -35639,6 +36138,7 @@ GameObject:
   - component: {fileID: 1418640818}
   - component: {fileID: 1418640817}
   - component: {fileID: 1418640820}
+  - component: {fileID: 1418640821}
   m_Layer: 0
   m_Name: AXIS 6
   m_TagString: Untagged
@@ -35775,10 +36275,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selected:
-  - {fileID: 1918025705}
-  - {fileID: 409588018}
-  unselected:
   - {fileID: 679529649}
+  - {fileID: 258793176}
+  unselected:
   - {fileID: 1090615029}
   - {fileID: 1550927570}
   - {fileID: 1790172884}
@@ -35788,7 +36287,6 @@ MonoBehaviour:
   - {fileID: 1181985893}
   - {fileID: 285310718}
   - {fileID: 1430391375}
-  - {fileID: 258793176}
   - {fileID: 1176382336}
   - {fileID: 71607504}
   - {fileID: 1897452337}
@@ -35798,6 +36296,19 @@ MonoBehaviour:
   - {fileID: 1464212090}
   - {fileID: 1064559925}
   - {fileID: 2032171120}
+--- !u!114 &1418640821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418640813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: "Nada \nasignado"
 --- !u!1 &1430361231
 GameObject:
   m_ObjectHideFlags: 0
@@ -35811,6 +36322,7 @@ GameObject:
   - component: {fileID: 1430361236}
   - component: {fileID: 1430361235}
   - component: {fileID: 1430361238}
+  - component: {fileID: 1430361239}
   m_Layer: 0
   m_Name: AXIS 2
   m_TagString: Untagged
@@ -35971,6 +36483,19 @@ MonoBehaviour:
   - {fileID: 1064559925}
   - {fileID: 409588018}
   - {fileID: 2032171120}
+--- !u!114 &1430361239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430361231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: "Selecciona un eje \nde movimiento"
 --- !u!1 &1430391374
 GameObject:
   m_ObjectHideFlags: 0
@@ -35984,6 +36509,7 @@ GameObject:
   - component: {fileID: 1430391376}
   - component: {fileID: 1430391375}
   - component: {fileID: 1430391379}
+  - component: {fileID: 1430391380}
   m_Layer: 0
   m_Name: + Axis 3 Z
   m_TagString: Untagged
@@ -36139,6 +36665,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+--- !u!114 &1430391380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430391374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: "Mov. positivo en \neje seleccionado"
 --- !u!1 &1439342594
 GameObject:
   m_ObjectHideFlags: 0
@@ -36902,6 +37441,7 @@ GameObject:
   - component: {fileID: 1464212091}
   - component: {fileID: 1464212090}
   - component: {fileID: 1464212094}
+  - component: {fileID: 1464212095}
   m_Layer: 0
   m_Name: '- Axis 4'
   m_TagString: Untagged
@@ -37057,6 +37597,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+--- !u!114 &1464212095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464212089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: "Mov. negativo en \neje seleccionado"
 --- !u!1 &1467669471
 GameObject:
   m_ObjectHideFlags: 0
@@ -39038,6 +39591,26 @@ MonoBehaviour:
   - {fileID: 2132477725}
   - {fileID: 1044541549}
   - {fileID: 544673430}
+  - {fileID: 1090615029}
+  - {fileID: 1550927570}
+  - {fileID: 1790172884}
+  - {fileID: 1181985893}
+  - {fileID: 285310718}
+  - {fileID: 1430391375}
+  - {fileID: 176433417}
+  - {fileID: 1637093329}
+  - {fileID: 1918025705}
+  - {fileID: 1905496553}
+  - {fileID: 1176382336}
+  - {fileID: 71607504}
+  - {fileID: 1897452337}
+  - {fileID: 19612068}
+  - {fileID: 1655973106}
+  - {fileID: 1987278940}
+  - {fileID: 1464212090}
+  - {fileID: 1064559925}
+  - {fileID: 409588018}
+  - {fileID: 2032171120}
   controlMainText: {fileID: 1383190507}
   subControlText:
   - {fileID: 1575547175}
@@ -39429,6 +40002,7 @@ GameObject:
   - component: {fileID: 1550927571}
   - component: {fileID: 1550927570}
   - component: {fileID: 1550927573}
+  - component: {fileID: 1550927574}
   m_Layer: 0
   m_Name: + Axis 2
   m_TagString: Untagged
@@ -39584,6 +40158,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1550927574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550927568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: "Mov. positivo en \neje seleccionado"
 --- !u!1 &1552800037
 GameObject:
   m_ObjectHideFlags: 0
@@ -42203,6 +42790,7 @@ GameObject:
   - component: {fileID: 1637093330}
   - component: {fileID: 1637093329}
   - component: {fileID: 1637093332}
+  - component: {fileID: 1637093333}
   m_Layer: 0
   m_Name: + Axis 5
   m_TagString: Untagged
@@ -42358,6 +42946,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+--- !u!114 &1637093333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637093327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: "Mov. positivo en \neje seleccionado"
 --- !u!1 &1640310430
 GameObject:
   m_ObjectHideFlags: 0
@@ -43182,6 +43783,7 @@ GameObject:
   - component: {fileID: 1655973107}
   - component: {fileID: 1655973106}
   - component: {fileID: 1655973110}
+  - component: {fileID: 1655973111}
   m_Layer: 0
   m_Name: '- Axis 2 Y'
   m_TagString: Untagged
@@ -43337,6 +43939,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1655973111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655973105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: "Mov. negativo en \neje seleccionado"
 --- !u!1 &1657435747
 GameObject:
   m_ObjectHideFlags: 0
@@ -46112,6 +46727,7 @@ GameObject:
   - component: {fileID: 1790172885}
   - component: {fileID: 1790172884}
   - component: {fileID: 1790172887}
+  - component: {fileID: 1790172888}
   m_Layer: 0
   m_Name: + Axis 3
   m_TagString: Untagged
@@ -46267,6 +46883,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1790172888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790172882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: "Mov. positivo en \neje seleccionado"
 --- !u!1 &1793975106
 GameObject:
   m_ObjectHideFlags: 0
@@ -49622,6 +50251,7 @@ GameObject:
   - component: {fileID: 1897452338}
   - component: {fileID: 1897452337}
   - component: {fileID: 1897452341}
+  - component: {fileID: 1897452342}
   m_Layer: 0
   m_Name: '- Axis 3'
   m_TagString: Untagged
@@ -49777,6 +50407,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+--- !u!114 &1897452342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897452336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: "Mov. negativo en \neje seleccionado"
 --- !u!1 &1898221070
 GameObject:
   m_ObjectHideFlags: 0
@@ -50105,6 +50748,7 @@ GameObject:
   - component: {fileID: 1905496554}
   - component: {fileID: 1905496553}
   - component: {fileID: 1905496556}
+  - component: {fileID: 1905496557}
   m_Layer: 0
   m_Name: + Axis 7
   m_TagString: Untagged
@@ -50260,6 +50904,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+--- !u!114 &1905496557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905496551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: "Mov. positivo en \neje seleccionado"
 --- !u!1 &1906898729
 GameObject:
   m_ObjectHideFlags: 0
@@ -50859,7 +51516,6 @@ GameObject:
   - component: {fileID: 1918025707}
   - component: {fileID: 1918025706}
   - component: {fileID: 1918025705}
-  - component: {fileID: 1918025708}
   m_Layer: 0
   m_Name: + Axis 6
   m_TagString: Untagged
@@ -50970,51 +51626,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1918025703}
   m_CullTransparentMesh: 1
---- !u!114 &1918025708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1918025703}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 3
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1363573164}
-          m_TargetAssemblyTypeName: ScorbotScripts.HingeJointMovement, Assembly-CSharp
-          m_MethodName: StopRotating
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-  - eventID: 2
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1363573164}
-          m_TargetAssemblyTypeName: ScorbotScripts.HingeJointMovement, Assembly-CSharp
-          m_MethodName: Rotate
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &1929008540
 GameObject:
   m_ObjectHideFlags: 0
@@ -52371,6 +52982,7 @@ GameObject:
   - component: {fileID: 1979905086}
   - component: {fileID: 1979905085}
   - component: {fileID: 1979905084}
+  - component: {fileID: 1979905087}
   m_Layer: 0
   m_Name: Close_Button
   m_TagString: Untagged
@@ -52493,6 +53105,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1979905082}
   m_CullTransparentMesh: 1
+--- !u!114 &1979905087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979905082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: "Cierra la \nbotonera"
 --- !u!1 &1981938768
 GameObject:
   m_ObjectHideFlags: 0
@@ -52641,6 +53266,7 @@ GameObject:
   - component: {fileID: 1987278941}
   - component: {fileID: 1987278940}
   - component: {fileID: 1987278944}
+  - component: {fileID: 1987278945}
   m_Layer: 0
   m_Name: '- Axis 3 Z'
   m_TagString: Untagged
@@ -52796,6 +53422,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1987278945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987278939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: "Mov. negativo en \neje seleccionado"
 --- !u!1 &1991266926
 GameObject:
   m_ObjectHideFlags: 0
@@ -53786,6 +54425,7 @@ GameObject:
   - component: {fileID: 2032171121}
   - component: {fileID: 2032171120}
   - component: {fileID: 2032171124}
+  - component: {fileID: 2032171125}
   m_Layer: 0
   m_Name: '- Axis 7'
   m_TagString: Untagged
@@ -53941,6 +54581,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &2032171125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032171119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: "Mov. negativo en \neje seleccionado"
 --- !u!1 &2038624629
 GameObject:
   m_ObjectHideFlags: 0
@@ -55762,6 +56415,7 @@ GameObject:
   - component: {fileID: 2132477726}
   - component: {fileID: 2132477725}
   - component: {fileID: 2132477729}
+  - component: {fileID: 2132477730}
   m_Layer: 0
   m_Name: AXIS 1 X
   m_TagString: Untagged
@@ -55922,6 +56576,19 @@ MonoBehaviour:
   - {fileID: 1064559925}
   - {fileID: 409588018}
   - {fileID: 2032171120}
+--- !u!114 &2132477730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132477724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: "Selecciona un eje \nde movimiento"
 --- !u!1 &2138968963
 GameObject:
   m_ObjectHideFlags: 0
@@ -75806,9 +76473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: 'Ejecuta un
-
-    programa'
+  text: "Ejecuta posici\xF3n\npor defecto"
 --- !u!4 &1851123003748409890
 Transform:
   m_ObjectHideFlags: 0
@@ -78034,9 +78699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: 'Ejecuta un
-
-    programa'
+  text: "Ejecuta posici\xF3n\npor defecto"
 --- !u!224 &2115086525550705988
 RectTransform:
   m_ObjectHideFlags: 0
