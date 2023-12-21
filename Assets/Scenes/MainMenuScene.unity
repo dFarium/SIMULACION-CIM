@@ -4990,9 +4990,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Modelos 3D:\nAlejandro Torres J.\nJos\xE9 Rodriguez H.\nMoises Salgado
-    B.\n\nCodificaci\xF3n:\nAlejandro Torres J.\nFelipe V\xE1squez A.\n\nProfesores
-    Guia/Co-guia\nAlejandro Vald\xE9s J.\nLuis Vera Q.\n\n"
+  m_text: "Modelos 3D:\nAlejandro Torres Jofr\xE9.\nJos\xE9 Rodriguez Herrera.\nMoises
+    Salgado Barria.\n\nCodificaci\xF3n:\nAlejandro Torres Jofr\xE9.\nFelipe V\xE1squez
+    Araneda.\n\nProfesores Guia/Co-guia\nAlejandro Vald\xE9s Jim\xE9nez.\nLuis Vera
+    Quiroga.\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
