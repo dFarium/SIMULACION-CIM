@@ -12061,7 +12061,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: "Arrasta la camara \ncon click derecho\n"
+  text: "Arrasta la c\xE1mara \ncon click derecho\n"
 --- !u!114 &515928429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22760,9 +22760,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: 'Camara Libre
-
-    (WASD, SHIFT y SPACE)'
+  text: "C\xE1mara libre\n(WASD, SHIFT y SPACE)"
 --- !u!114 &975542079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29501,9 +29499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: 'Camara Libre
-
-    (WASD, SHIFT y SPACE)'
+  text: "C\xE1mara libre\n(WASD, SHIFT y SPACE)"
 --- !u!114 &1170750273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38116,9 +38112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: 'Camara Libre
-
-    (WASD, SHIFT y SPACE)'
+  text: "C\xE1mara libre\n(WASD, SHIFT y SPACE)"
 --- !u!1 &1480834003
 GameObject:
   m_ObjectHideFlags: 3
@@ -47084,7 +47078,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: "Arrasta la camara \ncon click derecho\n"
+  text: "Arrasta la c\xE1mara \ncon click derecho\n"
 --- !u!114 &1798526894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48687,7 +48681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: "Arrasta la camara \ncon click derecho\n"
+  text: "Arrasta la c\xE1mara \ncon click derecho\n"
 --- !u!1001 &1840624992
 PrefabInstance:
   m_ObjectHideFlags: 0
