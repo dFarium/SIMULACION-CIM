@@ -1668,7 +1668,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 71136554}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 75644481}
+        m_TargetAssemblyTypeName: Tweener, Assembly-CSharp
+        m_MethodName: StopSequence
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &71136554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1719,7 +1731,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: "Nada \nasignado"
+  text: 'Detiene el mov.
+
+    del robot'
 --- !u!1 &71607503
 GameObject:
   m_ObjectHideFlags: 0
@@ -27678,6 +27692,7 @@ GameObject:
   - component: {fileID: 1114246039}
   - component: {fileID: 1114246038}
   - component: {fileID: 1114246037}
+  - component: {fileID: 1114246041}
   - component: {fileID: 1114246040}
   m_Layer: 0
   m_Name: RUN
@@ -27750,7 +27765,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1114246038}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114246041}
+        m_TargetAssemblyTypeName: SetDestinationPosition, Assembly-CSharp
+        m_MethodName: GoPositionButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1114246038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27802,6 +27829,104 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: "Ejecuta posici\xF3n\npor defecto"
+--- !u!114 &1114246041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114246033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2f58a7b72cee0249934b77e4d6bb014, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stationNumber: 2
+  saveNumber: 1
+  controlMainText: {fileID: 1383190507}
+  auxiliarText: {fileID: 1024965589}
+  saveText: {fileID: 1640310432}
+  interactableButtons:
+  - {fileID: 684153409}
+  - {fileID: 10764989}
+  - {fileID: 1430361235}
+  - {fileID: 1106456191}
+  - {fileID: 2132477725}
+  - {fileID: 1044541549}
+  - {fileID: 544673430}
+  - {fileID: 679529649}
+  - {fileID: 1090615029}
+  - {fileID: 1550927570}
+  - {fileID: 1790172884}
+  - {fileID: 1181985893}
+  - {fileID: 285310718}
+  - {fileID: 1430391375}
+  - {fileID: 176433417}
+  - {fileID: 1637093329}
+  - {fileID: 1918025705}
+  - {fileID: 1905496553}
+  - {fileID: 351672328}
+  - {fileID: 887120876}
+  - {fileID: 50877143}
+  - {fileID: 1418640817}
+  - {fileID: 258793176}
+  - {fileID: 1176382336}
+  - {fileID: 71607504}
+  - {fileID: 1897452337}
+  - {fileID: 19612068}
+  - {fileID: 1655973106}
+  - {fileID: 1987278940}
+  - {fileID: 1464212090}
+  - {fileID: 1064559925}
+  - {fileID: 409588018}
+  - {fileID: 2032171120}
+  - {fileID: 1114246037}
+  - {fileID: 1241692013}
+  - {fileID: 411356807}
+  - {fileID: 429381017}
+  - {fileID: 966517980}
+  - {fileID: 1183820833}
+  - {fileID: 968122775}
+  - {fileID: 328100435}
+  - {fileID: 1644389185}
+  - {fileID: 1315755422}
+  - {fileID: 1120296898}
+  - {fileID: 505126687}
+  - {fileID: 1439342598}
+  - {fileID: 1693010422}
+  - {fileID: 597321255}
+  - {fileID: 415346668}
+  numericButtons:
+  - {fileID: 1039011633}
+  - {fileID: 113437195}
+  - {fileID: 458105808}
+  - {fileID: 306401848}
+  - {fileID: 985161175}
+  - {fileID: 1311296785}
+  - {fileID: 842334722}
+  - {fileID: 1310098400}
+  - {fileID: 1697746490}
+  - {fileID: 1026133146}
+  - {fileID: 1955332674}
+  - {fileID: 2061821962}
+  hideButtons:
+  - {fileID: 10764985}
+  - {fileID: 1430361231}
+  - {fileID: 1106456187}
+  - {fileID: 2132477724}
+  - {fileID: 1044541548}
+  - {fileID: 544673429}
+  - {fileID: 887120872}
+  - {fileID: 50877139}
+  - {fileID: 1418640813}
+  - {fileID: 1241692009}
+  - {fileID: 411356803}
+  - {fileID: 429381013}
+  - {fileID: 966517976}
+  - {fileID: 505126683}
+  - {fileID: 597321251}
+  tweenerScript: {fileID: 75644481}
+  destino: {fileID: 1461941975}
 --- !u!1 &1115939668
 GameObject:
   m_ObjectHideFlags: 0
@@ -37393,6 +37518,89 @@ Transform:
   m_Father: {fileID: 5927207036575484648}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1461941975
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1461941976}
+  - component: {fileID: 1461941978}
+  - component: {fileID: 1461941977}
+  m_Layer: 0
+  m_Name: InicialPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1461941976
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461941975}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.608, y: 0.558, z: 0.281}
+  m_LocalScale: {x: 0.03, y: 0.03, z: 0.03}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1726727274}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &1461941977
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461941975}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1461941978
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461941975}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1462174932
 GameObject:
   m_ObjectHideFlags: 0
@@ -46051,6 +46259,7 @@ Transform:
   - {fileID: 1368767487}
   - {fileID: 1673065155}
   - {fileID: 75644476}
+  - {fileID: 1461941976}
   m_Father: {fileID: 1314143911}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
