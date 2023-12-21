@@ -12524,7 +12524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: "Arrasta la c\xE1mara \ncon click derecho\n"
+  text: "Cambia de\nc\xE1mara"
 --- !u!114 &515928429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49034,7 +49034,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: "Arrasta la c\xE1mara \ncon click derecho\n"
+  text: "Cambia de\nc\xE1mara"
 --- !u!114 &1798526894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50637,7 +50637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: "Arrasta la c\xE1mara \ncon click derecho\n"
+  text: "Cambia de\nc\xE1mara"
 --- !u!1001 &1840624992
 PrefabInstance:
   m_ObjectHideFlags: 0
