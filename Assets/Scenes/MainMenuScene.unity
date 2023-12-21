@@ -217,6 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e7a8bbe4aa89584ea940fea30814492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  link: https://github.com/dFarium/SIMULACION-CIM
 --- !u!114 &24717117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,8 +263,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 24717116}
-        m_TargetAssemblyTypeName: OpenRepo, Assembly-CSharp
-        m_MethodName: OpenLink
+        m_TargetAssemblyTypeName: OpenLink, Assembly-CSharp
+        m_MethodName: OpenLinkInBrowser
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
