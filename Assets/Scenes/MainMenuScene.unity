@@ -263,7 +263,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 24717116}
         m_TargetAssemblyTypeName: OpenRepo, Assembly-CSharp
-        m_MethodName: OpenLinkRepo
+        m_MethodName: OpenLink
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
