@@ -14,7 +14,7 @@ public class FloatingCamera : MonoBehaviour
     [SerializeField] private float defaultHorizontalValue, defaultVerticalValue;
     [SerializeField] private TMP_Dropdown dropdownOptions;
     private Camera camera1;
-
+    [SerializeField] private HideUI hideUI;
 
     private void Start()
     {
@@ -28,6 +28,7 @@ public class FloatingCamera : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if(dropdownOptions != null) dropdownOptions.value = 1;
+            if(hideUI != null) hideUI.ShowAllButtons();
             UnlockCursor();
         }
 
