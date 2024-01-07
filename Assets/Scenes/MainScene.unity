@@ -8429,7 +8429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: "Vuelve al\nMen\xFA principal"
+  text: "Vuelve al\nmen\xFA principal"
 --- !u!1 &357844057
 GameObject:
   m_ObjectHideFlags: 0
@@ -19098,7 +19098,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: 'Muestra/Oculta
+  text: 'Muestra u oculta
 
     la botonera'
 --- !u!114 &727436835
@@ -40538,7 +40538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: 'Muestra/Oculta
+  text: 'Muestra u oculta
 
     la botonera'
 --- !u!1 &1455281983
@@ -48702,7 +48702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1df7c7087a1e45043ab88016a44b8d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: 'Muestra/Oculta
+  text: 'Muestra u oculta
 
     la botonera'
 --- !u!114 &1684641633
