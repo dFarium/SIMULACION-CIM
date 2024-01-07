@@ -116,6 +116,8 @@ public class CameraManager : MonoBehaviour
 
     public void SwitchCameraDropdown(int cameraIndex)
     {
+        if (cameraIndex == 0) return;
+        cameraIndex = cameraIndex - 1;
         Debug.Log(cameraIndex);
         foreach (CinemachineVirtualCameraBase virtualCameraBase in virtualCameras)
         {

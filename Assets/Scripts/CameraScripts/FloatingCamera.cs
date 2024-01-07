@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
+using TMPro;
 using UnityEngine;
 
 public class FloatingCamera : MonoBehaviour
@@ -11,6 +12,7 @@ public class FloatingCamera : MonoBehaviour
     [SerializeField] private Transform startPosition;
     [SerializeField] private CinemachineVirtualCamera virtualCamera;
     [SerializeField] private float defaultHorizontalValue, defaultVerticalValue;
+    [SerializeField] private TMP_Dropdown dropdownOptions;
     private Camera camera1;
 
 
@@ -25,6 +27,7 @@ public class FloatingCamera : MonoBehaviour
         // Desbloquea cursor
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            if(dropdownOptions != null) dropdownOptions.value = 1;
             UnlockCursor();
         }
 
