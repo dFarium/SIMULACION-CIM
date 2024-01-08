@@ -8,7 +8,7 @@ public class SlideProductionList : MonoBehaviour
     [SerializeField] private RectTransform showProductionList;
     [SerializeField] private RectTransform hideProductionList;
     [SerializeField] private RectTransform image;
-    private bool isProductionListShown = false;
+    [SerializeField] private bool isProductionListShown;
     // Start is called before the first frame update
     
     public void ToggleProductionList()
